@@ -1,0 +1,17 @@
+#include <string.h>
+#include <stdio.h>
+
+
+
+
+char *readline(FILE *stream){
+
+  static char stringcontainer[100];
+
+  if(fgets(stream,100,stringcontainer) != NULL){
+    
+  }else
+    perror("End of file!");
+
+
+}

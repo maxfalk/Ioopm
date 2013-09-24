@@ -1,0 +1,13 @@
+#ifndef FILE_H
+#define FILE_H
+
+
+char *FILEreadline(FILE*);
+
+
+
+
+
+
+
+#endif

@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <file.h>
+
+int main(int argc, char *argv[]){
+
+  if(argc != 2){
+    perror("No arg");
+  }
+  char *file = argv[1];
+  FILE *stream = fopen(file);
+  if(stream == NULL) perror("File not open");
+
+  char * mystrings = Filereadline(stream);
+
+  fclose(file);
+  return 0;
+}

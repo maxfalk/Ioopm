@@ -1,0 +1,25 @@
+#include "list.h"
+#include <stdio.h>
+
+
+struct test{
+  char name;
+  int age;
+
+};
+
+int main(int argc,char *argv[]){
+
+
+  struct test *testar = malloc(sizeof(struct test));
+  
+  testar->name = 'a';
+  testar->age = 55;
+
+  List lista = createnewlist(testar);
+
+
+
+  return 0;
+
+}

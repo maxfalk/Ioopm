@@ -1,0 +1,75 @@
+
+
+struct info{
+  char type;
+  int num;
+};
+
+
+struct list{
+  char key;
+  void *infostruct;
+  struct list next;
+
+};
+
+typedef struct list *List;
+
+
+List createnewlist(void *newinfo){
+
+  List mylist = malloc(sizeof(struct list));
+  mylist->infostruct = newinfo;
+
+  return mylist;
+
+}
+
+List addtolist(List mylist, void *newinfo){
+
+  List newlist = malloc(sizeof(struct list));
+
+  newlist->infostruct = newinfo;
+  newlist->next = mylist;
+
+  return newlist;
+
+} 
+
+void updatelist(List mylist,char key, void *updatedinfo){
+
+  List cursor = mylist;
+  
+  while(cursor != NULL){
+
+    if(cursor->key == key){
+      free(cursor->infostruct);
+      cursor->infostruct = updatedinfo;
+    }
+    cursor = cursor->next;
+
+  }
+
+}
+
+void deletefromlist(List mylist, char key){
+
+  List cursor = mylist;
+  List lastcursor = NULL;
+
+  while(cursor != NULL){
+    if(cursor->key == key){
+     
+      lastcursor->next = cursor->next;
+      free(cursor->structinfo);
+      free(cursor);
+  
+    }
+
+    lastcursor = cursor;
+    cursor = cursor->next;
+
+  }
+
+
+}

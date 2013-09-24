@@ -1,0 +1,48 @@
+#include "list.h"
+
+
+struct graph{
+  List graphnodes;
+};
+
+
+typedef struct graph *Graph;
+
+
+Graph creategraph(void *pathinfo){
+
+  Graph newgraph = malloc(sizeof(struct graph));
+  List pathlist = createnewlist(pathinfo);
+  newgraph->graphnodes = createnewlist(pathlist);
+
+  return newgraph;
+
+}
+
+Graph addnewnode(Graph mygraph,void *pathinfo){
+
+  List pathlist = createnewlist(pathinfo);
+  Graph newgraph = addnewnode(mygraph->graphnodes,pathlist);
+    
+  return newgraph;
+
+}
+
+void linknodes(Graph mygraph,void *firstnode,void *secondnode){
+
+
+  int pos = 0;
+
+  while((void *result = findlist(mygraph->graphnodes,pos)) != NULL){
+    
+
+    findlist(result,);
+
+
+    pos++;
+  }
+
+
+
+
+}
