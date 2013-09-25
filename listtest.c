@@ -50,7 +50,9 @@ int main(int argc,char *argv[]){
   }else
     puts("inte hittad\n");
 
-
+  //free(p1);
+  //free(p2);
+  destroylist(lista);
 
   return 0;
 

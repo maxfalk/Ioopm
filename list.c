@@ -46,6 +46,32 @@ void updatelist(List mylist,int key, void *updatedinfo){
   }
 
 }
+void destroylist(List mylist){
+
+  List cursor = mylist;
+
+  while(cursor != NULL){
+    List nextcursor = cursor->next;
+    free(cursor->info);
+    free(cursor);
+    cursor = nextcursor;
+
+  }
+
+
+}
+
+List fixkeys(List mylist){
+
+  List cursor = mylist;
+  while(cursor != NULL){
+    mylist->key = mylist->key -1;
+    cursor = cursor->next;
+  }
+
+  return mylist;
+
+}
 
 List deletefromlist(List mylist, int key){
 
@@ -60,14 +86,18 @@ List deletefromlist(List mylist, int key){
 	free(cursor->info);
 	free(cursor);
 	printf("key:%d\n",key);
+	fixkeys(firstcursornext);
 	cursor = firstcursornext;	
 	break;
 
       }else{
 	lastcursor->next = cursor->next;
+	fixkeys(cursor->next);
 	free(cursor->info);
 	free(cursor);
+	
 	cursor = mylist;
+	
 	break;
       }
 
@@ -86,7 +116,8 @@ List deletefromlist(List mylist, int key){
 
 void *findlist(List mylist, int key){
 
-  List cursor = mylist;
+  List cursor = NULL; 
+  cursor = mylist;
   void *value = NULL;
 
   while(cursor != NULL){

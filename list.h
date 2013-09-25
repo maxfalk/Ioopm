@@ -9,6 +9,7 @@ List addtolist(List,void*);
 void updatelist(List,int,void*);
 List deletefromlist(List,int);
 void *findlist(List,int);
+void destroylist(List);
 
 
 #endif
