@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include "list.h"
 #include <stdio.h>
+
 struct list{
   int key;
   void *info;
@@ -20,13 +21,17 @@ List createnewlist(void *newinfo){
 }
 
 List addtolist(List mylist, void *newinfo){
+  List newlist = NULL;
 
-  List newlist = malloc(sizeof(struct list));
-  int key = (mylist->key +1);
-  newlist->key = key;
-  newlist->info = newinfo;
-  newlist->next = mylist;
-
+  if(mylist != NULL){
+    newlist = malloc(sizeof(struct list));
+    int key = (mylist->key +1);
+    newlist->key = key;
+    newlist->info = newinfo;
+    newlist->next = mylist;
+  }else{
+    newlist = createnewlist(newinfo);
+  }
   return newlist;
 
 } 
@@ -72,63 +77,16 @@ List fixkeys(List mylist){
   return mylist;
 
 }
+//-------------------------------------------------------------
+void *headlist(List mylist){
 
-List deletefromlist(List mylist, int key){
+  return mylist->info;
 
-  List cursor = mylist;
-  List lastcursor = NULL;
+}
+//--------------------------------------------------------------
+List listtail(List mylist){
 
-  while(cursor != NULL){
-    printf("Hkey:%d, inkey: %d",cursor->key,key);
-    if(cursor->key == key){
-      if(lastcursor == NULL){
-	List firstcursornext = cursor->next;
-	free(cursor->info);
-	free(cursor);
-	printf("key:%d\n",key);
-	fixkeys(firstcursornext);
-	cursor = firstcursornext;	
-	break;
-
-      }else{
-	lastcursor->next = cursor->next;
-	fixkeys(cursor->next);
-	free(cursor->info);
-	free(cursor);
-	
-	cursor = mylist;
-	
-	break;
-      }
-
-
-    }
-    puts("Looping\n");
-    lastcursor = cursor;
-    cursor = cursor->next;
-
-  }
-
-
-  return cursor;
+  return mylist->next;
 
 }
 
-void *findlist(List mylist, int key){
-
-  List cursor = NULL; 
-  cursor = mylist;
-  void *value = NULL;
-
-  while(cursor != NULL){
-    if(cursor->key == key){
-      value = cursor->info;
-      
-    }
-
-    cursor = cursor->next;
-  }
-
-  return value;
-
-}
