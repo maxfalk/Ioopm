@@ -25,33 +25,30 @@ int main(int argc,char *argv[]){
   lista = addtolist(lista,p2);
 
 
-  struct test *found = findlist(lista, 0);
-  if(found){
+  struct test *found = headlist(lista);
+
+  if(found != NULL){
     printf("name: %c\n",found->name);
     printf("age: %d\n",found->age);
   }
 
-  found = findlist(lista, 1);
-  if(found){
+  found = headlist(listtail(lista));
+
+  if(found != NULL){
     printf("name: %c\n",found->name);
     printf("age: %d\n",found->age);
   }
+  
 
-  lista = deletefromlist(lista,0);
-
-  found = findlist(lista,0);
-  if(found == NULL) puts("Borta\n");
-
-
-  found = findlist(lista, 1);
-  if(found){
+  List lista2 = listtail(lista);
+  found = headlist(lista2);
+ 
+  if(found != NULL){
     printf("name: %c\n",found->name);
     printf("age: %d\n",found->age);
   }else
     puts("inte hittad\n");
 
-  //free(p1);
-  //free(p2);
   destroylist(lista);
 
   return 0;

@@ -9,17 +9,18 @@ struct list{
 
 };
 
-
+//-----------------------------------------------
 List createnewlist(void *newinfo){
 
   List mylist = malloc(sizeof(struct list));
   mylist->info = newinfo;
   mylist->key = 0;
+  mylist->next = NULL;
 
   return mylist;
 
 }
-
+//------------------------------------------------
 List addtolist(List mylist, void *newinfo){
   List newlist = NULL;
 
@@ -35,7 +36,7 @@ List addtolist(List mylist, void *newinfo){
   return newlist;
 
 } 
-
+//---------------------------------------------------------
 void updatelist(List mylist,int key, void *updatedinfo){
 
   List cursor = mylist;
@@ -51,6 +52,7 @@ void updatelist(List mylist,int key, void *updatedinfo){
   }
 
 }
+//----------------------------------------------------
 void destroylist(List mylist){
 
   List cursor = mylist;
@@ -65,7 +67,7 @@ void destroylist(List mylist){
 
 
 }
-
+//-----------------------------------------------------------
 List fixkeys(List mylist){
 
   List cursor = mylist;
@@ -85,7 +87,7 @@ void *headlist(List mylist){
 }
 //--------------------------------------------------------------
 List listtail(List mylist){
-
+  
   return mylist->next;
 
 }
