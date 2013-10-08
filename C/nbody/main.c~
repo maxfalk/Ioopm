@@ -1,0 +1,239 @@
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+#ifdef ANIMATE
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+
+#define X_SIZE 800
+#define Y_SIZE 800
+#endif
+
+#define prec float
+#define PI 3.14159265359
+#define NG 6.67e-11 // Newtons gravitationskonstant
+
+static prec gdt = 0.00001;
+
+
+
+typedef struct {
+  int x;
+  int y;
+  prec forcex;
+  prec forcey; 
+  prec accx;
+  prec accy;
+  prec velocityx;
+  prec velocityy;  
+  prec mass;
+} body;
+
+static void copyToXBuffer(body* star, XPoint* points, int N);
+prec calculateacceleration(prec force,prec mass);
+static void resetForce(body* b);
+static void update(body* a, prec dt);
+static void addForce(body* a, body* b);
+static prec newRand() ;
+void init(int N, body* star);
+prec distance(body *starx, body *stary);
+prec calculateforce(body *starx, body *stary);
+prec deltatime(int oldtime);
+
+static float t;
+
+static void update(body* a, prec dt)
+{
+  
+  a->accx = calculateacceleration(a->forcex,a->mass);
+  a->accy = calculateacceleration(a->forcey,a->mass);
+  a->velocityx = a->velocityx + (a->accx*dt);
+  a->velocityy = a->velocityy + (a->accy*dt);
+
+  a->y = a->y+(a->velocityy * t) + ((a->accy*pow(dt,2))/2);
+  a->x = a->x+(a->velocityx * t) + ((a->accx*pow(dt,2))/2);
+}
+
+static void resetForce(body* b)
+{
+
+  b->forcex = 0;
+  b->forcey = 0;
+} 
+
+static void addForce(body* a, body* b)
+{
+  prec force = calculateforce(a, b);
+  int xdiff = (a->x-b->x);
+  int ydiff = (a->y-b->y);
+
+  int xvec = copysign(1.0,xdiff);
+  int yvec = copysign(1.0,ydiff);
+
+  prec forceration = (force/(abs(xdiff)+abs(ydiff)));
+
+  a->forcex = (xdiff*forceration*xvec);
+  a->forcey =(ydiff*forceration*yvec);
+
+  b->forcex = a->forcex;
+  b->forcey = a->forcey;
+
+}
+
+static prec newRand() 
+{
+	prec r = (prec)((double)rand()/(double)RAND_MAX);
+	return r;
+}
+
+
+void init(int N, body* star)
+{
+  srand( time(NULL));
+
+  for(int i=0;i<N;i++){
+    star[i].x = 300 +(rand()%200);
+    star[i].y = 300 + (rand()%200);
+    star[i].velocityy = newRand();
+    star[i].velocityx = newRand();
+    star[i].mass = rand()%10000;
+  }
+}
+/*
+static void updateForces(int N, body* star)
+{
+
+
+}
+*/
+prec distance(body *starx, body *stary)
+{
+  int xdiff = (starx->x-stary->x);
+  int ydiff = (starx->y-stary->y);
+  xdiff = pow(xdiff,2);
+  ydiff = pow(ydiff,2);
+
+  return sqrt(xdiff+ydiff);
+
+}
+
+prec calculateforce(body *starx, body *stary)
+{
+  prec dist = distance(starx,stary);
+  prec xymass = (starx->mass*stary->mass);
+  
+  return (NG*(xymass/dist));//(NG*(xymass/pow(dist,2)));
+
+}
+
+prec calculateacceleration(prec force,prec mass)
+{
+
+  return (force/mass);
+
+}
+
+
+prec deltatime(int oldtime)
+{
+  return ((prec)clock()-oldtime);
+
+}
+
+
+#ifdef ANIMATE
+
+static void copyToXBuffer(body* star, XPoint* points, int N)
+{
+
+  for(int i=0;i<N;i++){  
+    points[i].x = star[i].x;
+    points[i].y = star[i].y;
+  }
+
+}
+#endif
+
+int main(int argc, char* argv[]) {
+
+	int N = 200;
+	int iter = 1000;
+	
+	if(argc == 3)
+	{
+		N = atoi(argv[1]);
+		iter = atoi(argv[2]);
+	}
+	
+	body *star = malloc(sizeof(body)*N);
+	init(N,star);
+
+
+	#ifdef ANIMATE
+	XPoint* points = malloc(sizeof(XPoint)*N);
+	Display* disp;
+	Window window, rootwin;
+	int screen;
+
+	disp = XOpenDisplay(NULL);
+	screen = DefaultScreen(disp);
+	rootwin = RootWindow(disp,screen);
+	window = XCreateSimpleWindow(disp,rootwin,
+				0,0,X_SIZE,Y_SIZE,1,0,0);
+	GC gc = XCreateGC(disp, window, 0, 0);
+	XSetForeground(disp, gc, WhitePixel(disp, screen));
+	XSetBackground(disp, gc, BlackPixel(disp, screen));
+	XMapWindow(disp,window);
+
+	XClearWindow(disp,window);	
+	
+	copyToXBuffer(star, points, N);
+
+
+	XDrawPoints(disp, window, gc, points, N, 0);
+
+	XFlush(disp);
+
+	#endif
+       	
+	clock_t start = clock();
+	t = 1;
+	for(int i = 0; i < iter; i++)
+	{
+
+		#ifdef ANIMATE
+		copyToXBuffer(star, points, N);
+		XDrawPoints(disp, window, gc, points, N, CoordModeOrigin);
+		
+		XClearWindow(disp,window);	
+		#endif
+
+		for(int i = 0; i <N;i++)
+		  {
+		    for(int j = 0; j <N;j++)
+		      {
+			if (i!=j)
+			  addForce(star+i, star+j);
+		    
+		      } 	
+		    update(star+i,gdt);	
+
+		    t += 0.3;
+		  }
+		   printf("iteration: %d. X:%d Y: %d VelocityXY:%f,%f accXY: %f, %f ForceXY: %f, %f\n",0,(star)->x,(star)->y,(star)->velocityx,(star)->velocityy,(star)->accx,(star)->accy,(star)->forcex,(star)->forcey);
+	}
+	clock_t stop = clock();
+	float diff = (float)(stop - start)/CLOCKS_PER_SEC;
+
+	printf("Total: %lf seconds\n",diff);
+	printf("Bodies: %d\n",N);
+	printf("Iterations: %d\n", iter);
+
+	#ifdef ANIMATE
+	XCloseDisplay(disp);
+	#endif
+
+	return 0;
+}
