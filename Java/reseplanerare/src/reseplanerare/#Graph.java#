@@ -39,25 +39,21 @@ public class Graph{
 
 		return result;
 	}
-	//---------------------------------------------------------
+	//-----------------------
+----------------------------------
 	public Node getNode(String _name){
 
 		ListIterator<Node> it = nodes.listIterator();
 		Node result = null;
 		while(it.hasNext()){
 			Node currentnode = (Node)it.next();
-			//System.out.println("["+currentnode.getName()+"]==["+ _name + "]");
-			
 			if(currentnode.getName().compareTo(_name) == 0){
 				result = currentnode;
-				System.out.println("MATCH!" + "[" + _name + "]");
 				break;
 			}
 
 		}
-		if(result == null)
-			System.out.println("NOMATCH!" + "[" + _name + "]");
-		
+		System.out.println(result.getName());
 		return result;
 	}
 	//---------------------------------------------------------------
@@ -95,13 +91,8 @@ public class Graph{
 			System.out.print(currentnode.getFromName() + ", ");
 			System.out.print(currentnode.getToName() + ", ");
 			System.out.print(currentnode.getTime() + ", ");
-			try{
-				System.out.print("From Node: "+ currentnode.getFrom().getName());
-				System.out.print(" To Node: "+ currentnode.getTo().getName());
-			}catch(NullPointerException e){
-				System.out.print(" From Node: NULL,");
-				System.out.print(" To Node: NULL");
-			}
+			System.out.print("From Node: "+ currentnode.getFrom().getName());
+			System.out.print("To Node: "+ currentnode.getTo().getName());
 			System.out.print("\n");
 		}
 
