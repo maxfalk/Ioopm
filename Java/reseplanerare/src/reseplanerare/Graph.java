@@ -1,7 +1,8 @@
 package reseplanerare;
 
+import java.sql.Time;
 import java.util.ArrayList;
-
+import java.util.ListIterator;
 
 public class Graph{
 	
@@ -27,33 +28,62 @@ public void addlink(Node _fromNode, Node _toNode,Path _path){
 	
 }
 //---------------------------------------------------------
-public Node getNode(int _bussline, String start){
+public boolean checkForName(String _name){
 	
-	int len = nodes.size();
-	Node[] currentNodes  = new Node[len];
-	currentNodes =	(Node[])nodes.toArray();
-	
-	for(int i = 0; i< len; i++){
-		
-		if(currentNodes[i].bussline == _bussline){
+	ListIterator<Node> it = nodes.listIterator();
+	boolean result = false;
+	while(it.hasNext()){
+		Node currentnode = (Node)it.next();
+		String currentName = currentnode.getName();
+		//System.out.println(currentName + "===" + _name);
+		if(currentName.compareTo(_name) == 0){
+			result = true;
 			
-			
+			break;
 		}
 		
 	}
 	
-	return ;
+	return result;
 }
 //---------------------------------------------------------
-public Path getPath(Path _path){
+public Node getNode(String _name){
 	
-	int pos = paths.indexOf(_path);
-	return paths.get(pos);
+	ListIterator<Node> it = nodes.listIterator();
+	Node result = null;
+	while(it.hasNext()){
+		Node currentnode = (Node)it.next();
+		if(currentnode.getName() == _name){
+			result = currentnode;
+			break;
+		}
+		
+	}
+	
+	return result;
+}
+//---------------------------------------------------------------
+public void printNodes(){
+	
+	ListIterator<Node> it = nodes.listIterator();
+	while(it.hasNext()){
+		Node currentnode = (Node)it.next();
+		System.out.print(currentnode.getBussline() + ", ");
+		System.out.print(currentnode.getName() + ", ");
+		ArrayList<Time> timeList = currentnode.getTime();
+		ListIterator<Time> itime = timeList.listIterator();
+		while(itime.hasNext()){
+			Time currentElement = (Time) itime.next();
+			System.out.print(currentElement.toString() + ", ");
+		}
+		System.out.print("\n");
+	}
 	
 	
 }
-//---------------------------------------------------------
 
 
-	
+
+
+//---------------------------------------------------------------
 }
