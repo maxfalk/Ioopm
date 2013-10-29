@@ -10,7 +10,6 @@ public class Node{
 	private String name;
 	private ArrayList<Time> time;
 
-
 	public Node(int _bussLine,String _name, Time _time){
 		bussline = _bussLine;
 		name = _name;

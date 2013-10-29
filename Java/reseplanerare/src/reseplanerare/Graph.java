@@ -5,23 +5,19 @@ import java.util.ArrayList;
 import java.util.ListIterator;
 
 public class Graph{
-
-
 	private ArrayList <Node> nodes = new ArrayList<Node>();
 	private ArrayList <Path> paths = new ArrayList<Path>();
 
 	//---------------------------------------------------------
 	public void insertNode(Node _node){
-
 		nodes.add(_node);
-
 	}
 	//---------------------------------------------------------
-	public void addlink(Path _path){
+	public void insertPath(Path _path){
 			paths.add(_path);
 	}
 	//---------------------------------------------------------
-	public boolean checkForName(String _name){
+	public boolean checkForNode(String _name){
 
 		ListIterator<Node> it = nodes.listIterator();
 		boolean result = false;
@@ -31,10 +27,8 @@ public class Graph{
 			
 			if(currentName.compareTo(_name) == 0){
 				result = true;
-
 				break;
 			}
-
 		}
 
 		return result;
@@ -46,19 +40,56 @@ public class Graph{
 		Node result = null;
 		while(it.hasNext()){
 			Node currentnode = (Node)it.next();
-			//System.out.println("["+currentnode.getName()+"]==["+ _name + "]");
 			
 			if(currentnode.getName().compareTo(_name) == 0){
 				result = currentnode;
-				System.out.println("MATCH!" + "[" + _name + "]");
 				break;
 			}
 
 		}
-		if(result == null)
-			System.out.println("NOMATCH!" + "[" + _name + "]");
 		
 		return result;
+	}
+	//-------------------------------------------------------------
+	private ArrayList<Path> getNodePaths(Node _node){
+		
+		ListIterator<Path> it = paths.listIterator();
+		ArrayList<Path> pathsList = new ArrayList<Path>();
+		
+		while(it.hasNext()){
+			Path currentpath = (Path)it.next();
+			
+			if(currentpath.getFrom().equals(_node) == true){
+				pathsList.add(currentpath);
+				
+			}
+
+		}	
+		
+		return pathsList;
+		
+	}
+	//--------------------------------------------------------------
+	public Path getShortestPath(String _name){
+		
+		Node currentNode = getNode(_name);
+		ArrayList<Path> pathsList = getNodePaths(currentNode);
+		ListIterator<Path> it = pathsList.listIterator();
+		Path shortestPath = null;
+		
+		while(it.hasNext()){
+			Path currentpath = (Path)it.next();
+			if(shortestPath == null){
+				shortestPath = currentpath;
+				
+			}else if(currentpath.getTime().getMinutes() < shortestPath.getTime().getMinutes()){
+				shortestPath = currentpath;
+			}
+
+		}
+		
+		
+		return shortestPath;
 	}
 	//---------------------------------------------------------------
 	public void printNodes(){

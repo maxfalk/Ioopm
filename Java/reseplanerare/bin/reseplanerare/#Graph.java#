@@ -1,0 +1,104 @@
+package reseplanerare;
+
+import java.sql.Time;
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+public class Graph{
+
+
+	private ArrayList <Node> nodes = new ArrayList<Node>();
+	private ArrayList <Path> paths = new ArrayList<Path>();
+
+	//---------------------------------------------------------
+	public void insertNode(Node _node){
+
+		nodes.add(_node);
+
+	}
+	//---------------------------------------------------------
+	public void addlink(Path _path){
+			paths.add(_path);
+	}
+	//---------------------------------------------------------
+	public boolean checkForName(String _name){
+
+		ListIterator<Node> it = nodes.listIterator();
+		boolean result = false;
+		while(it.hasNext()){
+			Node currentnode = (Node)it.next();
+			String currentName = currentnode.getName();
+			
+			if(currentName.compareTo(_name) == 0){
+				result = true;
+
+				break;
+			}
+
+		}
+
+		return result;
+	}
+	//-----------------------
+----------------------------------
+	public Node getNode(String _name){
+
+		ListIterator<Node> it = nodes.listIterator();
+		Node result = null;
+		while(it.hasNext()){
+			Node currentnode = (Node)it.next();
+			if(currentnode.getName().compareTo(_name) == 0){
+				result = currentnode;
+				break;
+			}
+
+		}
+		System.out.println(result.getName());
+		return result;
+	}
+	//---------------------------------------------------------------
+	public void printNodes(){
+
+		ListIterator<Node> it = nodes.listIterator();
+		while(it.hasNext()){
+			Node currentnode = (Node)it.next();
+			
+			System.out.print(currentnode.getBussline() + ", ");
+			System.out.print(currentnode.getName() + ", ");
+			
+			ArrayList<Time> timeList = currentnode.getTime();
+			ListIterator<Time> itime = timeList.listIterator();
+			
+			while(itime.hasNext()){
+				Time currentElement = (Time) itime.next();
+				System.out.print(currentElement.toString() + ", ");
+			}
+			System.out.print("\n");
+		}
+
+
+	}
+
+	//---------------------------------------------------------------
+	//---------------------------------------------------------------
+	public void printPaths(){
+
+		ListIterator<Path> it = paths.listIterator();
+		while(it.hasNext()){
+			Path currentnode = (Path)it.next();
+			
+			System.out.print(currentnode.getBussline() + ", ");
+			System.out.print(currentnode.getFromName() + ", ");
+			System.out.print(currentnode.getToName() + ", ");
+			System.out.print(currentnode.getTime() + ", ");
+			System.out.print("From Node: "+ currentnode.getFrom().getName());
+			System.out.print("To Node: "+ currentnode.getTo().getName());
+			System.out.print("\n");
+		}
+
+
+	}
+	
+	
+	
+}
