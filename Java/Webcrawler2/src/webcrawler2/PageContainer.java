@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
+ * Stores information about a web page.
  *
  * @author Max
  */
@@ -69,16 +70,16 @@ public class PageContainer {
 
     /**
      *Check if the pageContainer is empty.
-     * @return true if it's empty else false
+     * @return true if it's empty else false.
      */
     public boolean isEmpty(){
         return Pages.isEmpty();
     }
 
     /**
-     *Add a SiteAddress and it's contents.
-     * @param siteAddress  the Web address
-     * @param contents the contents of the web address.(the web page)
+     * Add a SiteAddress and its contents.
+     * @param siteAddress the Web address.
+     * @param contents the contents of the web address.(the web page).
      */
     public void addPage(String siteAddress, String contents){
         Page newPage = new Page(siteAddress, contents);
@@ -86,7 +87,7 @@ public class PageContainer {
     }
 
     /**
-     *Check pageContainer for a web address
+     * Check pageContainer for a web address.
      * @param siteAddress the web address to look for.
      * @return true if the pageContainer contains the web address else false.
      */

@@ -6,8 +6,10 @@
 
 package webcrawler2;
 
+import java.util.List;
+
 /**
- *
+ * Ranks a html text by specific attributes and stores a index of it.
  * @author Max
  */
 public class Ranking{
@@ -40,17 +42,18 @@ public class Ranking{
     //PaseHTML för länkar varje länk ger 5p
     private void givePointPerLinkTitle(String Text){
         ParseHTML parse = new ParseHTML(Text);
-        
+        List<String> linkTitle = parse.getLinkTitle();
         int NumberOfPoints = 5;
-        for(String title : parse.getLinkTitle()){
+        for(int i = 0; i< linkTitle.size();i++){
+            String title = linkTitle.get(i);
             Rankings.add(title, NumberOfPoints);
         }
         
     }
     
     /**
-     *Rank the html text in Text according to specific rules
-     * @param Text the text to be ranked
+     * Rank the html text in Text according to specific rules.
+     * @param Text the text to be ranked.
      */
     public void rank(String Text){
         givePointsPerWord(Text);
@@ -59,8 +62,8 @@ public class Ranking{
     }
     
     /**
-     *Gives the rank of a specific word in the ranked text
-     * @param Word the word to lookup
+     * Gives the rank of a specific word in the ranked text.
+     * @param Word the word to lookup.
      * @return the number of points for the word.
      */
     public int getRank(String Word){

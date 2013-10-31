@@ -74,7 +74,7 @@ public class Counter<T>{
     }
     
     /**
-     * Add a object, number par.
+     * Add a (object, number) par to the Counter.
      * 
      * @param object the object you want to add
      * @param number the number you want to go with the object
@@ -90,9 +90,9 @@ public class Counter<T>{
     }
        
     /**
-     *  Get the number that the input parameter object is associated with.
-     * 
-     * @param object
+     * Get the number that the input parameter object is associated with.
+     * Compares using the equals method of the given object.
+     * @param object the object of the number too look for.
      * @return the number that your object is associated with.
      */
     public int getNumber(T object){
@@ -119,7 +119,7 @@ public class Counter<T>{
     /**
      * Limits the counters objects to the input parameters amount.
      * Removes all objects at position > Limit.
-     * @param Limit
+     * @param Limit the maximum number of elements in the {@link counter}.
      */
     public void limit(int Limit){
         removeAllAfter(Limit);
@@ -142,9 +142,9 @@ public class Counter<T>{
     }
  
     /**
-     * Get the object at index Index
+     * Get the object at index Index.
      * @param Index position of the object.
-     * @return the object at position Index
+     * @return the object at position Index.
      */
     public T getObject(int Index){
         Box myBox = List.get(Index);
@@ -152,7 +152,7 @@ public class Counter<T>{
     }
     
     /**
-     *Get the number at index Index
+     *Get the number at index Index.
      * @param Index position of the object.
      * @return the number at position Index
      */
@@ -162,7 +162,7 @@ public class Counter<T>{
     }
     
     /**
-     * Get the size of the counter
+     * Get the size of the counter.
      * @return size of the counter
      */
     public int size(){

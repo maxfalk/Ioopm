@@ -38,6 +38,9 @@ public class PageRankingTest {
         String Contains = "Det är är en text med flera ord <title>Som</title> kan innehålla html";
         PageRanking instance = new PageRanking();
         instance.rankPage(Site, Contains);
+        Site = "testSite2";
+        Contains = "En annan text";
+        instance.rankPage(Site, Contains);
         String result = instance.getHighestRankingSite("Som");
         assertEquals("testSite",result);
     }

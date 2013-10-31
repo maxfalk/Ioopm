@@ -15,6 +15,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
+ * Parse a string of html text.
  *
  * @author Max
  */
@@ -44,7 +45,7 @@ public class ParseHTML {
     }
     
     /**
-     *Get all the urls from links(<a></a> tags) from the contents. 
+     *Get all the urls from links(<a href="url"></a> tags) from the contents.
      * @return a list of all the links in the web page.
      */
     public List<String> getLink(){
@@ -68,10 +69,10 @@ public class ParseHTML {
         
     /**
      * Get all the link titles from the web page.
-     * @return all the link titles.
+     * @return All the link titles.
      */
     public List<String> getLinkTitle(){
-        final Elements links = parse.select("a[href]");
+        final Elements links = parse.select("a");
         List<String> list = new LinkedList();
         for(Element e : links){
              list.add(e.text());
@@ -82,8 +83,8 @@ public class ParseHTML {
     }
     
     /**
-     * get all the text in the web page without the html tags
-     * @return all the text in the web page, without the html tags.
+     * Get all the text in the web page without the html tags
+     * @return All the text in the web page, without the html tags.
      */
     public String getRemoveHTML(){
         return parse.text();

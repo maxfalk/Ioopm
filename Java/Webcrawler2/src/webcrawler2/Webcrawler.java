@@ -14,10 +14,10 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- *
+ * Methods for crawling web addresses and manipulating web pages captured with it.
  * @author Max
  */
-public class Webcrawler2 {
+public class Webcrawler {
     
     
     private class Container{
@@ -45,8 +45,8 @@ public class Webcrawler2 {
     }
     
     /**
-     * Walks through the web site and all the web sites it's linking to, to a maximus depth of depth.
-     * Saves the contents of the pages visited in pageCon.
+     * Walks through the web site and all the web sites it's linking to, to a maximus depth of {@link depth}.
+     * Saves the contents of the pages visited in {@link pageCon}.
      * @param siteAddress the address at were the crawling will begin
      * @param depth how deep from the first address we should go.
      */
@@ -60,7 +60,7 @@ public class Webcrawler2 {
             Currdepth = innerCon.depth;
             
             if(VisitedSites.contains(site) == false && Currdepth <= depth){
-                System.out.println("Site: " + site + ", Depth: " + Currdepth);
+                //System.out.println("Site: " + site + ", Depth: " + Currdepth);
                 //make and read URL
                 URL url = Utility.urlify(site);
                 String pageContains = Utility.readURL(url);

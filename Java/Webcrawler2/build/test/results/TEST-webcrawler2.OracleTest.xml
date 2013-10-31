@@ -1,199 +1,230 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="1" failures="1" hostname="Max-PC" name="webcrawler2.OracleTest" skipped="0" tests="2" time="0.069" timestamp="2013-10-30T10:46:19">
+<testsuite errors="0" failures="0" hostname="linne.it.uu.se" name="webcrawler2.OracleTest" tests="1" time="1.398" timestamp="2013-10-31T14:27:28">
   <properties>
+    <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
-    <property name="nb.wait.for.caches" value="true" />
-    <property name="file.reference.jsoup-1.7.2.jar" value="H:\Users\Max\workspace\webcrawler\src\webcrawler\jsoup-1.7.2.jar" />
-    <property name="javac.test.classpath" value="H:\Users\Max\workspace\webcrawler\src\webcrawler\jsoup-1.7.2.jar:build/classes:E:\Program Files\NetBeans 7.4\platform\modules\ext\junit-4.10.jar" />
-    <property name="libs.junit.javadoc" value="E:\Program Files\NetBeans 7.4\java\docs\junit-3.8.2-api.zip" />
-    <property name="ant.core.lib" value="E:\Program Files\NetBeans 7.4\extide\ant\lib\ant.jar" />
+    <property name="javac.test.classpath" value="/home/mani9271/jsoup-1.7.2.jar:build/classes:/it/sw/java/share/netbeans/6.9/platform/modules/ext/junit-4.5.jar" />
+    <property name="libs.jsf20.maven-pom" value="" />
+    <property name="libs.junit.javadoc" value="/it/sw/share/java/netbeans/6.9/java/docs/junit-3.8.2-api.zip" />
+    <property name="ant.core.lib" value="/it/sw/share/java/netbeans/6.9/java/ant/lib/ant.jar" />
+    <property name="libs.swing-app-framework.src" value="" />
     <property name="javadoc.windowtitle" value="" />
-    <property name="user.dir" value="H:\Users\Max\Documents\NetBeansProjects\Webcrawler2" />
+    <property name="libs.toplink.classpath" value="/it/sw/share/java/netbeans/6.9/java/modules/ext/toplink/toplink-essentials.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/toplink/toplink-essentials-agent.jar" />
+    <property name="libs.jsp-compilation.javadoc" value="" />
+    <property name="user.dir" value="/home/mani9271/github/Ioopm/Java/Webcrawler2" />
     <property name="libs.hibernate-persistence.javadoc" value="" />
-    <property name="java.vm.version" value="24.45-b08" />
-    <property name="libs.MySQLDriver.classpath" value="E:\Program Files\NetBeans 7.4\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar" />
-    <property name="libs.eclipselinkmodelgen.src" value="" />
+    <property name="java.vm.version" value="20.12-b01" />
+    <property name="libs.jstl11.maven-pom" value="" />
+    <property name="libs.MySQLDriver.classpath" value="/it/sw/share/java/netbeans/6.9/ide/modules/ext/mysql-connector-java-5.1.6-bin.jar" />
+    <property name="libs.jstl11.src" value="" />
     <property name="javadoc.notree" value="false" />
     <property name="netbeans.autoupdate.version" value="1.23" />
+    <property name="libs.javaee-web-api-6.0.classpath" value="/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/javaee-web-api-6.0.jar" />
     <property name="libs.hibernate-support.maven-pom" value="" />
     <property name="libs.hibernate-support.javadoc" value="" />
     <property name="javac.profile.cmd.line.arg" value="" />
-    <property name="jdk.home" value="H:\Program Files\Java\jdk1.7.0_45" />
+    <property name="jdk.home" value="/it/sw/java/JDK/6.0" />
     <property name="libs.javac-api.src" value="" />
     <property name="javadoc.noindex" value="false" />
-    <property name="sun.os.patch.level" value="Service Pack 1" />
+    <property name="sun.os.patch.level" value="unknown" />
     <property name="do.archive+manifest.available" value="true" />
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
-    <property name="ant.file.Webcrawler2" value="H:\Users\Max\Documents\NetBeansProjects\Webcrawler2\build.xml" />
+    <property name="ant.file.Webcrawler2" value="/home/mani9271/github/Ioopm/Java/Webcrawler2/build.xml" />
     <property name="nb.show.statistics.ui" value="usageStatisticsEnabled" />
     <property name="netbeans.autoupdate.variant" value="" />
     <property name="have.tests" value="true" />
     <property name="org.xml.sax.driver" value="com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser" />
     <property name="libs.javac-api.javadoc" value="" />
-    <property name="os.name" value="Windows 7" />
-    <property name="libs.beans-binding.classpath" value="E:\Program Files\NetBeans 7.4\java\modules\ext\beansbinding-1.2.1.jar" />
+    <property name="os.name" value="SunOS" />
+    <property name="libs.beans-binding.classpath" value="/it/sw/share/java/netbeans/6.9/java/modules/ext/beansbinding-1.2.1.jar" />
     <property name="ap.proc.none.internal" value="" />
+    <property name="libs.restapi.javadoc" value="/it/sw/share/java/netbeans/6.9/enterprise/docs/jsr311-api-1.1.1-javadoc.zip" />
     <property name="libs.JWSAntTasks.maven-pom" value="" />
-    <property name="libs.testng.src" value="" />
-    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="libs.spring-webmvc3.0.src" value="" />
+    <property name="libs.restapi.classpath" value="/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/rest/jsr311-api-1.1.1.jar" />
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
     <property name="libs.jaxb.maven-pom" value="" />
-    <property name="os.arch" value="amd64" />
+    <property name="os.arch" value="x86" />
     <property name="libs.eclipselink.src" value="" />
-    <property name="user.name" value="Max" />
+    <property name="user.name" value="mani9271" />
+    <property name="libs.jsf12.javadoc" value="/it/sw/share/java/netbeans/6.9/enterprise/docs/javaee6-doc-api.zip" />
     <property name="copylibs.rebase" value="true" />
+    <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner webcrawler2.OracleTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,H:\Users\Max\Documents\NetBeansProjects\Webcrawler2\build\test\results\TEST-webcrawler2.OracleTest.xml crashfile=H:\Users\Max\Documents\NetBeansProjects\Webcrawler2\build\junitvmwatcher1826347292063314977.properties propsfile=H:\Users\Max\Documents\NetBeansProjects\Webcrawler2\build\junit2058198722117866946.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner webcrawler2.OracleTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/mani9271/github/Ioopm/Java/Webcrawler2/build/test/results/TEST-webcrawler2.OracleTest.xml crashfile=/home/mani9271/github/Ioopm/Java/Webcrawler2/build/junitvmwatcher7698403211424382258.properties propsfile=/home/mani9271/github/Ioopm/Java/Webcrawler2/build/junit92076600209404469.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
     <property name="ap.supported.internal" value="true" />
-    <property name="ant.file.Webcrawler2-impl" value="H:\Users\Max\Documents\NetBeansProjects\Webcrawler2\nbproject\build-impl.xml" />
-    <property name="libs.jaxws21.javadoc" value="E:\Program Files\NetBeans 7.4\java\docs\jaxws-api-doc.zip" />
+    <property name="ant.file.Webcrawler2-impl" value="/home/mani9271/github/Ioopm/Java/Webcrawler2/nbproject/build-impl.xml" />
+    <property name="libs.jaxws21.javadoc" value="/it/sw/share/java/netbeans/6.9/java/docs/jaxws-api-doc.zip" />
     <property name="includes" value="**" />
     <property name="user.country" value="US" />
     <property name="manifest.file" value="manifest.mf" />
+    <property name="libs.jstl11.javadoc" value="/it/sw/share/java/netbeans/6.9/enterprise/docs/javaee6-doc-api.zip" />
     <property name="javadoc.encoding" value="UTF-8" />
-    <property name="javac.classpath" value="H:\Users\Max\workspace\webcrawler\src\webcrawler\jsoup-1.7.2.jar" />
-    <property name="libs.JAVADB_DRIVER_LABEL.src" value="" />
-    <property name="debug-transport" value="dt_shmem" />
-    <property name="netbeans.home" value="E:\Program Files\NetBeans 7.4\platform" />
+    <property name="javac.classpath" value="/home/mani9271/jsoup-1.7.2.jar" />
+    <property name="debug-transport" value="dt_socket" />
+    <property name="netbeans.system_http_non_proxy_hosts" value="" />
+    <property name="netbeans.home" value="/it/sw/java/share/netbeans/6.9/platform" />
     <property name="build.compiler.emacs" value="true" />
+    <property name="libs.javaee-web-api-6.0.src" value="" />
     <property name="libs.ejb3-persistence.src" value="" />
-    <property name="java.endorsed.dirs" value="H:\Program Files\Java\jdk1.7.0_45\jre\lib\endorsed" />
-    <property name="libs.hibernate-persistencemodelgen.classpath" value="E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\hibernate-jpamodelgen-1.1.1.Final.jar" />
-    <property name="user.language.format" value="sv" />
-    <property name="netbeans.dynamic.classpath" value="E:\Program Files\NetBeans 7.4\platform\core\core.jar;E:\Program Files\NetBeans 7.4\platform\core\org-openide-filesystems.jar;E:\Program Files\NetBeans 7.4\platform\core\locale\core_ja.jar;E:\Program Files\NetBeans 7.4\platform\core\locale\core_pt_BR.jar;E:\Program Files\NetBeans 7.4\platform\core\locale\core_ru.jar;E:\Program Files\NetBeans 7.4\platform\core\locale\core_zh_CN.jar;E:\Program Files\NetBeans 7.4\platform\core\locale\org-openide-filesystems_ja.jar;E:\Program Files\NetBeans 7.4\platform\core\locale\org-openide-filesystems_pt_BR.jar;E:\Program Files\NetBeans 7.4\platform\core\locale\org-openide-filesystems_ru.jar;E:\Program Files\NetBeans 7.4\platform\core\locale\org-openide-filesystems_zh_CN.jar;E:\Program Files\NetBeans 7.4\nb\core\org-netbeans-upgrader.jar;E:\Program Files\NetBeans 7.4\nb\core\locale\core_nb.jar;E:\Program Files\NetBeans 7.4\nb\core\locale\core_nb_ja.jar;E:\Program Files\NetBeans 7.4\nb\core\locale\core_nb_pt_BR.jar;E:\Program Files\NetBeans 7.4\nb\core\locale\core_nb_ru.jar;E:\Program Files\NetBeans 7.4\nb\core\locale\core_nb_zh_CN.jar;E:\Program Files\NetBeans 7.4\nb\core\locale\org-netbeans-upgrader_ja.jar;E:\Program Files\NetBeans 7.4\nb\core\locale\org-netbeans-upgrader_pt_BR.jar;E:\Program Files\NetBeans 7.4\nb\core\locale\org-netbeans-upgrader_ru.jar;E:\Program Files\NetBeans 7.4\nb\core\locale\org-netbeans-upgrader_zh_CN.jar" />
-    <property name="java.vm.specification.version" value="1.7" />
-    <property name="netbeans.productversion" value="NetBeans IDE 7.4 (Build 201310111528)" />
-    <property name="libs.hibernate-persistence.classpath" value="E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\antlr-2.7.6.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\cglib-2.2.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\commons-collections-3.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\dom4j-1.6.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\jta-1.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\hibernate-core-3.6.10.Final.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\hibernate-commons-annotations-3.2.0.Final.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\hibernate-entitymanager-3.6.10.Final.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\hibernate-tools-3.6.0.CR1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\javassist-3.12.0.GA.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\c3p0-0.9.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\oscache-2.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\slf4j-api-1.6.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\slf4j-simple-1.6.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\hibernate-jpa-2.0-api-1.0.1.Final.jar" />
+    <property name="java.endorsed.dirs" value="/it/sw/java/JDK/6.0/jre/lib/endorsed" />
+    <property name="libs.groovy-all.src" value="" />
+    <property name="netbeans.dynamic.classpath" value="/it/sw/java/share/netbeans/6.9/platform/core/core.jar:/it/sw/java/share/netbeans/6.9/platform/core/org-openide-filesystems.jar:/it/sw/java/share/netbeans/6.9/platform/core/locale/org-openide-filesystems_zh_CN.jar:/it/sw/java/share/netbeans/6.9/platform/core/locale/org-openide-filesystems_ja.jar:/it/sw/java/share/netbeans/6.9/platform/core/locale/core_zh_CN.jar:/it/sw/java/share/netbeans/6.9/platform/core/locale/core_ja.jar:/it/sw/java/share/netbeans/6.9/platform/core/locale/org-openide-filesystems_pt_BR.jar:/it/sw/java/share/netbeans/6.9/platform/core/locale/core_pt_BR.jar:/it/sw/share/java/netbeans/6.9/nb/core/org-netbeans-upgrader.jar:/it/sw/share/java/netbeans/6.9/nb/core/locale/core_nb_ja.jar:/it/sw/share/java/netbeans/6.9/nb/core/locale/core_nb_pt_BR.jar:/it/sw/share/java/netbeans/6.9/nb/core/locale/core_nb.jar:/it/sw/share/java/netbeans/6.9/nb/core/locale/org-netbeans-upgrader_pt_BR.jar:/it/sw/share/java/netbeans/6.9/nb/core/locale/core_nb_zh_CN.jar:/it/sw/share/java/netbeans/6.9/nb/core/locale/org-netbeans-upgrader_zh_CN.jar:/it/sw/share/java/netbeans/6.9/nb/core/locale/org-netbeans-upgrader_ja.jar" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="libs.javaee-api-6.0.classpath" value="/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/javaee-api-6.0.jar" />
+    <property name="libs.groovy-all.maven-pom" value="" />
+    <property name="libs.hibernate-persistence.classpath" value="/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/antlr-2.7.6.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/asm.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/asm-attrs.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/cglib-2.1.3.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/commons-collections-2.1.1.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/commons-logging-1.1.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/dom4j-1.6.1.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/ehcache-1.2.3.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/jdbc2_0-stdext.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/jta.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/hibernate3.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/hibernate-tools.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/hibernate-annotations.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/hibernate-commons-annotations.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/hibernate-entitymanager.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/javassist.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/ejb3-persistence.jar" />
     <property name="libs.jaxws21.src" value="" />
+    <property name="application.title" value="Webcrawler2" />
     <property name="do.archive" value="true" />
+    <property name="libs.swing-app-framework.classpath" value="/it/sw/share/java/netbeans/6.9/java/modules/ext/appframework-1.0.3.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/swing-worker-1.1.jar" />
     <property name="netbeans.autoupdate.language" value="en" />
-    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="java.vendor" value="Sun Microsystems Inc." />
+    <property name="libs.javaee-api-6.0.javadoc" value="/it/sw/share/java/netbeans/6.9/enterprise/docs/javaee6-doc-api.zip" />
     <property name="jar.index.metainf" value="false" />
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
-    <property name="file.separator" value="\" />
+    <property name="file.separator" value="/" />
+    <property name="libs.IdentityAntTasks.src" value="" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
-    <property name="javac.test.processorpath" value="H:\Users\Max\workspace\webcrawler\src\webcrawler\jsoup-1.7.2.jar:build/classes:E:\Program Files\NetBeans 7.4\platform\modules\ext\junit-4.10.jar" />
-    <property name="netbeans.buildnumber" value="201310111528" />
+    <property name="javac.test.processorpath" value="/home/mani9271/jsoup-1.7.2.jar:build/classes:/it/sw/java/share/netbeans/6.9/platform/modules/ext/junit-4.5.jar" />
+    <property name="netbeans.buildnumber" value="201201181214" />
     <property name="libs.JWSAntTasks.javadoc" value="" />
     <property name="build.generated.sources.dir" value="build/generated-sources" />
-    <property name="user.variant" value="" />
-    <property name="libs.eclipselinkmodelgen.classpath" value="E:\Program Files\NetBeans 7.4\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.modelgen_2.5.0.v20130507-3faac2b.jar" />
     <property name="sun.java.launcher" value="SUN_STANDARD" />
-    <property name="libs.junit.classpath" value="E:\Program Files\NetBeans 7.4\java\modules\ext\junit-3.8.2.jar" />
-    <property name="libs.jaxb.javadoc" value="E:\Program Files\NetBeans 7.4\ide\docs\jaxb-api-doc.zip" />
-    <property name="ant.home" value="E:\Program Files\NetBeans 7.4\extide\ant" />
-    <property name="libs.junit_4.src" value="E:\Program Files\NetBeans 7.4\java\docs\junit-4.10-sources.jar" />
-    <property name="libs.testng.classpath" value="E:\Program Files\NetBeans 7.4\platform\modules\ext\testng-6.8.1-dist.jar" />
+    <property name="libs.junit.classpath" value="/it/sw/share/java/netbeans/6.9/java/modules/ext/junit-3.8.2.jar" />
+    <property name="libs.jaxb.javadoc" value="/it/sw/share/java/netbeans/6.9/ide/docs/jaxb-api-doc.zip" />
+    <property name="libs.struts.classpath" value="/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/antlr-2.7.2.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/bsf-2.3.0.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/commons-beanutils-1.7.0.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/commons-chain-1.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/commons-digester-1.8.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/commons-fileupload-1.1.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/commons-io-1.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/commons-logging-1.0.4.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/commons-validator-1.3.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/jstl-1.0.2.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/oro-2.0.8.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/standard-1.0.2.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/struts-core-1.3.8.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/struts-el-1.3.8.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/struts-extras-1.3.8.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/struts-faces-1.3.8.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/struts-mailreader-dao-1.3.8.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/struts-scripting-1.3.8.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/struts-taglib-1.3.8.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/struts/struts-tiles-1.3.8.jar" />
+    <property name="ant.home" value="/it/sw/share/java/netbeans/6.9/java/ant" />
+    <property name="libs.junit_4.src" value="/it/sw/share/java/netbeans/6.9/java/docs/junit-4.5-src.jar" />
     <property name="libs.absolutelayout.maven-pom" value="" />
-    <property name="ant.java.version" value="1.7" />
-    <property name="java.library.path" value="H:\Program Files\Java\jdk1.7.0_45\jre\bin;H:\Windows\Sun\Java\bin;H:\Windows\system32;H:\Windows;H:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;H:\Program Files\Common Files\Microsoft Shared\Windows Live;H:\Windows\system32;H:\Windows;H:\Windows\System32\Wbem;H:\Windows\System32\WindowsPowerShell\v1.0\;H:\Program Files\Intel\DMIX;H:\Program Files (x86)\SMLNJ\bin\;H:\Program Files (x86)\Moscow ML\bin;H:\Python27;E:\Program Files\erl5.9.2\bin;&quot;H:\Program Files\Microsoft SQL Server\110\Tools\Binn\;&quot;H:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\;H:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\&quot;;H:\Program Files\Common Files\Microsoft Shared\Windows Live;." />
+    <property name="ant.java.version" value="1.6" />
+    <property name="java.library.path" value="/it/sw/java/JDK/6.0/jre/lib/i386/server:/it/sw/java/JDK/6.0/jre/lib/i386:/it/sw/java/JDK/6.0/jre/../lib/i386:/it/sw/java/JDK/6.0/jre/lib/i386/client:/it/sw/gnome/2.10/lib:/usr/X11/lib:/it/sw/X11/lib:/it/sw/www/mps/lib:/opt/SUNWhpc/lib:/lib:/usr/dt/lib:/it/sw/platform/lib/pentium_pro+sse3:/it/sw/platform/lib:/it/sw/gnu/lib:/it/sw/misc/lib:/it/sw/graphics/lib:/it/sw/multimedia/lib:/it/sw/www/lib:/usr/lib:/it/sw/tcl/lib:/usr/openwin/lib:/opt/SUNWspro/lib:/it/sw/HPC/lib:/it/sw/num/lib:/it/sw/sql/lib:/it/sw/cups/lib:/opt/SUNWspro-4.2/lib:/usr/sfw/lib:/usr/jdk/packages/lib/i386:/lib:/usr/lib" />
     <property name="javadoc.author" value="false" />
+    <property name="libs.metro.maven-pom" value="" />
+    <property name="libs.IdentityAntTasks.classpath" value="/it/sw/share/java/netbeans/6.9/identity/ant/nblib/org-netbeans-modules-identity-ant.jar:/it/sw/share/java/netbeans/6.9/identity/modules/org-netbeans-modules-identity-profile-api.jar" />
     <property name="java.util.logging.config.class" value="org.netbeans.core.startup.TopLogging" />
     <property name="libs.PostgreSQLDriver.src" value="" />
-    <property name="sun.arch.data.model" value="64" />
-    <property name="basedir" value="H:\Users\Max\Documents\NetBeansProjects\Webcrawler2" />
-    <property name="libs.jpa20-persistence.maven-pom" value="" />
+    <property name="sun.arch.data.model" value="32" />
+    <property name="basedir" value="/home/mani9271/github/Ioopm/Java/Webcrawler2" />
     <property name="jar.compress" value="false" />
-    <property name="path.separator" value=";" />
-    <property name="ant.junit.enabletestlistenerevents" value="true" />
-    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
-    <property name="libs.jaxws21.classpath" value="E:\Program Files\NetBeans 7.4\ide\modules\ext\jaxb\jaxb-impl.jar;E:\Program Files\NetBeans 7.4\ide\modules\ext\jaxb\jaxb-xjc.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\FastInfoset.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\gmbal-api-only.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\ha-api.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\javax.mail_1.4.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\jaxws-rt.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\jaxws-tools.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\management-api.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\mimepull.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\policy.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\saaj-impl.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\stax-ex.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\stax2-api.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\streambuffer.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\woodstox-core-asl.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\api\jaxws-api.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\api\jsr181-api.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\api\javax.annotation.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\jaxws22\api\saaj-api.jar;E:\Program Files\NetBeans 7.4\ide\modules\ext\jaxb\activation.jar;E:\Program Files\NetBeans 7.4\ide\modules\ext\jaxb\api\jaxb-api.jar;E:\Program Files\NetBeans 7.4\ide\modules\ext\jaxb\api\jsr173_1.0_api.jar" />
+    <property name="libs.jstl11.classpath" value="/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/standard.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/jstl.jar" />
+    <property name="path.separator" value=":" />
+    <property name="libs.javaee-web-api-6.0.javadoc" value="/it/sw/share/java/netbeans/6.9/enterprise/docs/javaee6-doc-api.zip" />
+    <property name="sun.io.unicode.encoding" value="UnicodeBig" />
+    <property name="libs.jaxws21.classpath" value="/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/jaxb-impl.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/jaxb-xjc.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/FastInfoset.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/gmbal-api-only.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/http.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/jaxws-rt.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/jaxws-tools.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/management-api.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/mimepull.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/policy.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/saaj-impl.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/stax-ex.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/streambuffer.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/woodstox.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/api/jaxws-api.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/api/jsr181-api.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/api/jsr250-api.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/jaxws22/api/saaj-api.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/activation.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/api/jaxb-api.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/api/jsr173_api.jar" />
+    <property name="libs.struts.src" value="" />
     <property name="compile.on.save" value="true" />
-    <property name="apple.awt.graphics.UseQuartz" value="true" />
     <property name="user.language" value="en" />
+    <property name="ant.file.type.-profiler-impl" value="file" />
     <property name="testng.mode" value="testng" />
-    <property name="libs.JAXB-ENDORSED.maven-pom" value="" />
-    <property name="libs.spring-framework.classpath" value="E:\Program Files\NetBeans 7.4\ide\modules\org-apache-commons-logging.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\cglib-2.2.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring\spring-2.5.6.SEC03.jar" />
+    <property name="libs.spring-framework.classpath" value="/it/sw/share/java/netbeans/6.9/ide/modules/ext/commons-logging-1.1.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/cglib-2.2.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring/spring-2.5.6.SEC01.jar" />
     <property name="libs.eclipselink.maven-pom" value="" />
+    <property name="application.vendor" value="mani9271" />
     <property name="test.binaryincludes" value="&lt;nothing&gt;" />
     <property name="manifest.available" value="true" />
     <property name="libs.spring-framework300.maven-pom" value="" />
-    <property name="run.test.classpath" value="H:\Users\Max\workspace\webcrawler\src\webcrawler\jsoup-1.7.2.jar:build/classes:E:\Program Files\NetBeans 7.4\platform\modules\ext\junit-4.10.jar:build/test/classes" />
+    <property name="run.test.classpath" value="/home/mani9271/jsoup-1.7.2.jar:build/classes:/it/sw/java/share/netbeans/6.9/platform/modules/ext/junit-4.5.jar:build/test/classes" />
     <property name="ant.project.invoked-targets" value="test" />
+    <property name="useJavaUtilZip" value="true" />
     <property name="test.binaryexcludes" value="" />
-    <property name="libs.swing-layout.javadoc" value="E:\Program Files\NetBeans 7.4\platform\docs\swing-layout-1.0.4-doc.zip" />
-    <property name="sun.java2d.dpiaware" value="true" />
+    <property name="libs.swing-layout.javadoc" value="/it/sw/java/share/netbeans/6.9/platform/docs/swing-layout-1.0.4-doc.zip" />
+    <property name="libs.swing-app-framework.javadoc" value="/it/sw/share/java/netbeans/6.9/java/docs/appframework-1.0.3-doc.zip" />
     <property name="libs.ejb3-persistence.maven-pom" value="" />
-    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|Max-PC" />
+    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|linne.it.uu.se" />
     <property name="libs.PostgreSQLDriver.maven-pom" value="" />
-    <property name="java.class.version" value="51.0" />
-    <property name="libs.JAVADB_DRIVER_LABEL.classpath" value="H:\Program Files\Java\jdk1.7.0_45\db\lib\derby.jar;H:\Program Files\Java\jdk1.7.0_45\db\lib\derbyclient.jar;H:\Program Files\Java\jdk1.7.0_45\db\lib\derbynet.jar" />
-    <property name="libs.eclipselink.javadoc" value="" />
-    <property name="user.properties.file" value="H:\Users\Max\AppData\Roaming\NetBeans\7.4\build.properties" />
+    <property name="java.class.version" value="50.0" />
+    <property name="libs.javaee-endorsed-api-6.0.src" value="" />
+    <property name="netbeans.system_http_proxy" value="DIRECT" />
+    <property name="libs.eclipselink.javadoc" value="/it/sw/share/java/netbeans/6.9/enterprise/docs/javaee6-doc-api.zip" />
+    <property name="libs.jsp-compilation.maven-pom" value="" />
+    <property name="user.properties.file" value="/home/mani9271/.netbeans/6.9/build.properties" />
     <property name="runtime.encoding" value="UTF-8" />
     <property name="libs.spring-framework.src" value="" />
     <property name="libs.javac-api.maven-pom" value="" />
     <property name="file.encoding.pkg" value="sun.io" />
     <property name="sun.cpu.endian" value="little" />
-    <property name="libs.JAXB-ENDORSED.javadoc" value="" />
-    <property name="libs.JWSAntTasks.classpath" value="E:\Program Files\NetBeans 7.4\java\ant\extra\org-netbeans-modules-javawebstart-anttasks.jar" />
+    <property name="libs.JWSAntTasks.classpath" value="/it/sw/share/java/netbeans/6.9/java/ant/extra/org-netbeans-modules-javawebstart-anttasks.jar" />
     <property name="libs.spring-framework300.src" value="" />
-    <property name="empty.dir" value="H:\Users\Max\Documents\NetBeansProjects\Webcrawler2\build\empty" />
-    <property name="version-output" value="java version &quot;1.7" />
+    <property name="empty.dir" value="/home/mani9271/github/Ioopm/Java/Webcrawler2/build/empty" />
+    <property name="version-output" value="java version &quot;1.6" />
     <property name="test.binarytestincludes" value="" />
     <property name="javadoc.preview" value="true" />
-    <property name="libs.jpa20-persistence.javadoc" value="" />
-    <property name="java.home" value="H:\Program Files\Java\jdk1.7.0_45\jre" />
-    <property name="debug.test.classpath" value="H:\Users\Max\workspace\webcrawler\src\webcrawler\jsoup-1.7.2.jar:build/classes:E:\Program Files\NetBeans 7.4\platform\modules\ext\junit-4.10.jar:build/test/classes" />
+    <property name="java.home" value="/it/sw/java/JDK/6.0/jre" />
+    <property name="libs.jsp-compilation.src" value="" />
+    <property name="libs.spring-webmvc.src" value="" />
+    <property name="debug.test.classpath" value="/home/mani9271/jsoup-1.7.2.jar:build/classes:/it/sw/java/share/netbeans/6.9/platform/modules/ext/junit-4.5.jar:build/test/classes" />
+    <property name="libs.javaee-endorsed-api-6.0.classpath" value="/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/javaee6-endorsed/javax.annotation.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/javaee6-endorsed/jaxb-api-osgi.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/javaee6-endorsed/webservices-api-osgi.jar" />
+    <property name="libs.javaee-api-6.0.src" value="" />
     <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
     <property name="ant.project.default-target" value="default" />
     <property name="annotation.processing.run.all.processors" value="true" />
+    <property name="libs.toplink.maven-pom" value="" />
     <property name="libs.PostgreSQLDriver.javadoc" value="" />
+    <property name="libs.restlib.classpath" value="/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/rest/asm-3.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/rest/jackson-core-asl-1.1.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/rest/jersey-client-1.1.5.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/rest/jersey-core-1.1.5.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/rest/jersey-json-1.1.5.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/rest/jersey-server-1.1.5.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/rest/jersey-spring-1.1.5.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/rest/jettison-1.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/rest/oauth-client-1.1.5.1.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/rest/oauth-signature-1.1.5.1.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/activation.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/api/jaxb-api.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/api/jsr173_api.jar" />
     <property name="libs.MySQLDriver.maven-pom" value="" />
-    <property name="http.nonProxyHosts" value="localhost|127.0.0.1|Max-PC" />
-    <property name="libs.junit_4.javadoc" value="E:\Program Files\NetBeans 7.4\java\docs\junit-4.10-javadoc.jar" />
-    <property name="run.classpath" value="H:\Users\Max\workspace\webcrawler\src\webcrawler\jsoup-1.7.2.jar:build/classes" />
+    <property name="http.nonProxyHosts" value="localhost|127.0.0.1|linne.it.uu.se" />
+    <property name="libs.junit_4.javadoc" value="/it/sw/share/java/netbeans/6.9/java/docs/junit-4.5-api.zip" />
+    <property name="libs.spring-webmvc.javadoc" value="" />
+    <property name="libs.toplink.src" value="" />
+    <property name="libs.javaee-web-api-6.0.maven-pom" value="" />
+    <property name="run.classpath" value="/home/mani9271/jsoup-1.7.2.jar:build/classes" />
     <property name="libs.hibernate-support.src" value="" />
-    <property name="jna.boot.library.name" value="jnidispatch-340" />
-    <property name="sun.awt.datatransfer.timeout" value="1000" />
+    <property name="libs.javaee-endorsed-api-6.0.javadoc" value="/it/sw/share/java/netbeans/6.9/enterprise/docs/javaee6-doc-api.zip" />
+    <property name="libs.spring-webmvc3.0.javadoc" value="" />
     <property name="annotation.processing.enabled.in.editor" value="false" />
-    <property name="nb.native.filechooser" value="false" />
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="libs.restapi.src" value="" />
+    <property name="sun.management.compiler" value="HotSpot Tiered Compilers" />
     <property name="javac.deprecation" value="false" />
     <property name="javadoc.use" value="true" />
+    <property name="jna.boot.library.path" value="/home/mani9271/.netbeans/6.9/var/cache/jna" />
     <property name="sun.java2d.noddraw" value="true" />
-    <property name="javac.processorpath" value="H:\Users\Max\workspace\webcrawler\src\webcrawler\jsoup-1.7.2.jar" />
+    <property name="libs.jsp-compiler.classpath" value="/it/sw/share/java/netbeans/6.9/enterprise/ant/extra/jspcompile.jar" />
+    <property name="javac.processorpath" value="/home/mani9271/jsoup-1.7.2.jar" />
+    <property name="libs.spring-webmvc.classpath" value="/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/spring/spring-webmvc-2.5.6.SEC01.jar" />
     <property name="javac.compilerargs" value="" />
-    <property name="ant.file" value="H:\Users\Max\Documents\NetBeansProjects\Webcrawler2\build.xml" />
+    <property name="ant.file" value="/home/mani9271/github/Ioopm/Java/Webcrawler2/build.xml" />
     <property name="libs.beans-binding.maven-pom" value="" />
+    <property name="libs.jsf12.classpath" value="/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/jsf-1_2/commons-beanutils.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/jsf-1_2/commons-collections.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/jsf-1_2/commons-digester.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/jsf-1_2/commons-logging.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/jsf-1_2/jsf-api.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/jsf-1_2/jsf-impl.jar" />
+    <property name="sun.awt.exception.handler" value="org.netbeans.core.startup.TopLogging$AWTHandler" />
+    <property name="libs.restapi.maven-pom" value="" />
     <property name="libs.beans-binding.src" value="" />
-    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
-    <property name="libs.swing-layout.src" value="E:\Program Files\NetBeans 7.4\platform\docs\swing-layout-1.0.4-src.zip" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="libs.swing-layout.src" value="/it/sw/java/share/netbeans/6.9/platform/docs/swing-layout-1.0.4-src.zip" />
     <property name="org.openide.major.version" value="IDE/1" />
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
-    <property name="netbeans.user" value="H:\Users\Max\AppData\Roaming\NetBeans\7.4" />
-    <property name="tests.failed" value="true" />
+    <property name="java.vm.name" value="Java HotSpot(TM) Server VM" />
+    <property name="netbeans.user" value="/home/mani9271/.netbeans/6.9" />
     <property name="javadoc.additionalparam" value="" />
-    <property name="java.io.tmpdir" value="H:\Users\Max\AppData\Local\Temp\" />
-    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.io.tmpdir" value="/var/tmp/" />
+    <property name="java.vendor.url" value="http://java.sun.com/" />
     <property name="endorsed.classpath.cmd.line.arg" value="" />
     <property name="junit.available" value="true" />
-    <property name="org.openide.awt.ActionReference.completion" value="org.netbeans.modules.apisupport.project.layers.PathCompletions" />
-    <property name="sun.boot.library.path" value="H:\Program Files\Java\jdk1.7.0_45\jre\bin" />
+    <property name="libs.jsp-compiler.src" value="" />
+    <property name="sun.boot.library.path" value="/it/sw/java/JDK/6.0/jre/lib/i386" />
     <property name="have.sources" value="true" />
-    <property name="debug.classpath" value="H:\Users\Max\workspace\webcrawler\src\webcrawler\jsoup-1.7.2.jar:build/classes" />
+    <property name="debug.classpath" value="/home/mani9271/jsoup-1.7.2.jar:build/classes" />
     <property name="javadoc.private" value="false" />
     <property name="test.src.dir" value="test" />
+    <property name="libs.jsf20.classpath" value="/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/jsf-2_0/jsf-api.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/jsf-2_0/jsf-impl.jar" />
     <property name="ap.processors.internal" value="" />
     <property name="meta.inf.dir" value="src/META-INF" />
     <property name="javadoc.encoding.used" value="UTF-8" />
     <property name="dist.jar" value="dist/Webcrawler2.jar" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.project.name" value="Webcrawler2" />
-    <property name="netbeans.hash.code" value="unique=NB_EXTIDE_JAVA03de0cb08-8c96-4224-b734-7a583ab927bd_6b217039-a3a7-4477-872e-a7f9b6b254bb" />
-    <property name="netbeans.default_userdir_root" value="H:\Users\Max\AppData\Roaming\NetBeans" />
-    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="netbeans.hash.code" value="unique=NB_CND_FX_GFMOD_GROOVY_JAVA_PHP_RUBY_TOMCAT_WEBEE0a8316447-22f5-45e7-a9f7-9cff88d4c234_646ab852-e93c-4614-a98a-9b924c75ab3a" />
+    <property name="sun.cpu.isalist" value="" />
     <property name="libs.CopyLibs.javadoc" value="" />
-    <property name="libs.hibernate-persistencemodelgen.maven-pom" value="" />
     <property name="org.openide.specification.version" value="6.2" />
-    <property name="libs.hibernate-support.classpath" value="E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\dom4j-1.6.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\antlr-2.7.6.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\cglib-2.2.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\commons-collections-3.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\jta-1.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\hibernate-core-3.6.10.Final.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\hibernate-commons-annotations-3.2.0.Final.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\hibernate-entitymanager-3.6.10.Final.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\hibernate-tools-3.6.0.CR1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\javassist-3.12.0.GA.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\c3p0-0.9.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\oscache-2.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\slf4j-api-1.6.1.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\slf4j-simple-1.6.1.jar" />
-    <property name="user.home" value="H:\Users\Max" />
+    <property name="libs.hibernate-support.classpath" value="/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/antlr-2.7.6.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/asm.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/asm-attrs.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/cglib-2.1.3.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/commons-collections-2.1.1.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/commons-logging-1.1.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/dom4j-1.6.1.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/ehcache-1.2.3.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/jdbc2_0-stdext.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/jta.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/hibernate3.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/hibernate-tools.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/hibernate-annotations.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/hibernate-commons-annotations.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/hibernate-entitymanager.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/javassist.jar" />
+    <property name="user.home" value="/home/mani9271" />
     <property name="annotation.processing.processors.list" value="" />
     <property name="debug-args-line" value="-Xdebug" />
+    <property name="libs.javaee-api-6.0.maven-pom" value="" />
     <property name="libs.JWSAntTasks.src" value="" />
     <property name="jar.index" value="false" />
     <property name="ant.file.type.Webcrawler2-impl" value="file" />
@@ -202,129 +233,125 @@
     <property name="libs.hibernate-persistence.maven-pom" value="" />
     <property name="libs.absolutelayout.javadoc" value="" />
     <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="libs.swing-app-framework.maven-pom" value="" />
     <property name="do.archive+main.class.available" value="true" />
-    <property name="java.specification.vendor" value="Oracle Corporation" />
-    <property name="libs.javac-api.classpath" value="E:\Program Files\NetBeans 7.4\java\modules\ext\nb-javac-api.jar" />
-    <property name="java.version" value="1.7.0_45" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="libs.javac-api.classpath" value="/it/sw/share/java/netbeans/6.9/java/modules/ext/javac-api-nb-7.0-b07.jar" />
+    <property name="java.version" value="1.6.0_37" />
     <property name="run.jvmargs.ide" value="" />
     <property name="javadoc.version" value="false" />
     <property name="libs.MySQLDriver.javadoc" value="" />
     <property name="org.openide.version" value="deprecated" />
-    <property name="platform.java" value="H:\Program Files\Java\jdk1.7.0_45\jre/bin/java" />
+    <property name="platform.java" value="/it/sw/java/JDK/6.0/jre/bin/java" />
     <property name="source.encoding" value="UTF-8" />
     <property name="ap.cmd.line.internal" value="" />
-    <property name="libs.eclipselinkmodelgen.maven-pom" value="" />
     <property name="libs.junit.maven-pom" value="" />
-    <property name="libs.eclipselinkmodelgen.javadoc" value="" />
+    <property name="libs.metro.javadoc" value="/it/sw/share/java/netbeans/6.9/enterprise/docs/metro-1.4-doc.zip" />
+    <property name="libs.struts.maven-pom" value="" />
     <property name="netbeans.home+have.tests" value="true" />
     <property name="annotation.processing.processor.options" value="" />
-    <property name="libs.testng.maven-pom" value="" />
+    <property name="libs.IdentityAntTasks.maven-pom" value="" />
     <property name="libs.jaxb.src" value="" />
-    <property name="work.dir" value="H:\Users\Max\Documents\NetBeansProjects\Webcrawler2" />
-    <property name="libs.jaxb.classpath" value="E:\Program Files\NetBeans 7.4\ide\modules\ext\jaxb\jaxb-impl.jar;E:\Program Files\NetBeans 7.4\ide\modules\ext\jaxb\jaxb-xjc.jar;E:\Program Files\NetBeans 7.4\ide\modules\ext\jaxb\jaxb1-impl.jar;E:\Program Files\NetBeans 7.4\ide\modules\ext\jaxb\activation.jar;E:\Program Files\NetBeans 7.4\ide\modules\ext\jaxb\api\jaxb-api.jar;E:\Program Files\NetBeans 7.4\ide\modules\ext\jaxb\api\jsr173_1.0_api.jar" />
+    <property name="work.dir" value="/home/mani9271/github/Ioopm/Java/Webcrawler2" />
+    <property name="libs.jaxb.classpath" value="/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/jaxb-impl.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/jaxb-xjc.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/jaxb1-impl.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/activation.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/api/jaxb-api.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/api/jsr173_api.jar" />
     <property name="do.depend" value="false" />
     <property name="dist.javadoc.dir" value="dist/javadoc" />
-    <property name="libs.swing-layout.classpath" value="E:\Program Files\NetBeans 7.4\platform\modules\ext\swing-layout-1.0.4.jar" />
+    <property name="libs.swing-layout.classpath" value="/it/sw/java/share/netbeans/6.9/platform/modules/ext/swing-layout-1.0.4.jar" />
+    <property name="libs.spring-webmvc3.0.classpath" value="/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-webmvc-3.0.2.RELEASE.jar" />
+    <property name="libs.restlib.src" value="" />
     <property name="build.generated.dir" value="build/generated" />
-    <property name="javac.source" value="1.7" />
+    <property name="javac.source" value="1.6" />
     <property name="libs.hibernate-persistence.src" value="" />
-    <property name="line.separator" value="&#xd;&#xa;" />
-    <property name="java.specification.version" value="1.7" />
+    <property name="line.separator" value="
+" />
+    <property name="java.specification.version" value="1.6" />
     <property name="libs.jaxws21.maven-pom" value="" />
     <property name="java.vm.info" value="mixed mode" />
     <property name="nb.junit.batch" value="true" />
     <property name="junit.forkmode" value="perTest" />
-    <property name="user.country.format" value="SE" />
     <property name="libs.spring-framework.maven-pom" value="" />
-    <property name="sun.boot.class.path" value="H:\Program Files\Java\jdk1.7.0_45\jre\lib\resources.jar;H:\Program Files\Java\jdk1.7.0_45\jre\lib\rt.jar;H:\Program Files\Java\jdk1.7.0_45\jre\lib\sunrsasign.jar;H:\Program Files\Java\jdk1.7.0_45\jre\lib\jsse.jar;H:\Program Files\Java\jdk1.7.0_45\jre\lib\jce.jar;H:\Program Files\Java\jdk1.7.0_45\jre\lib\charsets.jar;H:\Program Files\Java\jdk1.7.0_45\jre\lib\jfr.jar;H:\Program Files\Java\jdk1.7.0_45\jre\classes" />
-    <property name="javac.target" value="1.7" />
-    <property name="built-jar.properties" value="H:\Users\Max\Documents\NetBeansProjects\Webcrawler2\build\built-jar.properties" />
+    <property name="sun.boot.class.path" value="/it/sw/java/JDK/6.0/jre/lib/resources.jar:/it/sw/java/JDK/6.0/jre/lib/rt.jar:/it/sw/java/JDK/6.0/jre/lib/sunrsasign.jar:/it/sw/java/JDK/6.0/jre/lib/jsse.jar:/it/sw/java/JDK/6.0/jre/lib/jce.jar:/it/sw/java/JDK/6.0/jre/lib/charsets.jar:/it/sw/java/JDK/6.0/jre/lib/modules/jdk.boot.jar:/it/sw/java/JDK/6.0/jre/classes" />
+    <property name="javac.target" value="1.6" />
+    <property name="built-jar.properties" value="/home/mani9271/github/Ioopm/Java/Webcrawler2/build/built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
+    <property name="libs.IdentityAntTasks.javadoc" value="" />
     <property name="annotation.processing.enabled" value="true" />
-    <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
-    <property name="libs.jpa20-persistence.src" value="" />
-    <property name="libs.JAVADB_DRIVER_LABEL.maven-pom" value="" />
-    <property name="ignore.failing.tests" value="true" />
+    <property name="libs.jsf20.src" value="" />
+    <property name="libs.jsf12.src" value="" />
+    <property name="libs.struts.javadoc" value="/it/sw/share/java/netbeans/6.9/enterprise/docs/struts-1.3.8-javadoc.zip" />
     <property name="dist.dir" value="dist" />
+    <property name="libs.groovy-all.javadoc" value="" />
+    <property name="no.set.rowheight" value="true" />
     <property name="testng.debug.mode" value="" />
     <property name="javac.fork" value="false" />
-    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
-    <property name="default.javac.source" value="1.7" />
-    <property name="debug-transport-by-os" value="dt_shmem" />
+    <property name="libs.groovy-all.classpath" value="/it/sw/share/java/netbeans/6.9/groovy/modules/ext/groovy-all.jar" />
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
+    <property name="default.javac.source" value="1.6" />
+    <property name="debug-transport-by-os" value="dt_socket" />
+    <property name="sun.jnu.encoding" value="ISO8859-1" />
     <property name="libs.MySQLDriver.src" value="" />
-    <property name="sun.jnu.encoding" value="Cp1252" />
-    <property name="java.runtime.version" value="1.7.0_45-b18" />
     <property name="build.test.results.dir" value="build/test/results" />
+    <property name="java.runtime.version" value="1.6.0_37-b06" />
     <property name="libs.ejb3-persistence.javadoc" value="" />
-    <property name="default.javac.target" value="1.7" />
-    <property name="libs.junit_4.classpath" value="E:\Program Files\NetBeans 7.4\platform\modules\ext\junit-4.10.jar" />
+    <property name="jna.platform.library.path" value="/usr/lib/32:/lib/32:/usr/lib:/lib" />
+    <property name="default.javac.target" value="1.6" />
+    <property name="libs.junit_4.classpath" value="/it/sw/java/share/netbeans/6.9/platform/modules/ext/junit-4.5.jar" />
     <property name="user.timezone" value="" />
     <property name="nb.junit.single" value="false" />
-    <property name="libs.JAVADB_DRIVER_LABEL.javadoc" value="" />
-    <property name="netbeans.dirs" value="E:\Program Files\NetBeans 7.4\nb;E:\Program Files\NetBeans 7.4\ergonomics;E:\Program Files\NetBeans 7.4\ide;E:\Program Files\NetBeans 7.4\extide;E:\Program Files\NetBeans 7.4\java;E:\Program Files\NetBeans 7.4\apisupport;E:\Program Files\NetBeans 7.4\webcommon;E:\Program Files\NetBeans 7.4\websvccommon;E:\Program Files\NetBeans 7.4\enterprise;E:\Program Files\NetBeans 7.4\mobility;E:\Program Files\NetBeans 7.4\profiler;E:\Program Files\NetBeans 7.4\python;E:\Program Files\NetBeans 7.4\php;E:\Program Files\NetBeans 7.4\identity;E:\Program Files\NetBeans 7.4\harness;E:\Program Files\NetBeans 7.4\cnd;E:\Program Files\NetBeans 7.4\dlight;E:\Program Files\NetBeans 7.4\groovy;E:\Program Files\NetBeans 7.4\extra;E:\Program Files\NetBeans 7.4\javacard;E:\Program Files\NetBeans 7.4\javafx" />
-    <property name="java.ext.dirs" value="H:\Program Files\Java\jdk1.7.0_45\jre\lib\ext;H:\Windows\Sun\Java\lib\ext" />
-    <property name="libs.absolutelayout.classpath" value="E:\Program Files\NetBeans 7.4\java\modules\ext\AbsoluteLayout.jar" />
+    <property name="do.jar" value="true" />
+    <property name="libs.javaee-endorsed-api-6.0.maven-pom" value="" />
+    <property name="netbeans.dirs" value="/it/sw/share/java/netbeans/6.9/nb:/it/sw/share/java/netbeans/6.9/ergonomics:/it/sw/share/java/netbeans/6.9/ide:/it/sw/share/java/netbeans/6.9/java:/it/sw/java/bin/../share/netbeans/6.9/bin/../xml:/it/sw/share/java/netbeans/6.9/apisupport:/it/sw/java/bin/../share/netbeans/6.9/bin/../webcommon:/it/sw/share/java/netbeans/6.9/websvccommon:/it/sw/share/java/netbeans/6.9/enterprise:/it/sw/java/bin/../share/netbeans/6.9/bin/../mobility:/it/sw/share/java/netbeans/6.9/profiler:/it/sw/share/java/netbeans/6.9/ruby:/it/sw/share/java/netbeans/6.9/python:/it/sw/share/java/netbeans/6.9/php:/it/sw/java/bin/../share/netbeans/6.9/bin/../visualweb:/it/sw/java/bin/../share/netbeans/6.9/bin/../soa:/it/sw/share/java/netbeans/6.9/identity:/it/sw/java/bin/../share/netbeans/6.9/bin/../uml:/it/sw/share/java/netbeans/6.9/harness:/it/sw/share/java/netbeans/6.9/cnd:/it/sw/share/java/netbeans/6.9/dlight:/it/sw/share/java/netbeans/6.9/groovy:/it/sw/share/java/netbeans/6.9/extra:/it/sw/share/java/netbeans/6.9/javafx:/it/sw/java/bin/../share/netbeans/6.9/bin/../javacard:" />
+    <property name="file.reference.jsoup-1.7.2.jar-1" value="/home/mani9271/jsoup-1.7.2.jar" />
+    <property name="libs.jsf20.javadoc" value="/it/sw/share/java/netbeans/6.9/enterprise/docs/javaee6-doc-api.zip" />
+    <property name="java.ext.dirs" value="/it/sw/java/JDK/6.0/jre/lib/ext:/usr/jdk/packages/lib/ext" />
+    <property name="libs.metro.src" value="" />
+    <property name="endorsed.classpath" value="" />
+    <property name="libs.absolutelayout.classpath" value="/it/sw/share/java/netbeans/6.9/java/modules/ext/AbsoluteLayout.jar" />
     <property name="excludes" value="" />
     <property name="ant.file.type.Webcrawler2" value="file" />
-    <property name="java.class.path" value="H:\Users\Max\workspace\webcrawler\src\webcrawler\jsoup-1.7.2.jar;H:\Users\Max\Documents\NetBeansProjects\Webcrawler2\build\classes;E:\Program Files\NetBeans 7.4\platform\modules\ext\junit-4.10.jar;H:\Users\Max\Documents\NetBeansProjects\Webcrawler2\build\test\classes;E:\Program Files\NetBeans 7.4\extide\ant\lib\ant-launcher.jar;E:\Program Files\NetBeans 7.4\extide\ant\lib\ant.jar;E:\Program Files\NetBeans 7.4\extide\ant\lib\ant-junit.jar;E:\Program Files\NetBeans 7.4\extide\ant\lib\ant-junit4.jar" />
+    <property name="libs.metro.classpath" value="/it/sw/share/java/netbeans/6.9/ide/modules/ext/jaxb/activation.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/metro/webservices-api.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/metro/webservices-extra-api.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/metro/webservices-extra.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/metro/webservices-rt.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/metro/webservices-tools.jar" />
+    <property name="libs.restlib.maven-pom" value="" />
+    <property name="java.class.path" value="/home/mani9271/jsoup-1.7.2.jar:/home/mani9271/github/Ioopm/Java/Webcrawler2/build/classes:/it/sw/java/share/netbeans/6.9/platform/modules/ext/junit-4.5.jar:/home/mani9271/github/Ioopm/Java/Webcrawler2/build/test/classes:/it/sw/share/java/netbeans/6.9/java/ant/lib/ant-launcher.jar:/it/sw/share/java/netbeans/6.9/java/ant/lib/ant.jar:/it/sw/share/java/netbeans/6.9/java/ant/patches/72080.jar" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
     <property name="do.mkdist" value="true" />
     <property name="libs.absolutelayout.src" value="" />
-    <property name="libs.jpa20-persistence.classpath" value="E:\Program Files\NetBeans 7.4\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar" />
-    <property name="os.version" value="6.1" />
+    <property name="os.version" value="5.10" />
     <property name="application.args" value="" />
-    <property name="libs.hibernate-persistencemodelgen.src" value="" />
-    <property name="sun.awt.enableExtraMouseButtons" value="true" />
     <property name="main.class.available" value="true" />
-    <property name="sun.desktop" value="windows" />
-    <property name="nb.internal.action.name" value="test" />
-    <property name="libs.JAXB-ENDORSED.classpath" value="E:\Program Files\NetBeans 7.4\ide\modules\ext\jaxb\api\jaxb-api.jar" />
-    <property name="libs.eclipselink.classpath" value="E:\Program Files\NetBeans 7.4\java\modules\ext\eclipselink\eclipselink.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.0.v20130507-3faac2b.jar" />
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
-    <property name="libs.beans-binding.javadoc" value="E:\Program Files\NetBeans 7.4\java\docs\beansbinding-1.2.1-doc.zip" />
-    <property name="java.vm.vendor" value="Oracle Corporation" />
-    <property name="libs.CopyLibs.classpath" value="E:\Program Files\NetBeans 7.4\java\ant\extra\org-netbeans-modules-java-j2seproject-copylibstask.jar" />
-    <property name="libs.spring-framework300.classpath" value="E:\Program Files\NetBeans 7.4\ide\modules\org-apache-commons-logging.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\cglib-2.2.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-aop-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-aspects-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-beans-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-build-src-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-context-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-context-support-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-core-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-expression-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-instrument-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-jdbc-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-jms-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-orm-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-oxm-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-struts-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-test-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-tx-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-web-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-webmvc-3.2.3.RELEASE.jar;E:\Program Files\NetBeans 7.4\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.3.RELEASE.jar" />
+    <property name="libs.toplink.javadoc" value="/it/sw/share/java/netbeans/6.9/enterprise/docs/javaee6-doc-api.zip" />
+    <property name="sun.desktop" value="gnome" />
+    <property name="libs.restlib.javadoc" value="/it/sw/share/java/netbeans/6.9/enterprise/docs/jersey-client-1.1.5.1-javadoc.zip:/it/sw/share/java/netbeans/6.9/enterprise/docs/jersey-core-1.1.5.1-javadoc.zip:/it/sw/share/java/netbeans/6.9/enterprise/docs/jersey-json-1.1.5.1-javadoc.zip:/it/sw/share/java/netbeans/6.9/enterprise/docs/jersey-spring-1.1.5.1-javadoc.zip:/it/sw/share/java/netbeans/6.9/enterprise/docs/oauth-client-1.1.5.1-javadoc.zip:/it/sw/share/java/netbeans/6.9/enterprise/docs/oauth-signature-1.1.5.1-javadoc.zip" />
+    <property name="libs.eclipselink.classpath" value="/it/sw/share/java/netbeans/6.9/java/modules/ext/eclipselink/eclipselink-2.0.2.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/eclipselink/eclipselink-javax.persistence-2.0.jar" />
+    <property name="libs.beans-binding.javadoc" value="/it/sw/share/java/netbeans/6.9/java/docs/beansbinding-1.2.1-doc.zip" />
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
+    <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+    <property name="libs.CopyLibs.classpath" value="/it/sw/share/java/netbeans/6.9/java/ant/extra/org-netbeans-modules-java-j2seproject-copylibstask.jar" />
+    <property name="ant.file.-profiler-impl" value="/home/mani9271/github/Ioopm/Java/Webcrawler2/nbproject/profiler-build-impl.xml" />
+    <property name="libs.spring-framework300.classpath" value="/it/sw/share/java/netbeans/6.9/ide/modules/ext/commons-logging-1.1.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/cglib-2.2.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-aop-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-asm-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-aspects-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-beans-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-context-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-context-support-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-core-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-expression-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-instrument-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-instrument-tomcat-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-jdbc-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-jms-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-orm-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-oxm-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-test-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-tx-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-web-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-webmvc-portlet-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-webmvc-3.0.2.RELEASE.jar:/it/sw/share/java/netbeans/6.9/java/modules/ext/spring-3.0/spring-struts-3.0.2.RELEASE.jar" />
+    <property name="libs.jsp-compiler.maven-pom" value="" />
+    <property name="libs.spring-webmvc.maven-pom" value="" />
     <property name="run.jvmargs" value="" />
-    <property name="libs.ejb3-persistence.classpath" value="E:\Program Files\NetBeans 7.4\java\modules\ext\hibernate\hibernate-jpa-2.0-api-1.0.1.Final.jar" />
-    <property name="libs.hibernate-persistencemodelgen.javadoc" value="" />
-    <property name="libs.JAXB-ENDORSED.src" value="" />
+    <property name="libs.ejb3-persistence.classpath" value="/it/sw/share/java/netbeans/6.9/java/modules/ext/hibernate/ejb3-persistence.jar" />
     <property name="libs.spring-framework.javadoc" value="" />
     <property name="dist.archive.excludes" value="" />
-    <property name="libs.testng.javadoc" value="E:\Program Files\NetBeans 7.4\platform\docs\testng-6.8.1-javadoc.zip" />
-    <property name="user.script" value="" />
-    <property name="libs.PostgreSQLDriver.classpath" value="E:\Program Files\NetBeans 7.4\ide\modules\ext\postgresql-9.2-1002.jdbc4.jar" />
+    <property name="libs.PostgreSQLDriver.classpath" value="/it/sw/share/java/netbeans/6.9/ide/modules/ext/postgresql-8.3-603.jdbc3.jar" />
+    <property name="libs.jsf12.maven-pom" value="" />
     <property name="libs.junit.src" value="" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
     <property name="main.class" value="webcrawler2.Driver" />
-    <property name="build.dir" value="build" />
     <property name="libs.CopyLibs.src" value="" />
-    <property name="ant.version" value="Apache Ant(TM) version 1.9.1 compiled on May 15 2013" />
-    <property name="file.encoding" value="Cp1252" />
+    <property name="build.dir" value="build" />
+    <property name="libs.jsp-compilation.classpath" value="/it/sw/share/java/netbeans/6.9/java/ant/lib/ant.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/servlet2.5-jsp2.1-api.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/glassfish-jspparser-2.0.jar:/it/sw/share/java/netbeans/6.9/enterprise/modules/ext/glassfish-logging-2.0.jar:/it/sw/share/java/netbeans/6.9/ide/modules/ext/commons-logging-1.1.jar:/it/sw/share/java/netbeans/6.9/java/ant/lib/ant-launcher.jar" />
+    <property name="ant.version" value="Apache Ant version 1.8.1 compiled on April 30 2010" />
+    <property name="file.encoding" value="ISO8859-1" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
     <property name="jdkBug6558476" value="false" />
     <property name="javadoc.nonavbar" value="false" />
     <property name="platform.active" value="default_platform" />
-    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="webcrawler2.OracleTest" name="testGetShortestPath" time="0.009">
-    <failure message="expected:&lt;null&gt; but was:&lt;[]&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;null&gt; but was:&lt;[]&gt;
-	at webcrawler2.OracleTest.testGetShortestPath(OracleTest.java:41)
-</failure>
-  </testcase>
-  <testcase classname="webcrawler2.OracleTest" name="testOracle" time="0.003">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at webcrawler2.Utility.readURL(Utility.java:42)
-	at webcrawler2.Oracle.Oracle(Oracle.java:115)
-	at webcrawler2.OracleTest.testOracle(OracleTest.java:56)
-</error>
-  </testcase>
-  <system-out><![CDATA[getShortestPath
-Oracle
-!FOUND SITE! Site: , Depth: 0
-Site: , Depth: 0
-Path: []
+  <testcase classname="webcrawler2.OracleTest" name="testOracleandgetShortestPath" time="1.294" />
+  <system-out><![CDATA[Oracle and getShortestPath
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

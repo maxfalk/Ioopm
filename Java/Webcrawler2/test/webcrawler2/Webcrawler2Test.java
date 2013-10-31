@@ -6,7 +6,6 @@
 
 package webcrawler2;
 
-import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -30,59 +29,51 @@ public class Webcrawler2Test {
     }
     
     /**
-     * Test of Crawl method, of class Webcrawler2.
+     * Test of Crawl method, of class Webcrawler.
      */
     @Test
     public void testCrawl() {
         System.out.println("Crawl");
         String siteAddress = "https://sv.wikipedia.org";
         int depth = 0;
-        Webcrawler2 instance = new Webcrawler2();
+        Webcrawler instance = new Webcrawler();
         instance.Crawl(siteAddress, depth);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int expvalue = instance.pageCon.size();
+        assertEquals(1, expvalue);
     }
 
     /**
-     * Test of TagCloud method, of class Webcrawler2.
+     * Test of TagCloud method, of class Webcrawler.
      */
     @Test
     public void testTagCloud() throws Exception {
         System.out.println("TagCloud");
-        Webcrawler2 instance = new Webcrawler2();
-        instance.TagCloud();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String siteAddress = "https://sv.wikipedia.org";
+        int depth = 0;
+        Webcrawler instance = new Webcrawler();
+        instance.Crawl(siteAddress, depth);
+        Counter mycounter = instance.TagCloud();
+        int size = mycounter.size();
+        assertTrue(size > 0);
+
     }
 
     /**
-     * Test of rankPages method, of class Webcrawler2.
+     * Test of rankPages method, of class Webcrawler.
      */
     @Test
     public void testRankPages() {
         System.out.println("rankPages");
-        Webcrawler2 instance = new Webcrawler2();
-        PageRanking expResult = null;
+        String siteAddress = "https://sv.wikipedia.org";
+        int depth = 0;
+        Webcrawler instance = new Webcrawler();
+        instance.Crawl(siteAddress, depth);
+        instance.Crawl(siteAddress, depth);
+        String expResult = "https://sv.wikipedia.org";
         PageRanking result = instance.rankPages();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result.getHighestRankingSite("Wikipedia"));
+
     }
 
-    /**
-     * Test of searchSites method, of class Webcrawler2.
-     */
-    @Test
-    public void testSearchSites() {
-        System.out.println("searchSites");
-        PageRanking rank = null;
-        String Word = "";
-        Webcrawler2 instance = new Webcrawler2();
-        String expResult = "";
-        String result = instance.searchSites(rank, Word);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
 }

@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 /**
- *
+ * Methods for reading and making an URL.
  * @author Max
  */
 public class Utility {

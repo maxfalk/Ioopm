@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- *
+ * Stores web pages and a index of how different words are ranked in the page.
  * @author Max
  */
 public class PageRanking{
@@ -31,7 +31,7 @@ public class PageRanking{
     private ArrayList<Container> List = new ArrayList();
     
     /**
-     *Ranks and indexes the web page.
+     * Ranks and indexes the web page.
      * @param Site the web address to the page
      * @param Contains the page contents
      */
@@ -44,7 +44,7 @@ public class PageRanking{
     }
     
     /**
-     *Get the web address of the page that has the highest rank for the given word.
+     * Get the web address of the page that has the highest rank for the given string.
      * @param Word word to check for in rank index.
      * @return the web address of the highest ranking page.
      */

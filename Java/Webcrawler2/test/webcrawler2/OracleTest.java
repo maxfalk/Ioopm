@@ -30,32 +30,35 @@ public class OracleTest {
     }
 
     /**
-     * Test of getShortestPath method, of class Oracle.
-     */
-    @Test
-    public void testGetShortestPath() {
-        System.out.println("getShortestPath");
-        Oracle instance = new Oracle();
-        Stack<String> expResult = null;
-        Stack<String> result = instance.getShortestPath();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of Oracle method, of class Oracle.
      */
     @Test
     public void testOracle() {
-        System.out.println("Oracle");
-        String firstSite = "";
-        String SecondSite = "";
+        System.out.println("Oracle and getShortestPath");
+        String firstSite = "https://sv.wikipedia.org";
+        String SecondSite = "https://sv.wikipedia.org";
         int depth = 0;
         Oracle instance = new Oracle();
+
         instance.Oracle(firstSite, SecondSite, depth);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Stack<String> result = instance.getShortestPath();
+        assertEquals(SecondSite, result.pop());
+        
     }
-    
+       /**
+     * Test of Oracle method, of class Oracle.
+     */
+    @Test
+    public void ShortestPath() {
+        System.out.println("Oracle and getShortestPath");
+        String firstSite = "https://sv.wikipedia.org";
+        String SecondSite = "https://sv.wikipedia.org";
+        int depth = 0;
+        Oracle instance = new Oracle();
+        assertTrue(instance.getShortestPath().isEmpty());
+
+        instance.Oracle(firstSite, SecondSite, depth);
+        Stack<String> result = instance.getShortestPath();
+        assertEquals(SecondSite, result.pop());
+    }
 }

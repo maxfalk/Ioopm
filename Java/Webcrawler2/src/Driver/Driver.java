@@ -7,83 +7,37 @@
 package Driver;
 
 import java.io.IOException;
-import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import webcrawler2.Oracle;
-import webcrawler2.PageRanking;
-import webcrawler2.Webcrawler2;
+import webcrawler2.Webcrawler;
 
 /**
  *
  * @author Max
  */
 public class Driver {
-    
+
     /**
      *
      * @param args
-     * @throws java.io.IOException
      */
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args){
+        Webcrawler W = new Webcrawler();
         
-        if(args.length < 2){
-            System.err.println("Need 2 args");
-        }
-        // --target addr
-        // --tags
-        // --rank
-        // --oracletarget
-        // --ranktarget
-        String target = "";
-        String action = "";
-        String stoptarget = "";
-        int depth = 0;
         
-        for(int i= 0; i < args.length; i++){
-            switch (args[i]) {
-                case "--target":
-                    target = args[++i];
-                    break;
-                case "--tags":
-                    action = "tags";
-                    break;
-                case "--rank":
-                    action = "rank";
-                    break;
-                case "--oracletarget":
-                    action = "oracle";
-                    stoptarget = args[++i];
-                    break;
-                case "--depth":
-                    depth = Integer.parseInt(args[++i]);
-                    break;
-            }
-            
-            
-        }
-        switch (action) {
-            case "tags":
-            case "rank":
-                Webcrawler2 crawler = new Webcrawler2();
-                crawler.Crawl(target, depth);
-                switch (action) {
-                    case "tags":
-                        crawler.TagCloud();
-                        break;
-                    case "rank":
-                        PageRanking rank = crawler.rankPages();
-                        String site = rank.getHighestRankingSite("Det");
-                        System.out.println(site);
-                        break;
-                }
-                break;
-            case "oracle":
-                Oracle oracle = new Oracle();
-                oracle.Oracle(target, stoptarget, depth);
-                Stack<String> path = oracle.getShortestPath();
-                System.out.println(path.toString());
-                break;
+        
+        //W.Oracle("https://sv.wikipedia.org", "https://sv.wikipedia.org/wiki/Portal:Tid", 1);
+        
+       W.Crawl("http://www.dn.se/",1);
+        /*
+        PageRanking p = W.rankPages();
+        String Site = W.searchSites(p, "det");
+        System.out.println(Site);
+        */
+        try {
+            W.TagCloud();
+        } catch (IOException ex) {
+            Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         

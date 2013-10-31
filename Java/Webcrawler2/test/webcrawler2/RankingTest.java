@@ -36,11 +36,14 @@ public class RankingTest {
         System.out.println("rank");
         String Text = "<p>Det här är en html sträng varje ord ger 1 poäng </p> "
                 +     "<title>Title</title> <a>Link</a>";
-        String Word = "Title";
         Ranking instance = new Ranking();
         instance.rank(Text);
-        int result = instance.getRank(Word);
+        int result = instance.getRank("Title");
         assertEquals(5,result);
+        result = instance.getRank("Link");
+        assertEquals(6,result);
+        result = instance.getRank("html");
+        assertEquals(1,result);
     }
 
     /**
@@ -49,11 +52,14 @@ public class RankingTest {
     @Test
     public void testGetRank() {
         System.out.println("getRank");
-        String Word = "test";
+        String Text = "html";
         Ranking instance = new Ranking();
-        int expResult = 0;
-        int result = instance.getRank(Word);
-        assertEquals(expResult, result);
+        instance.rank(Text);
+        int result = instance.getRank("html");
+        assertEquals(1,result);
+        String Word = "test";
+        result = instance.getRank(Word);
+        assertEquals(0, result);
 
         
         

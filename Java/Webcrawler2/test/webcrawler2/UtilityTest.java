@@ -29,32 +29,18 @@ public class UtilityTest {
     public static void tearDownClass() {
     }
 
-    /**
-     * Test of urlify method, of class Utility.
-     */
-    @Test
-    public void testUrlify() {
-        System.out.println("urlify");
-        String s = "";
-        URL expResult = null;
-        URL result = Utility.urlify(s);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of readURL method, of class Utility.
      */
     @Test
-    public void testReadURL() {
+    public void testReadURLandUrlify() {
         System.out.println("readURL");
-        URL url = null;
-        String expResult = "";
+        String s = "https://sv.wikipedia.org";
+        URL url = Utility.urlify(s);
         String result = Utility.readURL(url);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertTrue(result.contains("wikipedia"));
+
     }
     
 }

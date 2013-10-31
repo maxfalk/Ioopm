@@ -40,6 +40,7 @@ public class CounterTest {
         assertEquals(0,instance.size());
         instance.add(_item, number);
         assertEquals(1,instance.size());
+        assertEquals(instance.getObject(0), "TestItem");
        
     }
 
@@ -51,8 +52,8 @@ public class CounterTest {
         System.out.println("getNumber");
         Object Value = "TestItem";
         Counter instance = new Counter();
-        instance.add(Value, 0);
-        int expResult = 0;
+        instance.add(Value, 3);
+        int expResult = 3;
         int result = instance.getNumber(Value);
         assertEquals(expResult, result);
 
@@ -65,8 +66,9 @@ public class CounterTest {
     public void testSort() {
         System.out.println("sort");
         Counter instance = new Counter();
-        instance.add("V1", 1);
+        instance.add("V0", 0);
         instance.add("V2", 2);
+        instance.add("V1", 1);
         instance.sort();
         int result = instance.getIndexNumber(0);
         assertEquals(2,result);
@@ -95,10 +97,15 @@ public class CounterTest {
         System.out.println("getIndexItem");
         int Index = 0;
         Counter instance = new Counter();
+        instance.add("V2", 2);
         instance.add("V1", 1);
-        Object expResult = "V1";
         Object result = instance.getObject(Index);
-        assertEquals(expResult, result);
+        assertEquals("V2", result);
+        Index = 1;
+        result = instance.getObject(Index);
+        assertEquals("V1", result);
+
+
     }
 
     /**
@@ -122,9 +129,11 @@ public class CounterTest {
     public void testSize() {
         System.out.println("getSize");
         Counter instance = new Counter();
-        int expResult = 0;
         int result = instance.size();
-        assertEquals(expResult, result);
+        assertEquals(0, result);
+        instance.add("V1", 1);
+        result = instance.size();
+        assertEquals(1, result);
 
     }
     

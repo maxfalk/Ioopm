@@ -35,8 +35,9 @@ public class PageContainerTest {
     public void testGetSiteAddress() {
         System.out.println("getSiteAddress");
         PageContainer instance = new PageContainer();
+        instance.addPage("Siteaddr2", "Contents2");
         instance.addPage("Siteaddr", "Contents");
-        String expResult = "Siteaddr";
+        String expResult = "Siteaddr2";
         String result = instance.getSiteAddress();
         assertEquals(expResult, result);
 
@@ -49,8 +50,9 @@ public class PageContainerTest {
     public void testGetContents() {
         System.out.println("getContents");
         PageContainer instance = new PageContainer();
+        instance.addPage("Siteaddr2", "Contents2");
         instance.addPage("Siteaddr", "Contents");
-        String expResult = "Contents";
+        String expResult = "Contents2";
         String result = instance.getContents();
         assertEquals(expResult, result);
 
@@ -63,10 +65,13 @@ public class PageContainerTest {
     public void testPop() {
         System.out.println("pop");
         PageContainer instance = new PageContainer();
+        instance.addPage("Siteaddr2", "Contents");
         instance.addPage("Siteaddr", "Contents");
         instance.pop();
-        boolean result = instance.checkForAddress("Siteaddr");
+        boolean result = instance.checkForAddress("Siteaddr2");
         assertFalse(result);
+        result = instance.checkForAddress("Siteaddr");
+        assertTrue(result);
     }
 
     /**
@@ -97,6 +102,7 @@ public class PageContainerTest {
         assertEquals(1,instance.size());
         instance.addPage(_SiteAddress, _Contents);
         assertEquals(2,instance.size());
+        assertTrue(instance.checkForAddress("http://testing.org"));
 
     }
 
@@ -108,7 +114,6 @@ public class PageContainerTest {
         System.out.println("testCheckForAddress");
         String _SiteAddress = "http://testing.org";
         PageContainer instance = new PageContainer();
-        boolean expResult = false;
         instance.addPage(_SiteAddress, "Contens");
         boolean result = instance.checkForAddress(_SiteAddress);
         assertTrue(result);

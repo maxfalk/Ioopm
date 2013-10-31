@@ -14,8 +14,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
- *
- * 
+ * Loads the specific excludes file and handles checking against those strings.
  * 
  * @author Max
  *
@@ -40,16 +39,16 @@ public class Exclude {
         br.close();
     }
     /**
-     * Gives the list of items in the exluded list.
-     * @return list of the exluded items
+     * Gives the list of items in the excluded list.
+     * @return list of the items to be excluded.
      */
     public static LinkedList<String> getExludesAsList(){
         return List;
     }
     /**
-     * Checks if a given string is in the exludes list
-     * @param object
-     * @return true if the string is exludes else false.
+     * Checks if a given string is in the excluded list
+     * @param object the string to check for.
+     * @return true if the string is excluded else false.
      */
     public static boolean checkIfExcluded(String object){
         Iterator<String> it = List.listIterator();

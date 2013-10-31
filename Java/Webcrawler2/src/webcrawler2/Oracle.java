@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
+ * Starts at on web address and searches for another web address.
  *
  * @author Max
  */
@@ -33,7 +34,7 @@ public class Oracle {
     private int ShortestPathNum = -1;
     
     /**
-     *Gives the shortest path found.
+     * Gives the shortest path found by the oracle.
      * @return the shortest path found.
      */
     public Stack<String> getShortestPath(){
@@ -56,7 +57,7 @@ public class Oracle {
         if(site.equals(SecondSite)  == true){
             
             if(ShortestPathNum == -1 || ShortestPathNum > Currdepth){
-                System.out.println("!FOUND SITE! Site: " + site + ", Depth: " + Currdepth);
+                //System.out.println("!FOUND SITE! Site: " + site + ", Depth: " + Currdepth);
                 ShortestPath.addAll(Path);
                 ShortestPathNum = Currdepth;
                 return true;
@@ -112,8 +113,8 @@ public class Oracle {
                 
                 Pathdepth =  updatePath(site, Pathdepth, Currdepth);
                 
-                System.out.println("Site: " + site + ", Depth: " + Currdepth);
-                System.out.println("Path: " + Path.toString());
+                //System.out.println("Site: " + site + ", Depth: " + Currdepth);
+                //System.out.println("Path: " + Path.toString());
                 //make and read URL
                 URL url = Utility.urlify(site);
                 String pageContains = Utility.readURL(url);
