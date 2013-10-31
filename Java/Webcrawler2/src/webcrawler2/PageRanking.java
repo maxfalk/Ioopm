@@ -31,9 +31,9 @@ public class PageRanking{
     private ArrayList<Container> List = new ArrayList();
     
     /**
-     *
-     * @param Site
-     * @param Contains
+     *Ranks and indexes the web page.
+     * @param Site the web address to the page
+     * @param Contains the page contents
      */
     public void rankPage(String Site, String Contains){
         Ranking rank = new Ranking();
@@ -44,9 +44,9 @@ public class PageRanking{
     }
     
     /**
-     *
-     * @param Word
-     * @return
+     *Get the web address of the page that has the highest rank for the given word.
+     * @param Word word to check for in rank index.
+     * @return the web address of the highest ranking page.
      */
     public String getHighestRankingSite(String Word){
         

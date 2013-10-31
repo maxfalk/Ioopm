@@ -9,8 +9,6 @@ package webcrawler2;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -25,29 +23,29 @@ public class ParseHTML {
     private Document parse = null;
     
     /**
-     *
-     * @param _contents
+     *Create a parse for HTML without a baseurl but with the page contents
+     * @param contents the web page's contents
      */
-    public ParseHTML(String _contents){
-        parse = Jsoup.parse(_contents);
+    public ParseHTML(String contents){
+        parse = Jsoup.parse(contents);
      
         
     }
     
     /**
-     *
-     * @param _contents
-     * @param baseurl
+     *Create a parse for HTML with a baseurl but with the page contents
+     * @param contents the contents of the web page
+     * @param baseurl the baseurl of the web page.
      */
-    public ParseHTML(String _contents,String baseurl){
-        parse = Jsoup.parse(_contents, baseurl);
+    public ParseHTML(String contents,String baseurl){
+        parse = Jsoup.parse(contents, baseurl);
      
         
     }
     
     /**
-     *
-     * @return
+     *Get all the urls from links(<a></a> tags) from the contents. 
+     * @return a list of all the links in the web page.
      */
     public List<String> getLink(){
         final Elements links = parse.select("a[href]");
@@ -61,17 +59,16 @@ public class ParseHTML {
     }
     
     /**
-     *
-     * @return
+     * Get the title of the web page(<title></title>)
+     * @return the title of the web page.
      */
     public String getTitle(){
-    return parse.title();
-    
+        return parse.title();
     }
         
     /**
-     *
-     * @return
+     * Get all the link titles from the web page.
+     * @return all the link titles.
      */
     public List<String> getLinkTitle(){
         final Elements links = parse.select("a[href]");
@@ -85,8 +82,8 @@ public class ParseHTML {
     }
     
     /**
-     *
-     * @return
+     * get all the text in the web page without the html tags
+     * @return all the text in the web page, without the html tags.
      */
     public String getRemoveHTML(){
         return parse.text();

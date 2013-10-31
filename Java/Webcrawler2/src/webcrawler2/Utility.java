@@ -18,9 +18,9 @@ import java.net.URL;
  */
 public class Utility {
    /**
-    * 
-    * @param s
-    * @return
+    * Converts a url in string format to an url in URL format
+    * @param s the string to convert
+    * @return the string s as an URL.
     */
 	
 	public static URL urlify(String s) {
@@ -29,9 +29,9 @@ public class Utility {
         return null;
     }
 	/**
-	 * 
-	 * @param url
-	 * @return
+	 * Reads the contents at the URL location.
+	 * @param url the URL of the location to read at
+	 * @return the text read at url.
 	 */
     public static String readURL(URL url) {
         String inputLine;

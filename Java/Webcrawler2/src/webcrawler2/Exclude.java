@@ -15,13 +15,15 @@ import java.util.LinkedList;
 
 /**
  *
+ * 
+ * 
  * @author Max
  *
  */
 public class Exclude {
     private static LinkedList<String> List = new LinkedList();
     /**
-     *
+     * Loads the file excludes.txt at source location
      * @throws IOException
      */
     public static void loadExcludes() throws IOException, NullPointerException{
@@ -38,23 +40,23 @@ public class Exclude {
         br.close();
     }
     /**
-     *
-     * @return
+     * Gives the list of items in the exluded list.
+     * @return list of the exluded items
      */
     public static LinkedList<String> getExludesAsList(){
         return List;
     }
     /**
-     *
-     * @param _match
-     * @return
+     * Checks if a given string is in the exludes list
+     * @param object
+     * @return true if the string is exludes else false.
      */
-    public static boolean checkIfExcluded(String _match){
+    public static boolean checkIfExcluded(String object){
         Iterator<String> it = List.listIterator();
         
         while(it.hasNext()){
             String currentString = it.next();
-            if(currentString.equals(_match) == true){
+            if(currentString.equals(object) == true){
                 return true;
             }
             

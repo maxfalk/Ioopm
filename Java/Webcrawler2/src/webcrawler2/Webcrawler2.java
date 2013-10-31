@@ -45,9 +45,10 @@ public class Webcrawler2 {
     }
     
     /**
-     *
-     * @param siteAddress
-     * @param depth
+     * Walks through the web site and all the web sites it's linking to, to a maximus depth of depth.
+     * Saves the contents of the pages visited in pageCon.
+     * @param siteAddress the address at were the crawling will begin
+     * @param depth how deep from the first address we should go.
      */
     public void Crawl(String siteAddress, int depth) {
         Container con = new Container(0, siteAddress);
@@ -78,10 +79,13 @@ public class Webcrawler2 {
         
     }
     /**
-     *
+     *Counts the number of words on the crawled pages. 
+     * The pages that have been saved by the previous call to {@link Crawl}.
+     * @return a counter with the words and number of the frequency of the numbers where found,
+     * in sorted order, with the highest first. The counter is limited to 100 elements.
      * @throws IOException
      */
-    public void TagCloud() throws IOException{
+    public Counter<String> TagCloud() throws IOException{
         //Counter Words in a page
         Counter mycounter = new Counter();
         Exclude.loadExcludes();
@@ -100,15 +104,12 @@ public class Webcrawler2 {
         mycounter.sort();
         mycounter.limit(100);
         
-        for(int i = 0; i<mycounter.getSize(); i++){
-            System.out.println("[" + mycounter.getIndexItem(i) + "], " + mycounter.getIndexNumber(i));
-            
-        }
+        return mycounter;
     }
     
     /**
-     *
-     * @return
+     *Rank the pages collected by the Crawl method
+     * @return a PageRanking of all the pages collected by {@link Crawl}
      */
     public PageRanking rankPages(){
         
@@ -123,82 +124,6 @@ public class Webcrawler2 {
         }
         
         return rank;
-    }
-    
-    /**
-     *
-     * @param rank
-     * @param Word
-     * @return
-     */
-    public String searchSites(PageRanking rank, String Word){
-        return rank.getHighestRankingSite(Word);
-    }
-    
-    /**
-     *
-     * @param firstSite
-     * @param SecondSite
-     * @param depth
-     * @return
-     */
-    public Stack<String> Oracle(String firstSite, String SecondSite, int depth){
-        //put first site on stack
-        Container con = new Container(0, firstSite);
-        Sites.push(con);
-        //kepp track of path
-        Stack<String> Path = new Stack();
-        Path.push(firstSite);
-        int Pathdepth = 0;
-        //Keep shortest path
-        Stack<String> ShortestPath = new Stack();
-        int ShortestPathNum = -1;
-        //Keep current depth
-        int Currdepth;
-        
-        while(Sites.empty() == false){
-            Container innerCon = Sites.pop();
-            String site = innerCon.Site;
-            Currdepth = innerCon.depth;
-            
-            
-            if(site.equals(SecondSite)  == true){
-                
-                if(ShortestPathNum == -1 || ShortestPathNum > Currdepth){
-                    System.out.println("!FOUND SITE! Site: " + site + ", Depth: " + Currdepth);
-                    ShortestPath.addAll(Path);
-                    ShortestPathNum = Currdepth;
-                }
-                
-            }
-            
-            if(VisitedSites.contains(site) == false && Currdepth <= depth){
-                
-                if(Pathdepth < Currdepth){
-                    Path.push(site);
-                    Pathdepth = Currdepth;
-                }else if(Pathdepth > Currdepth){
-                    Path.pop();
-                }else{
-                    Path.pop();
-                    Path.push(site);
-                }
-
-                System.out.println("Site: " + site + ", Depth: " + Currdepth);
-                System.out.println("Path: " + Path.toString());
-                //make and read URL
-                URL url = Utility.urlify(site);
-                String pageContains = Utility.readURL(url);
-                //parse HTML
-                ParseHTML parser = new ParseHTML(pageContains,site);
-                //add all links in surrent site
-                addToSites(Currdepth,parser.getLink());
-                //add to visited list
-                VisitedSites.add(site);
-                
-            }
-        }
-        return ShortestPath;
     }
     
     

@@ -11,19 +11,21 @@ import java.util.Collections;
 import java.util.Iterator;
 
 /**
- *
+ * Stores an item and keeps track of the number of times you have added an item
+ * with the same name(item name).
+ * 
  * @author Max
- * @param <T>
+ * @param <T> the type of items you want to store in your counter
  */
 public class Counter<T>{
     
     private class Box implements Comparable<Box>{
         private int Number = 0;
-        private T Item = null;
+        private T object = null;
         
-        private Box(T _item, int increment){
+        private Box(T obj, int increment){
             this.Number = increment;
-            this.Item = _item;
+            this.object = obj;
         }
         
         @Override
@@ -50,7 +52,7 @@ public class Counter<T>{
         Iterator it = List.listIterator();
         while(it.hasNext()){
             Box currentBox  = (Box) it.next();
-            T _item = currentBox.Item;
+            T _item = currentBox.object;
             if(_item.equals(checkValue) ){
                 return true;
             }
@@ -62,7 +64,7 @@ public class Counter<T>{
         Iterator it = List.listIterator();
         while(it.hasNext()){
             Box currentBox  = (Box) it.next();
-            T _item = currentBox.Item;
+            T _item = currentBox.object;
             if(_item.equals(Value) ){
                 currentBox.Number += increment;
                 break;
@@ -72,34 +74,34 @@ public class Counter<T>{
     }
     
     /**
-     *
-     * @param _item
-     * @param number
+     * Add a object, number par.
+     * 
+     * @param object the object you want to add
+     * @param number the number you want to go with the object
      */
-    public void add(T _item, int number){
-        Box newBox = new Box(_item, number);
-        if(checkForItem(_item) == false){
+    public void add(T object, int number){
+        Box newBox = new Box(object, number);
+        if(checkForItem(object) == false){
             List.add(newBox);
         }else{
-            increaceExistingValue(_item,number);
+            increaceExistingValue(object,number);
         }
         
     }
-    
-    //Kan hämta ut godtyckligt element
-
+       
     /**
-     *
-     * @param Value
-     * @return
+     *  Get the number that the input parameter object is associated with.
+     * 
+     * @param object
+     * @return the number that your object is associated with.
      */
-        public int getNumber(T Value){
+    public int getNumber(T object){
         
         Iterator it = List.listIterator();
         while(it.hasNext()){
             Box currentBox  = (Box) it.next();
-            T _item = currentBox.Item;
-            if(_item.equals(Value) ){
+            T obj = currentBox.object;
+            if(obj.equals(object) ){
                 return currentBox.Number;
                 
             }
@@ -108,14 +110,15 @@ public class Counter<T>{
     }
     
     /**
-     *
+     *Sort the objects in the counter with the highest number first.
      */
     public void sort(){
         Collections.sort(List);
     }
-
+    
     /**
-     *
+     * Limits the counters objects to the input parameters amount.
+     * Removes all objects at position > Limit.
      * @param Limit
      */
     public void limit(int Limit){
@@ -137,33 +140,32 @@ public class Counter<T>{
         
         
     }
-    //--------------------------------------------------------
-
+ 
     /**
-     *
-     * @param Index
-     * @return
+     * Get the object at index Index
+     * @param Index position of the object.
+     * @return the object at position Index
      */
-        public T getIndexItem(int Index){
+    public T getObject(int Index){
         Box myBox = List.get(Index);
-        return myBox.Item;
+        return myBox.object;
     }
     
     /**
-     *
-     * @param Index
-     * @return
+     *Get the number at index Index
+     * @param Index position of the object.
+     * @return the number at position Index
      */
     public int getIndexNumber(int Index){
         Box myBox = List.get(Index);
         return myBox.Number;
     }
-
+    
     /**
-     *
-     * @return
+     * Get the size of the counter
+     * @return size of the counter
      */
-    public int getSize(){
+    public int size(){
         return List.size();
     }
     

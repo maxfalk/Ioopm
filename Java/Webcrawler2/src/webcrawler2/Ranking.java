@@ -12,14 +12,10 @@ package webcrawler2;
  */
 public class Ranking{
     
-    //Spara rank i en arraylista
-    //kan sortera lätt
-    //Kan letareda i listan lätt
-    Counter<String> Rankings = new Counter();
+    private Counter<String> Rankings = new Counter();
     
     //söka igenom en text och se förekomster av all t i denna text
     //Gå igenom strängen leta efter t, varje t ger 1p
-    
     private void givePointsPerWord(String Text){
         ParseHTML parse = new ParseHTML(Text);
         String text = parse.getRemoveHTML();
@@ -28,7 +24,7 @@ public class Ranking{
         for(String Word : Words){
             Rankings.add(Word, NumberOfPoints);
         }
-   
+        
     }
     
     //Söka igenom en text och se förkomster av t i <title></title>
@@ -46,29 +42,28 @@ public class Ranking{
         ParseHTML parse = new ParseHTML(Text);
         
         int NumberOfPoints = 5;
-        for(String title : parse.getLinkTitle()){    
+        for(String title : parse.getLinkTitle()){
             Rankings.add(title, NumberOfPoints);
         }
         
     }
     
     /**
-     *
-     * @param Text
+     *Rank the html text in Text according to specific rules
+     * @param Text the text to be ranked
      */
     public void rank(String Text){
         givePointsPerWord(Text);
         givePointsForTitle(Text);
         givePointPerLinkTitle(Text);
     }
-    //kunna slå upp ranking för en sida.
-
+    
     /**
-     *
-     * @param Word
-     * @return
+     *Gives the rank of a specific word in the ranked text
+     * @param Word the word to lookup
+     * @return the number of points for the word.
      */
-        public int getRank(String Word){
+    public int getRank(String Word){
         return Rankings.getNumber(Word);
     }
     //kunna hitta den högst rankade

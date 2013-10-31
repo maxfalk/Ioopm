@@ -34,14 +34,19 @@ public class PageContainer {
     private LinkedList<Page> Pages = new LinkedList();
 
     /**
-     *
-     * @return
+     *Get the siteAddress of the top element.
+     * @return the siteAddress of the top element.
      */
     public String getSiteAddress(){
         Page tempPage = Pages.peek();
         return tempPage.SiteAddress;
         
     }
+
+    /**
+     *Get the Contents of the top element.
+     * @return the Contents of the top element.
+     */
     public String getContents(){
         Page tempPage = Pages.peek();
         return tempPage.Contents;
@@ -49,35 +54,47 @@ public class PageContainer {
     }
 
     /**
-     *
+     * The number of elements.
+     * @return number of elements
+     */
+    public int size(){
+        return Pages.size();
+    }
+    /**
+     * Remove the top element.
      */
     public void pop(){
         Pages.pop();
     }
+
+    /**
+     *Check if the pageContainer is empty.
+     * @return true if it's empty else false
+     */
     public boolean isEmpty(){
         return Pages.isEmpty();
     }
 
     /**
-     *
-     * @param _SiteAddress
-     * @param _Contents
+     *Add a SiteAddress and it's contents.
+     * @param siteAddress  the Web address
+     * @param contents the contents of the web address.(the web page)
      */
-    public void addPage(String _SiteAddress, String _Contents){
-        Page newPage = new Page(_SiteAddress, _Contents);
+    public void addPage(String siteAddress, String contents){
+        Page newPage = new Page(siteAddress, contents);
         Pages.add(newPage);
     }
 
     /**
-     *
-     * @param _SiteAddress
-     * @return
+     *Check pageContainer for a web address
+     * @param siteAddress the web address to look for.
+     * @return true if the pageContainer contains the web address else false.
      */
-    public boolean checkForVisitedAddress(String _SiteAddress){
+    public boolean checkForAddress(String siteAddress){
         Iterator<Page> it = Pages.listIterator();
         while(it.hasNext()){
             Page currentPage = it.next();
-            if(currentPage.siteEquals(_SiteAddress)){
+            if(currentPage.siteEquals(siteAddress)){
                 return true;
                 
             }
