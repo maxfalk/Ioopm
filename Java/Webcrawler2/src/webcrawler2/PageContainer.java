@@ -16,24 +16,8 @@ import java.util.LinkedList;
  */
 public class PageContainer {
     
-    private class Page{
-        private String SiteAddress = "";
-        private String Contents = "";
-        
-        private Page(String _SiteAddress, String _Contents){
-            this.Contents = _Contents;
-            this.SiteAddress = _SiteAddress;
-            
-        }
-        private boolean siteEquals(String _SiteAddress){
-            
-            return this.SiteAddress.equals(_SiteAddress);
-        }
-        
-    }
+    private final LinkedList<Page> Pages = new LinkedList();
     
-    private LinkedList<Page> Pages = new LinkedList();
-
     /**
      *Get the siteAddress of the top element.
      * @return the siteAddress of the top element.
@@ -43,7 +27,17 @@ public class PageContainer {
         return tempPage.SiteAddress;
         
     }
-
+    
+    /**
+     *
+     * @param index
+     * @return
+     */
+    public String getSiteAddress(int index){
+        Page tempPage = Pages.get(index);
+        return tempPage.SiteAddress;
+        
+    }
     /**
      *Get the Contents of the top element.
      * @return the Contents of the top element.
@@ -54,6 +48,17 @@ public class PageContainer {
         
     }
 
+    /**
+     *
+     * @param index
+     * @return
+     */
+    public String getContents(int index){
+        Page tempPage = Pages.get(index);
+        return tempPage.Contents;
+        
+    }
+    
     /**
      * The number of elements.
      * @return number of elements
@@ -67,7 +72,6 @@ public class PageContainer {
     public void pop(){
         Pages.pop();
     }
-
     /**
      *Check if the pageContainer is empty.
      * @return true if it's empty else false.
@@ -75,7 +79,7 @@ public class PageContainer {
     public boolean isEmpty(){
         return Pages.isEmpty();
     }
-
+    
     /**
      * Add a SiteAddress and its contents.
      * @param siteAddress the Web address.
@@ -85,7 +89,7 @@ public class PageContainer {
         Page newPage = new Page(siteAddress, contents);
         Pages.add(newPage);
     }
-
+    
     /**
      * Check pageContainer for a web address.
      * @param siteAddress the web address to look for.
@@ -102,6 +106,22 @@ public class PageContainer {
         }
         
         return false;
+    }
+    
+    private class Page{
+        private String SiteAddress = "";
+        private String Contents = "";
+        
+        private Page(String _SiteAddress, String _Contents){
+            this.Contents = _Contents;
+            this.SiteAddress = _SiteAddress;
+            
+        }
+        private boolean siteEquals(String _SiteAddress){
+            
+            return this.SiteAddress.equals(_SiteAddress);
+        }
+        
     }
     
     

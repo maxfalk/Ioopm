@@ -19,34 +19,8 @@ import java.util.Iterator;
  */
 public class Counter<T>{
     
-    private class Box implements Comparable<Box>{
-        private int Number = 0;
-        private T object = null;
-        
-        private Box(T obj, int increment){
-            this.Number = increment;
-            this.object = obj;
-        }
-        
-        @Override
-        public int compareTo(Box compareWord){
-            
-            if(compareWord.Number > Number){
-                return 1;
-                
-            }else if(compareWord.Number == Number){
-                return 0;
-            }
-            
-            return -1;
-            
-        }
-        
-        
-    }
     
-    
-    private ArrayList<Box> List = new ArrayList();
+    private final ArrayList<Box> List = new ArrayList();
     //Kolla om item redan finns i listan
     private boolean checkForItem(T checkValue){
         Iterator it = List.listIterator();
@@ -169,6 +143,33 @@ public class Counter<T>{
         return List.size();
     }
     
+    private class Box implements Comparable<Box>{
+        private int Number = 0;
+        private T object = null;
+        
+        private Box(T obj, int increment){
+            this.Number = increment;
+            this.object = obj;
+        }
+        
+        @Override
+        public int compareTo(Box compareWord){
+            
+            if(compareWord.Number > Number){
+                return 1;
+                
+            }else if(compareWord.Number == Number){
+                return 0;
+            }
+            
+            return -1;
+            
+        }
+        
+        
+    }
+    
+
     
     
 }

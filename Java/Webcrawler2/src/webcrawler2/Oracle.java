@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
+import static webcrawler2.Utility.readURL;
+import static webcrawler2.Utility.urlify;
 
 /**
  * Starts at on web address and searches for another web address.
@@ -18,19 +20,10 @@ import java.util.Stack;
  * @author Max
  */
 public class Oracle {
-    
-    private class Container{
-        private int depth = 0;
-        private String Site = "";
-        private Container(int d, String S){
-            depth = d;
-            Site = S;
-        }
-    }
-    private Stack<Container> Sites = new Stack();
-    private ArrayList<String> VisitedSites = new ArrayList();
-    private Stack<String> Path = new Stack();
-    private Stack<String> ShortestPath = new Stack();
+    private final Stack<Container> Sites = new Stack();
+    private final ArrayList<String> VisitedSites = new ArrayList();
+    private final Stack<String> Path = new Stack();
+    private final Stack<String> ShortestPath = new Stack();
     private int ShortestPathNum = -1;
     
     /**
@@ -53,7 +46,7 @@ public class Oracle {
         
     }
     
-    private boolean chckIfSiteFound(String site, String SecondSite, int Currdepth){
+    private boolean setShortestPath(String site, String SecondSite, int Currdepth){
         if(site.equals(SecondSite)  == true){
             
             if(ShortestPathNum == -1 || ShortestPathNum > Currdepth){
@@ -104,9 +97,7 @@ public class Oracle {
             String site = innerCon.Site;
             Currdepth = innerCon.depth;
             
-            if(chckIfSiteFound(site, SecondSite, Currdepth)){
-                
-            }
+            setShortestPath(site, SecondSite, Currdepth);
             
             
             if(VisitedSites.contains(site) == false && Currdepth <= depth){
@@ -116,8 +107,8 @@ public class Oracle {
                 //System.out.println("Site: " + site + ", Depth: " + Currdepth);
                 //System.out.println("Path: " + Path.toString());
                 //make and read URL
-                URL url = Utility.urlify(site);
-                String pageContains = Utility.readURL(url);
+                URL url = urlify(site);
+                String pageContains = readURL(url);
                 //parse HTML
                 ParseHTML parser = new ParseHTML(pageContains,site);
                 //add all links in surrent site
@@ -128,6 +119,15 @@ public class Oracle {
             }
         }
  
+    }
+    
+    private class Container{
+        private int depth = 0;
+        private String Site = "";
+        private Container(int d, String S){
+            depth = d;
+            Site = S;
+        }
     }
     
     

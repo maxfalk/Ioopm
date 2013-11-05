@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -25,7 +26,7 @@ public class Utility {
 	
 	public static URL urlify(String s) {
         // Crazy ugly coding
-        try { return new URL(s); } catch (Exception e) {}
+        try { return new URL(s); } catch (MalformedURLException e) {}
         return null;
     }
 	/**
@@ -35,24 +36,28 @@ public class Utility {
 	 */
     public static String readURL(URL url) {
         String inputLine;
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         BufferedReader in = null;
 
         try {
             in = new BufferedReader(new InputStreamReader(url.openStream()));
             
-            while ((inputLine = in.readLine()) != null)
+            while ((inputLine = in.readLine()) != null) {
                 result.append(inputLine);
+            }
 
         } catch (FileNotFoundException fnfe) {
-            fnfe.printStackTrace(System.err);
         } catch (IOException ioe) {
-            ioe.printStackTrace(System.err);
         } finally {
-            try { if (in != null) in.close(); } catch (Exception ignore) {}
+            try { if (in != null) {
+                in.close();
+            } } catch (IOException ignore) {}
         }
         
         return result.toString();
+    }
+
+    private Utility() {
     }
     
     

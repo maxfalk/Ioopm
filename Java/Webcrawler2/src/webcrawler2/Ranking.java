@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Ranking{
     
-    private Counter<String> Rankings = new Counter();
+    private final Counter<String> Rankings = new Counter();
     
     //söka igenom en text och se förekomster av all t i denna text
     //Gå igenom strängen leta efter t, varje t ger 1p
@@ -69,8 +69,7 @@ public class Ranking{
     public int getRank(String Word){
         return Rankings.getNumber(Word);
     }
-    //kunna hitta den högst rankade
-    
+
     
     
     

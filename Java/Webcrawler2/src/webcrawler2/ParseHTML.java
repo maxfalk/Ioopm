@@ -9,7 +9,7 @@ package webcrawler2;
 
 import java.util.LinkedList;
 import java.util.List;
-import org.jsoup.Jsoup;
+import static org.jsoup.Jsoup.parse;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -28,7 +28,7 @@ public class ParseHTML {
      * @param contents the web page's contents
      */
     public ParseHTML(String contents){
-        parse = Jsoup.parse(contents);
+        parse = parse(contents);
      
         
     }
@@ -39,7 +39,7 @@ public class ParseHTML {
      * @param baseurl the baseurl of the web page.
      */
     public ParseHTML(String contents,String baseurl){
-        parse = Jsoup.parse(contents, baseurl);
+        parse = parse(contents, baseurl);
      
         
     }

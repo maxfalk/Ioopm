@@ -9,26 +9,14 @@ package webcrawler2;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+
 /**
  * Stores web pages and a index of how different words are ranked in the page.
  * @author Max
  */
 public class PageRanking{
     
-    private class Container{
-        private String site;
-        private Ranking ranks;
-        
-        private Container(String Site, Ranking rank){
-            this.site = Site;
-            this.ranks = rank;
-            
-        }
-        
-        
-    }
-    
-    private ArrayList<Container> List = new ArrayList();
+    private final ArrayList<Container> List = new ArrayList();
     
     /**
      * Ranks and indexes the web page.
@@ -66,7 +54,19 @@ public class PageRanking{
         return CurrentHighestRanker;
     }
     
-    
+    private class Container{
+        private String site;
+        private Ranking ranks;
+        
+        private Container(String Site, Ranking rank){
+            this.site = Site;
+            this.ranks = rank;
+            
+        }
+        
+        
+    }
+  
     
     
     

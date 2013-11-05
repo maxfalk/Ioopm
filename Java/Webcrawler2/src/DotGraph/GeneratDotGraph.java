@@ -6,19 +6,35 @@
 
 package DotGraph;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  *
  * @author Max
  */
 public class GeneratDotGraph {
  
-    //skapa en graph
-    
-    public void createGraph(){
-    
+    /**
+     *
+     * @param name
+     * @param list
+     * @return
+     */
+    public static String fromList(String name, ArrayList list){
+        Graph graph = new Graph(name);
+        Path path = new Path();
+        Iterator it = list.listIterator();
+        while(it.hasNext() == true){
+            String currentPath = (String) it.next();
+            path.addNode(currentPath);
+            
+        }
+        graph.add(path);
+        String result = graph.get();
+  
+        return result;
     }
-    //skapa en graph linje, en herarik
-    //
     
     
     

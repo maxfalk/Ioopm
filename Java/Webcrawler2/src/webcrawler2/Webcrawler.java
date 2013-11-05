@@ -6,12 +6,19 @@
 
 package webcrawler2;
 
+import DotGraph.GeneratDotGraph;
+import static DotGraph.GeneratDotGraph.fromList;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
+import java.util.concurrent.ForkJoinPool;
+import static webcrawler2.Exclude.checkIfExcluded;
+import static webcrawler2.Exclude.loadExcludes;
+import static webcrawler2.Utility.readURL;
+import static webcrawler2.Utility.urlify;
 
 /**
  * Methods for crawling web addresses and manipulating web pages captured with it.
@@ -19,19 +26,9 @@ import java.util.Stack;
  */
 public class Webcrawler {
     
-    
-    private class Container{
-        private int depth = 0;
-        private String Site = "";
-        private Container(int d, String S){
-            depth = d;
-            Site = S;
-        }
-    }
-    
-    PageContainer pageCon = new PageContainer();
-    private Stack<Container> Sites = new Stack();
-    private ArrayList<String> VisitedSites = new ArrayList();
+    private final PageContainer pageCon = new PageContainer();
+    private final Stack<Container> Sites = new Stack();
+    private final ArrayList<String> VisitedSites = new ArrayList();
     
     private void addToSites(int CurrDepth, List<String> List){
         Iterator it = List.listIterator();
@@ -62,8 +59,8 @@ public class Webcrawler {
             if(VisitedSites.contains(site) == false && Currdepth <= depth){
                 //System.out.println("Site: " + site + ", Depth: " + Currdepth);
                 //make and read URL
-                URL url = Utility.urlify(site);
-                String pageContains = Utility.readURL(url);
+                URL url = urlify(site);
+                String pageContains = readURL(url);
                 //parse HTML
                 ParseHTML parser = new ParseHTML(pageContains,site);
                 //Save page
@@ -79,16 +76,41 @@ public class Webcrawler {
         
     }
     /**
-     *Counts the number of words on the crawled pages. 
+     * Parallel
+     *Counts the number of words on the crawled pages.
      * The pages that have been saved by the previous call to {@link Crawl}.
      * @return a counter with the words and number of the frequency of the numbers where found,
      * in sorted order, with the highest first. The counter is limited to 100 elements.
      * @throws IOException
      */
     public Counter<String> TagCloud() throws IOException{
-        //Counter Words in a page
+        
+        loadExcludes();
         Counter mycounter = new Counter();
-        Exclude.loadExcludes();
+        ForkJoinPool pool = new ForkJoinPool();
+        TagCloud tag = new TagCloud(pageCon,mycounter,0,pageCon.size());
+       // pool.invoke(tag);
+        pool.invoke(tag);
+        mycounter.sort();
+        mycounter.limit(100);
+        
+        return mycounter;
+    }
+    /**
+     *sequential
+     *Counts the number of words on the crawled pages.
+     * The pages that have been saved by the previous call to {@link Crawl}.
+     * @return a counter with the words and number of the frequency of the numbers where found,
+     * in sorted order, with the highest first. The counter is limited to 100 elements.
+     * @throws IOException
+     */
+    
+    public Counter<String> TagCloudOld() throws IOException{
+        
+        //Counter Words in a page
+        
+        Counter mycounter = new Counter();
+        loadExcludes();
         while(this.pageCon.isEmpty() == false){
             String page = this.pageCon.getContents();
             this.pageCon.pop();
@@ -96,16 +118,19 @@ public class Webcrawler {
             
             
             for(String Word : parse.getLinkTitle()){
-                if(Exclude.checkIfExcluded(Word) == false){
+                if(checkIfExcluded(Word) == false){
                     mycounter.add(Word, 1);
                 }
             }
         }
+        
         mycounter.sort();
         mycounter.limit(100);
         
         return mycounter;
+        
     }
+    
     
     /**
      *Rank the pages collected by the Crawl method
@@ -115,15 +140,33 @@ public class Webcrawler {
         
         PageRanking rank = new PageRanking();
         
-        while(this.pageCon.isEmpty() == false){
-            String page = this.pageCon.getContents();
-            String site = this.pageCon.getSiteAddress();
-            this.pageCon.pop();
+        for(int i = 0; i <this.pageCon.size();i++){
+            String page = this.pageCon.getContents(i);
+            String site = this.pageCon.getSiteAddress(i);
             
             rank.rankPage(site,page);
         }
         
         return rank;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public String createDotGraph(){
+        
+        return fromList("Test", VisitedSites);
+    }
+    
+    
+    private class Container{
+        private int depth = 0;
+        private String Site = "";
+        private Container(int d, String S){
+            depth = d;
+            Site = S;
+        }
     }
     
     

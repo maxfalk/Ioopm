@@ -20,7 +20,7 @@ import java.util.LinkedList;
  *
  */
 public class Exclude {
-    private static LinkedList<String> List = new LinkedList();
+    private static final LinkedList<String> List = new LinkedList();
     /**
      * Loads the file excludes.txt at source location
      * @throws IOException
@@ -62,6 +62,9 @@ public class Exclude {
         }
         return false;
         
+    }
+
+    private Exclude() {
     }
     
     
