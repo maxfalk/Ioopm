@@ -6,7 +6,6 @@
 
 package webcrawler2;
 
-import DotGraph.GeneratDotGraph;
 import static DotGraph.GeneratDotGraph.fromList;
 import java.io.IOException;
 import java.net.URL;
@@ -25,6 +24,7 @@ import static webcrawler2.Utility.urlify;
  * @author Max
  */
 public class Webcrawler {
+    private static final int TagCloudLimit = 100;
     
     private final PageContainer pageCon = new PageContainer();
     private final Stack<Container> Sites = new Stack();
@@ -88,11 +88,11 @@ public class Webcrawler {
         loadExcludes();
         Counter mycounter = new Counter();
         ForkJoinPool pool = new ForkJoinPool();
-        TagCloud tag = new TagCloud(pageCon,mycounter,0,pageCon.size());
-       // pool.invoke(tag);
+        final int startPoint = 0;
+        TagCloud tag = new TagCloud(pageCon,mycounter, startPoint,pageCon.size());
         pool.invoke(tag);
         mycounter.sort();
-        mycounter.limit(100);
+        mycounter.limit(TagCloudLimit);
         
         return mycounter;
     }
@@ -125,7 +125,7 @@ public class Webcrawler {
         }
         
         mycounter.sort();
-        mycounter.limit(100);
+        mycounter.limit(TagCloudLimit);
         
         return mycounter;
         

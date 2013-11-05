@@ -33,7 +33,8 @@ public class Driver {
         
         Counter myCounter;
         try {
-            myCounter = W.TagCloud();
+            myCounter = W.TagCloudOld();
+           
             for(int i =0; i< myCounter.size(); i++){
                 System.out.println("Obj: " + myCounter.getObject(i));
                 System.out.println("Num: " + myCounter.getIndexNumber(i));

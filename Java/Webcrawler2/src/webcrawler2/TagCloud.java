@@ -51,7 +51,7 @@ public class TagCloud extends RecursiveAction{
         if(length <= LIMIT){
             computeDirectly();
         }else{
-            int mid = (start+end)/2;
+            int mid = (start-end)/2;
             
             TagCloud left = new TagCloud(pageCon,mycounter,start,mid);
             TagCloud right = new TagCloud(pageCon,mycounter,mid,end);
