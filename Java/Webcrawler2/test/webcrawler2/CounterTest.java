@@ -136,5 +136,20 @@ public class CounterTest {
         assertEquals(1, result);
 
     }
+
+    /**
+     * Test of makeProcent method, of class Counter.
+     */
+    @Test
+    public void testMakeProcent() {
+        System.out.println("makeProcent");
+        Counter<String> instance = new Counter();
+        instance.add("First", 2);
+        instance.add("last", 1);
+        int expResult = 66;
+        Counter result = instance.makeProcent();
+        assertEquals(expResult, result.getIndexNumber(0));
+
+    }
     
 }

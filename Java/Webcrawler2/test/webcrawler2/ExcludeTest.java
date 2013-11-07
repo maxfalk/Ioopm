@@ -32,7 +32,7 @@ public class ExcludeTest {
      * Test of loadExcludes method, of class Exclude.
      */
     @Test
-    public void GetExludesAsList() throws Exception {
+    public void testGetExludesAsList() throws Exception {
         System.out.println("GetExludesAsList");
         Exclude.loadExcludes();
         assertTrue(Exclude.getExludesAsList().size() >0);

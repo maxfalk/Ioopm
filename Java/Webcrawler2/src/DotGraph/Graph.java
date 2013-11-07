@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- *
+ * Creates a dot graph.
  * @author Max
  */
 public class Graph {
@@ -19,21 +19,25 @@ public class Graph {
     private ArrayList<Path> Paths = new ArrayList();
     private String end = "}";
     
-    Graph(String name){
-        this.start = this.start + " " + name + "{\n";
+    /**
+     * Create a new graph with the name {@code name}
+     * @param name the name of the graph
+     */
+    public Graph(String name){
+        this.start = this.start + " \"" + name + "\"{\n";
     }
     
     /**
-     *
-     * @param path
+     * Add a path to the graph.
+     * @param path the path to add to the graph.
      */
     public void add(Path path){
         Paths.add(path);
     }
     
     /**
-     *
-     * @return
+     * Gives the graph as text, in dotgraph formate.
+     * @return the graph in dotgraph format.
      */
     public String get(){
         Iterator it = Paths.listIterator();

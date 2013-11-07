@@ -16,13 +16,13 @@ import static webcrawler2.Utility.urlify;
 
 /**
  * Starts at on web address and searches for another web address.
- *
+ * Uses a breath first algorithm
+ * 
  * @author Max
  */
 public class Oracle {
     private final Stack<Container> Sites = new Stack();
     private final ArrayList<String> VisitedSites = new ArrayList();
-    private final Stack<String> Path = new Stack();
     private final Stack<String> ShortestPath = new Stack();
     private int ShortestPathNum = -1;
     
@@ -35,22 +35,25 @@ public class Oracle {
     }
     
     
-    private void addToSites(int CurrDepth, List<String> List){
+    private void addToSites(int CurrDepth, List<String> List, Stack<String> Path){
         Iterator it = List.listIterator();
         
         while(it.hasNext()){
             String link = (String)it.next();
-            Container c = new Container(CurrDepth+1,link);
-            Sites.add(c);
+            if(link.isEmpty() == false){
+                Stack<String> newPath = updatePath(link,CurrDepth+1,Path);
+                Container c = new Container(CurrDepth+1,link,newPath);
+                Sites.push(c);
+            }
         }
         
     }
     
-    private boolean setShortestPath(String site, String SecondSite, int Currdepth){
+    private boolean setShortestPath(String site, String SecondSite, int Currdepth, Stack<String> Path){
         if(site.equals(SecondSite)  == true){
             
             if(ShortestPathNum == -1 || ShortestPathNum > Currdepth){
-                //System.out.println("!FOUND SITE! Site: " + site + ", Depth: " + Currdepth);
+                System.out.println("!FOUND SITE! Site: " + site + ", Depth: " + Currdepth);
                 ShortestPath.addAll(Path);
                 ShortestPathNum = Currdepth;
                 return true;
@@ -61,49 +64,44 @@ public class Oracle {
         
     }
     
-    private int updatePath(String site, int Pathdepth, int Currdepth){
+    private Stack<String> updatePath(String site, int Currdepth, Stack<String> Path){
         
-        if(Pathdepth < Currdepth){
-            Path.push(site);
-            Pathdepth = Currdepth;
-        }else if(Pathdepth > Currdepth){
-            Path.pop();
-        }else{
-            Path.pop();
-            Path.push(site);
+        int pathLen = (Path.size() - 1);
+        Stack<String> newPath = (Stack<String>)Path.clone();
+        
+        if(Currdepth > pathLen){
+            newPath.push(site);
+        }else if(Currdepth == pathLen){
+            newPath.pop();
+            newPath.push(site);
         }
         
-        return Pathdepth;
-        
+        return newPath;
     }
     /**
      * Searches from {@link firstSite} and tries to find a link to {@link secondSite}.
      * @param firstSite the web address to search from
      * @param SecondSite the web address to search for
-     * @param depth the maximum amount of depth to search in. 
      */
-    public void Oracle(String firstSite, String SecondSite, int depth){
+    public void Oracle(String firstSite, String SecondSite){
         //put first site on stack
-        Container con = new Container(0, firstSite);
-        Sites.push(con);
-        //kepp track of path
+        Stack<String> Path = new Stack();
         Path.push(firstSite);
-        int Pathdepth = 0;
+        Container con = new Container(0, firstSite,Path);
+        Sites.push(con);
         //Keep current depth
-        int Currdepth;
+        int Currdepth = 0;
         
         while(Sites.empty() == false){
-            Container innerCon = Sites.pop();
+            Container innerCon = Sites.get(0);
+            Sites.remove(0);
+            Stack<String> innerPath = innerCon.Path;
             String site = innerCon.Site;
             Currdepth = innerCon.depth;
-            
-            setShortestPath(site, SecondSite, Currdepth);
-            
-            
-            if(VisitedSites.contains(site) == false && Currdepth <= depth){
-                
-                Pathdepth =  updatePath(site, Pathdepth, Currdepth);
-                
+
+            setShortestPath(site, SecondSite, Currdepth,innerPath);
+ 
+            if(VisitedSites.contains(site) == false && (Currdepth < ShortestPathNum || ShortestPathNum == -1)){
                 //System.out.println("Site: " + site + ", Depth: " + Currdepth);
                 //System.out.println("Path: " + Path.toString());
                 //make and read URL
@@ -112,21 +110,24 @@ public class Oracle {
                 //parse HTML
                 ParseHTML parser = new ParseHTML(pageContains,site);
                 //add all links in surrent site
-                addToSites(Currdepth,parser.getLink());
+                addToSites(Currdepth,parser.getLink(),innerPath);
                 //add to visited list
                 VisitedSites.add(site);
                 
             }
         }
- 
+        
     }
     
     private class Container{
         private int depth = 0;
         private String Site = "";
-        private Container(int d, String S){
-            depth = d;
-            Site = S;
+        private Stack<String> Path;
+        
+        private Container(int d, String S, Stack<String> Path){
+            this.depth = d;
+            this.Site = S;
+            this.Path = Path;
         }
     }
     

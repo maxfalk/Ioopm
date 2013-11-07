@@ -34,13 +34,12 @@ public class OracleTest {
      */
     @Test
     public void testOracle() {
-        System.out.println("Oracle and getShortestPath");
+        System.out.println("Oracle");
         String firstSite = "https://sv.wikipedia.org";
         String SecondSite = "https://sv.wikipedia.org";
-        int depth = 0;
         Oracle instance = new Oracle();
 
-        instance.Oracle(firstSite, SecondSite, depth);
+        instance.Oracle(firstSite, SecondSite);
         Stack<String> result = instance.getShortestPath();
         assertEquals(SecondSite, result.pop());
         
@@ -49,16 +48,16 @@ public class OracleTest {
      * Test of Oracle method, of class Oracle.
      */
     @Test
-    public void ShortestPath() {
+    public void testGetShortestPath() {
         System.out.println("Oracle and getShortestPath");
         String firstSite = "https://sv.wikipedia.org";
         String SecondSite = "https://sv.wikipedia.org";
-        int depth = 0;
         Oracle instance = new Oracle();
         assertTrue(instance.getShortestPath().isEmpty());
 
-        instance.Oracle(firstSite, SecondSite, depth);
+        instance.Oracle(firstSite, SecondSite);
         Stack<String> result = instance.getShortestPath();
         assertEquals(SecondSite, result.pop());
     }
+
 }

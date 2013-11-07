@@ -120,5 +120,52 @@ public class PageContainerTest {
         result = instance.checkForAddress("http://finnsinte.com");
         assertFalse(result);   
     }
+
+    /**
+     * Test of getSiteAddress method, of class PageContainer.
+     */
+    @Test
+    public void testGetSiteAddress_int() {
+        System.out.println("getSiteAddress");
+        int index = 0;
+        PageContainer instance = new PageContainer();
+        String expResult = "testSite";
+        instance.addPage("testSite","testContents" );
+        instance.addPage("testSite2","testContents2" );
+        String result = instance.getSiteAddress(index);
+        assertEquals(expResult, result);
+
+    }
+
+
+    /**
+     * Test of getContents method, of class PageContainer.
+     */
+    @Test
+    public void testGetContents_int() {
+        System.out.println("getContents");
+        int index = 0;
+        PageContainer instance = new PageContainer();
+        String expResult = "testContents";
+        instance.addPage("testSite","testContents" );
+        instance.addPage("testSite2","testContents2" );
+        String result = instance.getContents(index);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of size method, of class PageContainer.
+     */
+    @Test
+    public void testSize() {
+        System.out.println("size");
+        PageContainer instance = new PageContainer();
+        instance.addPage("testSite","testContents" );
+        instance.addPage("testSite2","testContents2" );
+        int expResult = 2;
+        int result = instance.size();
+        assertEquals(expResult, result);
+
+    }
     
 }

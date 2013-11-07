@@ -29,9 +29,9 @@ public class PageContainer {
     }
     
     /**
-     *
+     * Returns the Site address of the element at index {@code index}
      * @param index
-     * @return
+     * @return the site address of the element at index {@code index}.
      */
     public String getSiteAddress(int index){
         Page tempPage = Pages.get(index);
@@ -49,7 +49,7 @@ public class PageContainer {
     }
 
     /**
-     *
+     * Get the {@code Contents} at the index {@code index}
      * @param index
      * @return
      */

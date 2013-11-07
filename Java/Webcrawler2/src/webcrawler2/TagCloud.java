@@ -10,7 +10,7 @@ import java.util.concurrent.RecursiveAction;
 import static webcrawler2.Exclude.checkIfExcluded;
 
 /**
- *
+ * Parallel search and processing of the tagCloud. 
  * @author Max
  */
 public class TagCloud extends RecursiveAction{

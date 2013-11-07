@@ -10,11 +10,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import webcrawler2.Counter;
+import webcrawler2.PageRanking;
 import webcrawler2.Webcrawler;
+import webcrawler2.Oracle;
 
 /**
  *
@@ -22,71 +21,77 @@ import webcrawler2.Webcrawler;
  */
 public class Driver {
     
+
+    private static final String OracleFrom = "https://sv.wikipedia.org";
+    private static final String OracleTo = "https://sv.wikipedia.org/wiki/Intel";
+    private static final String CrawlFrom = "http://www.tv-kalendern.se/";
+    private static final String Word = "det";
+    
     /**
      *
      * @param args
+     * @throws java.io.IOException
      */
-    public static void main(String[] args){
-        Webcrawler W = new Webcrawler();
-        W.Crawl("http://www.tv-kalendern.se/",1);
+    public static void main(String[] args) throws IOException{
+        webCrawl();
+        //runOracle();
+      
         
+    }
+    
+    private static void makeGraph(Webcrawler W)throws IOException{
         
-        Counter myCounter;
-        try {
-            myCounter = W.TagCloudOld();
-           
-            for(int i =0; i< myCounter.size(); i++){
-                System.out.println("Obj: " + myCounter.getObject(i));
-                System.out.println("Num: " + myCounter.getIndexNumber(i));
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        /*
-        
-        
-        
-        
-        
-        PageRanking p = W.rankPages();
-        String Site = W.searchSites(p, "det");
-        System.out.println(Site);
-        
-        
-        
-        */
-        //W.Oracle("https://sv.wikipedia.org", "https://sv.wikipedia.org/wiki/Portal:Tid", 1);
-        
-        
-        /*
-        String contents = W.createDotGraph();
-        String FileName = "Foo.gv";
-        
-        try{
-        File file = new File("E:" + FileName);
+        String FileName = "E:/test.gv";
+        String Contents = W.createDotGraph(CrawlFrom);
+        File file = new File(FileName);
         if(file.exists() == false){
-        
-        file.createNewFile();
-        
+            file.createNewFile();
         }
-        
         
         FileWriter fw = new FileWriter(file.getAbsolutePath());
         BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(contents);
+        bw.write(Contents);
         bw.close();
-        }catch(IOException e){
-        e.printStackTrace();
         
-        }
+    }
+
+    private static void webCrawl() throws IOException {
+        Webcrawler W = new Webcrawler();
         
+        W.Crawl(CrawlFrom,1);
+        Counter<String> myCounter;
+        myCounter = W.TagCloud();
+        Counter<String> counterProc = myCounter.makeProcent();
+       
         
-        
-        */
-        
+        PageRanking p = W.rankPages();
+        String highestRankingSite = p.getHighestRankingSite(Word);
+        makeGraph(W);
+      
+
+
+    printTags(counterProc);
+        System.out.println("Highest ranking site: " + highestRankingSite);
         
         
     }
+
+    private static void printTags(Counter<String> count){
+    
+        for(int i=0;i < count.size();i++){
+            System.out.println("Obj: " + count.getObject(i));
+            System.out.println("Proc: " +count.getIndexNumber(i));    
+        }
+        
+    
+    }
+    
+
+    private static void runOracle() {
+        Oracle oracle = new Oracle();
+        oracle.Oracle(OracleFrom, OracleTo);
+        System.out.println(oracle.getShortestPath());
+    }
+
     
 }

@@ -45,7 +45,7 @@ public class ParseHTML {
     }
     
     /**
-     *Get all the urls from links(<a href="url"></a> tags) from the contents.
+     *Get all the urls from links from the contents.
      * @return a list of all the links in the web page.
      */
     public List<String> getLink(){
@@ -60,7 +60,7 @@ public class ParseHTML {
     }
     
     /**
-     * Get the title of the web page(<title></title>)
+     * Get the title of the web page(
      * @return the title of the web page.
      */
     public String getTitle(){

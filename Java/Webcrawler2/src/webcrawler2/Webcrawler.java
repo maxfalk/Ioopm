@@ -6,10 +6,11 @@
 
 package webcrawler2;
 
-import static DotGraph.GeneratDotGraph.fromList;
+
+import DotGraph.Graph;
+import DotGraph.Path;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
@@ -21,26 +22,65 @@ import static webcrawler2.Utility.urlify;
 
 /**
  * Methods for crawling web addresses and manipulating web pages captured with it.
+ * Uses a depth first algorithm.
  * @author Max
  */
 public class Webcrawler {
-    private static final int TagCloudLimit = 100;
+    
     
     private final PageContainer pageCon = new PageContainer();
-    private final Stack<Container> Sites = new Stack();
-    private final ArrayList<String> VisitedSites = new ArrayList();
+    private final Stack<Container> UnvisitedSites = new Stack();
+    private final Stack<Container> VisitedSites = new Stack();
+    private static final int TagCloudLimit = 100;
     
-    private void addToSites(int CurrDepth, List<String> List){
+    private void addSites(Stack<Container> Sites,int CurrDepth, List<String> List, Stack<String> Path){
+        
         Iterator it = List.listIterator();
         
         while(it.hasNext()){
             String link = (String)it.next();
-            Container c = new Container(CurrDepth+1,link);
-            Sites.add(c);
+            if(link.isEmpty() == false){
+                Stack<String> newPath = updatePath(link,CurrDepth+1,Path);
+                Container c = new Container(CurrDepth+1,link,newPath);
+                Sites.push(c);
+            }
         }
         
     }
     
+    private void addSite(Stack<Container> Sites,int CurrDepth, String Site, Stack<String> Path){
+        Container c = new Container(CurrDepth+1,Site,Path);
+        Sites.push(c);
+        
+    }
+    
+    private Stack<String> updatePath(String site, int Currdepth, Stack<String> Path){
+        
+        int pathLen = (Path.size() - 1);
+        Stack<String> newPath = (Stack<String>)Path.clone();
+        
+        if(Currdepth > pathLen){
+            newPath.push(site);
+        }else if(Currdepth == pathLen){
+            newPath.pop();
+            newPath.push(site);
+        }
+        
+        return newPath;
+    }
+    private boolean containsSite(Stack<Container> stack, String site){
+        Iterator it = stack.listIterator();
+        
+        while(it.hasNext()){
+            Container currentCon = (Container) it.next();
+            
+            if(currentCon.Site.equals(site)){
+                return true;
+            }
+        }
+
+        return false;
+    }
     /**
      * Walks through the web site and all the web sites it's linking to, to a maximus depth of {@link depth}.
      * Saves the contents of the pages visited in {@link pageCon}.
@@ -48,16 +88,28 @@ public class Webcrawler {
      * @param depth how deep from the first address we should go.
      */
     public void Crawl(String siteAddress, int depth) {
-        Container con = new Container(0, siteAddress);
-        Sites.push(con);
+        //put first site on stack
+        Stack<String> Path = new Stack();
+        Path.push(siteAddress);
+        Container con = new Container(0, siteAddress,Path);
+        UnvisitedSites.push(con);
         int Currdepth = 0;
-        while(Sites.empty() == false){
-            Container innerCon = Sites.pop();
+        
+        
+        while(UnvisitedSites.empty() == false){
+            Container innerCon = UnvisitedSites.pop();
             String site = innerCon.Site;
             Currdepth = innerCon.depth;
+            Stack<String> innerPath = innerCon.Path;
             
-            if(VisitedSites.contains(site) == false && Currdepth <= depth){
-                //System.out.println("Site: " + site + ", Depth: " + Currdepth);
+            
+            
+            if(containsSite(VisitedSites,site) == false && Currdepth <= depth){
+                
+                //System.out.println(site + ", " + Currdepth);
+                //System.out.println(Path.toString());
+                //System.out.println(Path.size()-1);
+                
                 //make and read URL
                 URL url = urlify(site);
                 String pageContains = readURL(url);
@@ -66,15 +118,19 @@ public class Webcrawler {
                 //Save page
                 pageCon.addPage(site, pageContains);
                 //add all links in surrent site
-                addToSites(Currdepth,parser.getLink());
-                
+                addSites(UnvisitedSites,Currdepth,parser.getLink(),innerPath);
                 //add to visited list
-                VisitedSites.add(site);
-                
+                addSite(VisitedSites,Currdepth ,site,innerPath);
+                //make graph
             }
+            
+            
+            
         }
         
     }
+    
+    
     /**
      * Parallel
      *Counts the number of words on the crawled pages.
@@ -97,14 +153,12 @@ public class Webcrawler {
         return mycounter;
     }
     /**
-     *sequential
-     *Counts the number of words on the crawled pages.
-     * The pages that have been saved by the previous call to {@link Crawl}.
+     * sequential
+     * Counts the number of words on the crawled pages.The pages that have been saved by the previous call to {@link Crawl}.
      * @return a counter with the words and number of the frequency of the numbers where found,
      * in sorted order, with the highest first. The counter is limited to 100 elements.
      * @throws IOException
      */
-    
     public Counter<String> TagCloudOld() throws IOException{
         
         //Counter Words in a page
@@ -151,22 +205,45 @@ public class Webcrawler {
     }
     
     /**
-     *
-     * @return
+     * Create a dotgraph of the sites and the routes to the sites visited by the
+     * webcrawler
+     * @param name name of the graph to create.
+     * @return the text representing the graph in dotgraph format.
      */
-    public String createDotGraph(){
+    public String createDotGraph(String name){
         
-        return fromList("Test", VisitedSites);
+        Graph graph = new Graph(name);
+        
+        for(int i=0;i < VisitedSites.size();i++){
+            Path graphPath = new Path();
+            Container c = VisitedSites.get(i);
+            Stack<String> path = c.Path; 
+            
+            graphPath.addList(path);
+            graph.add(graphPath);
+        }
+            
+            
+            
+        
+        return graph.get();
+        
     }
     
     
     private class Container{
         private int depth = 0;
         private String Site = "";
-        private Container(int d, String S){
-            depth = d;
-            Site = S;
+        private Stack<String> Path;
+        
+        private Container(int d, String S, Stack<String> Path){
+            this.depth = d;
+            this.Site = S;
+            this.Path = Path;
         }
+        
+        
+        
     }
     
     
