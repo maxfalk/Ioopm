@@ -1,9 +1,9 @@
+
 /*
 * To change this license header, choose License Headers in Project Properties.
 * To change this template file, choose Tools | Templates
 * and open the template in the editor.
 */
-
 package pong;
 
 /**
@@ -11,32 +11,51 @@ package pong;
  * @author Max
  */
 public class Field {
-    
-    private Position topLeftCorner;
+    public Ball      ball;
+    public Player    player1;
+    public Player    player2;
     private Position bottomRightCorner;
-    public Ball ball = new Ball(2);
-    public Player player1 = new Player();
-    public Player player2 = new Player();
-    
-    Field(Position topLeftCorner, Position bottomRightCorner){
-        this.topLeftCorner = topLeftCorner;
+    private Position topLeftCorner;
+
+    Field(Position topLeftCorner, Position bottomRightCorner) {
+        this.topLeftCorner     = topLeftCorner;
         this.bottomRightCorner = bottomRightCorner;
+        
+        Position middePos = new Position();
+        middePos.x = (topLeftCorner.x + bottomRightCorner.x) / 2;
+        middePos.y = (topLeftCorner.y + bottomRightCorner.y) / 2;
+        this.ball = new Ball(4,middePos);
+        
+        Position p1Pos = new Position();
+        p1Pos.x = topLeftCorner.x;
+        p1Pos.y = middePos.y;
+        player1 = new Player(p1Pos);
+        
+        Position p2Pos = new Position();
+        p2Pos.x = bottomRightCorner.x;
+        p2Pos.y = middePos.y;
+        player2 = new Player(p2Pos);
+        
+        
     }
-    
-    public Position getTopLeftCorner(){
+
+    public Position getTopLeftCorner() {
         return this.topLeftCorner;
     }
-    
-    public Position getBottomRightCorner(){
+
+    public Position getBottomRightCorner() {
         return this.bottomRightCorner;
     }
-    
-    public Position getMiddle(){
+
+    public Position getMiddle() {
         Position pos = new Position();
-        pos.x = (topLeftCorner.x + bottomRightCorner.x)/2;
-        pos.y = (topLeftCorner.y + bottomRightCorner.y)/2;
+
+        pos.x = (topLeftCorner.x + bottomRightCorner.x) / 2;
+        pos.y = (topLeftCorner.y + bottomRightCorner.y) / 2;
+
         return pos;
     }
-    
-    
 }
+
+
+//~ Formatted by Jindent --- http://www.jindent.com

@@ -9,6 +9,9 @@ package pong;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -17,8 +20,13 @@ import javax.swing.JPanel;
  */
 public class PongMenu extends JPanel{
     
-    public int toggled = 0;
+    private int toggled = 0;
+    private JFrame f;
     
+    public PongMenu(JFrame f){
+        this.f = f;
+        f.addKeyListener(new Control());
+    }
     
     @Override
     public void paintComponent(Graphics g){
@@ -31,6 +39,20 @@ public class PongMenu extends JPanel{
           
         
     }
+
+    private void runPong() {
+        Position bottomRight = new Position();
+        Position topLeft = new Position();
+        bottomRight.x = f.getSize().height-20;
+        bottomRight.y = f.getSize().width-20;
+        topLeft.x = 20;
+        topLeft.y = 20;
+        Field field = new Field(topLeft,bottomRight);
+        PongView pV = new PongView(f,field);
+        f.removeAll();
+        f.add(pV);
+        f.repaint();
+    }
     
     private void write(Graphics g, String text, int x, int y, int key){
         if(toggled == key){
@@ -41,15 +63,51 @@ public class PongMenu extends JPanel{
         
     }
     
-    public void keyTyped(KeyEvent event){
+    private void keyPressedEvent(KeyEvent event){
     
         if(event.getKeyCode() == KeyEvent.VK_UP){
-         toggled += 1;
+            if(toggled == 0) toggled =1;
+            else if(toggled == 1) toggled =0;
+            f.repaint();
         }else if(event.getKeyCode() == KeyEvent.VK_DOWN){
-            toggled +=1;
-        }
-    
-    
+            if(toggled == 0) toggled =1;
+            else if(toggled == 1) toggled =0;
+            f.repaint();
+        }else if(event.getKeyCode() == KeyEvent.VK_ENTER){
+            if(toggled == 0){
+            runPong();
+               
+            }else if(toggled == 1){
+                System.exit(0);
+            }
+        }   
+        
+        
     }
+    
+ 
+
+    
+    public class Control implements KeyListener{
+
+        @Override
+        public void keyTyped(KeyEvent e) {
+            
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            keyPressedEvent(e);
+          
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            
+        }
+        
+        } 
+    
+    
     
 }
