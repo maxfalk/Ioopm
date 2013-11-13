@@ -1,0 +1,18 @@
+
+CCOMP = gcc
+CFLAGS = -ggdb -Wall -std=c99
+
+all: id3.o dir.o main.o
+	$(CCOMP) ID3Info.o musiclibdir.o main.o -o main
+
+
+id3.o: ID3Info.c ID3Info.h
+	$(CCOMP) $(CFLAGS) -c ID3Info.c ID3Info.h
+
+dir.o: musiclibdir.c musiclibdir.h
+	$(CCOMP) $(CFLAGS) -c musiclibdir.c musiclibdir.h
+
+main.o: main.c
+	$(CCOMP) $(CFLAGS) -c main.c 
+
+
