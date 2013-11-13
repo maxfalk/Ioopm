@@ -12,18 +12,26 @@ struct bitree{
   struct bitree *right;
 };
 //Satt in data i nod.
+
+void destroynode(db node);
+
 //----------------------------------------------------------------------------------------------
 void insertdata(char *value, char *key, db newNode){
 
- 
+  if(newNode->key != NULL){
     free(newNode->key);
-    newNode->key = malloc(strlen(key) + 1);//skapa plats pa heapen.
+  }
+  newNode->key = malloc(strlen(key) + 1);//skapa plats pa heapen.
+  if(newNode->value != NULL){
     free(newNode->value);
-    newNode->value = malloc(strlen(value) + 1);//skapa plats pa heapen.
-    
+  }
+  newNode->value = malloc(strlen(value) + 1);//skapa plats pa heapen.
+  if(value != NULL){
     strcpy(newNode->value, value);//kopiera varden till noden.
+  }
+  if(key != NULL){
     strcpy(newNode->key, key);//kopiera till noden.
- 
+  }
 }
 //Skapa tom db.
 //----------------------------------------------------------------------------------------------
@@ -37,7 +45,8 @@ db emptynode(){
   db newNode = malloc(sizeof(struct bitree)); 
   newNode->left = NULL;//Satt grenarna till NULL, for att hjalpa sokningen genom databasen.
   newNode->right = NULL;
-
+  newNode->key = NULL;
+  newNode->value = NULL;
   return newNode;
 
 }
@@ -139,7 +148,7 @@ db treverseright(db node,db newNode){
     db tmpnode = node;
     insertdata(node->value,node->key,newNode);
     node = node->left;
-    free(tmpnode);
+    destroynode(tmpnode);
   }
   return node;
 }
@@ -163,13 +172,13 @@ db deletedb(db node,char *key, int *status,char *result){
       //Ta bort nod ochsatter med hogernod.
       db tmpnode = node;
       node = node->right;
-      free(tmpnode);
+      destroynode(tmpnode);
     }
     else if(node->left != NULL && node->right == NULL){
       //Vanster gren.
       db tmpnode = node;
       node = node->left;
-      free(tmpnode);
+      destroynode(tmpnode);
     }
     else  if(node->left != NULL && node->right != NULL){
       //Tva existerande grenar.
@@ -180,11 +189,12 @@ db deletedb(db node,char *key, int *status,char *result){
       newNode->right = node->right;
       node = newNode;
       
-      free(tmpnode);
+      destroynode(tmpnode);
       //puts(node->key);
     }
     else{
       //Inga grenar.
+      destroynode(node);
       node = NULL;
     }
    
@@ -199,13 +209,27 @@ db deletedb(db node,char *key, int *status,char *result){
   return node;
 
 }
+//-----------------------------------------------------
+void destroynode(db node){
+ 
+  if(node->key != NULL)
+    free(node->key);
+  if(node->value != NULL)
+    free(node->value);
+
+  free(node);
+
+}
 //----------------------------------------------------------------------------------------------
 db destroy(db node){
 
   if(node != NULL){
+    
     destroy(node->left);
     destroy(node->right);
-    free(node);
+    destroynode(node);
+  
+  
   }
 
   return node;

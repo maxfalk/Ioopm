@@ -147,7 +147,7 @@ int main(int argc, char *argv[]){
   FILE *database = fopen(filename, "r"); // oppna en stom mot filename.
   db list = createdb(); //skapar databas list med createdb.
   list = createdbfromfile(list,database); //satter in datan fran strommen i list.
-
+  fclose(database);
   // Main loop
   int choice = -1;
   while(choice != 0){ 

@@ -1,7 +1,16 @@
 
-stdcomp= "gcc -Wall -ggdb -std=c99"
+CCOMP = gcc
+CFLAGS = -std=c99 -ggdb -Wall
 
-database: $stdcomp -o database database.c db2.c
+
+database.o: database.c database.h
+	$(CCOMP) $(CFLAGS) -c database.c database.h
+
+db2.o:db2.c
+	$(CCOMP) $(CFLAGS) -c db2.c
+
+all: db2.o database.o
+	$(CCOMP) $(CFLAGS) database.o db2.o -o database
 
 
 
