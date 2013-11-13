@@ -88,7 +88,7 @@ db insert(db list) {
   printf("Enter value: ");
   readline(value, 128, stdin);//Laser in varde.
   puts("Searching database...\n");
-  insertdb(list,key,value,&status);//satter in lista och varde.  
+  list = insertdb(list,key,value,&status);//satter in lista och varde.  
 
 
   if(status == 1){ //Satter in ny nod pa ratt plats.

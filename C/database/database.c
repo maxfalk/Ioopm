@@ -21,14 +21,19 @@ void insertdata(char *value, char *key, db newNode){
   if(newNode->key != NULL){
     free(newNode->key);
   }
+
   newNode->key = malloc(strlen(key) + 1);//skapa plats pa heapen.
+
   if(newNode->value != NULL){
     free(newNode->value);
   }
+
   newNode->value = malloc(strlen(value) + 1);//skapa plats pa heapen.
+
   if(value != NULL){
     strcpy(newNode->value, value);//kopiera varden till noden.
   }
+
   if(key != NULL){
     strcpy(newNode->key, key);//kopiera till noden.
   }
