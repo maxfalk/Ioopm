@@ -1,0 +1,7 @@
+
+stdcomp= "gcc -Wall -ggdb -std=c99"
+
+database: $stdcomp -o database database.c db2.c
+
+
+
