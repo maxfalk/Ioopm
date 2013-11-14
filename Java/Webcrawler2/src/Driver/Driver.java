@@ -22,28 +22,63 @@ import webcrawler2.Oracle;
 public class Driver {
     
 
-    private static final String OracleFrom = "https://sv.wikipedia.org";
-    private static final String OracleTo = "https://sv.wikipedia.org/wiki/Intel";
-    private static final String CrawlFrom = "http://www.tv-kalendern.se/";
-    private static final String Word = "det";
-    
+   // private static final String OracleFrom = "http://nova/index.php";
+   // private static final String OracleTo = "file://///Anton/Serier 2/Being.Human.US.S02E07.The.Ties.That.Blind.HDTV.XviD-FQM.avi";
+    //private static final String CrawlFrom = "http://nova/index.php";
+    //private static final String Word = "webserver";
     /**
      *
      * @param args
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException{
-        webCrawl();
-        //runOracle();
-      
+        
+        int Action = 0;
+        int steps = 0;
+        String From = "";
+        String To = "";
+        boolean tags = false;
+        boolean ranking = false;
+        boolean graph = false;
+        String Word = "";
+        String filename = "";
+        
+        
+        System.out.println("Running Webcrawler/oracle");
+        for(int i=0; i< args.length;i++){
+        
+            if(args[i].equals("-webcrawl") && Action == 0) Action = 1;
+            if(args[i].equals("-steps")) steps = Integer.parseInt(args[++i]);
+            if(args[i].equals("-from") && From.isEmpty()) From = args[++i];
+            if(args[i].equals("-tags") && tags == false) tags = true;
+            if(args[i].equals("-ranking") && ranking == false) ranking = true;
+            if(args[i].equals("-word") && Word.isEmpty()) Word = args[++i];
+            if(args[i].equals("-graph") && graph == false){
+                graph = true; 
+                filename = args[++i];
+            }
+            
+            if(args[i].equals("-oracle") && Action == 0) Action = 2;
+            if(args[i].equals("-to") && To.isEmpty()) To = args[++i];
+        
+        }
+        
+        if(Action == 1 && From.isEmpty() == false){
+            Webcrawler W = webCrawl(From, steps);
+            if(tags == true) TagCloud(W);     
+            if(ranking == true && Word.isEmpty() == false) Ranking(W, Word);
+            if(graph == true && filename.isEmpty() == false) makeGraph(W, From, filename);
+            
+        }else if(Action == 2 && From.isEmpty() == false && To.isEmpty() == false){
+            runOracle(From,To);
+        }
         
     }
     
-    private static void makeGraph(Webcrawler W)throws IOException{
+    private static void makeGraph(Webcrawler W, String CrawlFrom, String Filename)throws IOException{
         
-        String FileName = "E:/test.gv";
         String Contents = W.createDotGraph(CrawlFrom);
-        File file = new File(FileName);
+        File file = new File(Filename);
         if(file.exists() == false){
             file.createNewFile();
         }
@@ -55,42 +90,44 @@ public class Driver {
         
     }
 
-    private static void webCrawl() throws IOException {
+    private static Webcrawler webCrawl(String CrawlFrom, int steps) throws IOException {
         Webcrawler W = new Webcrawler();
         
-        W.Crawl(CrawlFrom,1);
+        W.Crawl(CrawlFrom,steps);
+        
+
+        return W;
+        
+    }
+
+    private static void Ranking(Webcrawler W,String Word) {
+        PageRanking p = W.rankPages();
+        String highestRankingSite = p.getHighestRankingSite(Word);
+        System.out.println("Highest ranking site: " + highestRankingSite);
+    }
+
+    private static void TagCloud(Webcrawler W) throws IOException {
         Counter<String> myCounter;
         myCounter = W.TagCloud();
         Counter<String> counterProc = myCounter.makeProcent();
-       
-        
-        PageRanking p = W.rankPages();
-        String highestRankingSite = p.getHighestRankingSite(Word);
-        makeGraph(W);
-      
-
-
-    printTags(counterProc);
-        System.out.println("Highest ranking site: " + highestRankingSite);
-        
-        
+        printTags(counterProc);
     }
 
     private static void printTags(Counter<String> count){
     
         for(int i=0;i < count.size();i++){
-            System.out.println("Obj: " + count.getObject(i));
-            System.out.println("Proc: " +count.getIndexNumber(i));    
+            System.out.println("Tag: " + count.getObject(i));
+            System.out.println("Procent: " +count.getIndexNumber(i)+ "%");    
         }
         
     
     }
     
 
-    private static void runOracle() {
+    private static void runOracle(String OracleFrom, String OracleTo) {
         Oracle oracle = new Oracle();
         oracle.Oracle(OracleFrom, OracleTo);
-        System.out.println(oracle.getShortestPath());
+        System.out.println("Shortest path : " + oracle.getShortestPath());
     }
 
     

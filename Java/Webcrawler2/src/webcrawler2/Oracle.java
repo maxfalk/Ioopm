@@ -53,7 +53,7 @@ public class Oracle {
         if(site.equals(SecondSite)  == true){
             
             if(ShortestPathNum == -1 || ShortestPathNum > Currdepth){
-                System.out.println("!FOUND SITE! Site: " + site + ", Depth: " + Currdepth);
+                
                 ShortestPath.addAll(Path);
                 ShortestPathNum = Currdepth;
                 return true;

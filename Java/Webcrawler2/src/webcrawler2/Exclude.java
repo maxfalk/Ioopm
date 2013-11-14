@@ -7,6 +7,8 @@
 package webcrawler2;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -24,10 +26,12 @@ public class Exclude {
     /**
      * Loads the file excludes.txt at source location
      */
-    public static void loadExcludes()throws NullPointerException{
+    public static void loadExcludes(){
         try{
-            InputStream instream = Exclude.class.getResourceAsStream("exclude.txt");
-            BufferedReader br = new BufferedReader(new InputStreamReader(instream));
+            File currentDir = new File("Exclude.txt");
+            System.out.println(currentDir.getAbsolutePath());
+            FileReader instream = new FileReader(currentDir.getAbsolutePath());
+            BufferedReader br = new BufferedReader(instream);
             
             String currentLine;
             
@@ -36,7 +40,7 @@ public class Exclude {
             }
             
             if(List.isEmpty() == true){
-                System.err.println("Nothing found in exclude.txt");
+                System.out.println("Nothing found in exclude.txt");
             }
             
             br.close();

@@ -85,15 +85,16 @@ public class Webcrawler {
      * Walks through the web site and all the web sites it's linking to, to a maximus depth of {@link depth}.
      * Saves the contents of the pages visited in {@link pageCon}.
      * @param siteAddress the address at were the crawling will begin
-     * @param depth how deep from the first address we should go.
+     * @param maxSteps how many steps from the first address we should go.
      */
-    public void Crawl(String siteAddress, int depth) {
+    public void Crawl(String siteAddress, int maxSteps) {
         //put first site on stack
         Stack<String> Path = new Stack();
         Path.push(siteAddress);
         Container con = new Container(0, siteAddress,Path);
         UnvisitedSites.push(con);
         int Currdepth = 0;
+        int step = 0;
         
         
         while(UnvisitedSites.empty() == false){
@@ -104,7 +105,7 @@ public class Webcrawler {
             
             
             
-            if(containsSite(VisitedSites,site) == false && Currdepth <= depth){
+            if(containsSite(VisitedSites,site) == false && (step <= maxSteps || maxSteps == -1)){
                 
                 //System.out.println(site + ", " + Currdepth);
                 //System.out.println(Path.toString());
@@ -122,6 +123,7 @@ public class Webcrawler {
                 //add to visited list
                 addSite(VisitedSites,Currdepth ,site,innerPath);
                 //make graph
+                step++;
             }
             
             
