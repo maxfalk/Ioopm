@@ -1,0 +1,81 @@
+\hypertarget{_i_d3_info_8h}{\section{I\-D3\-Info.\-h File Reference}
+\label{_i_d3_info_8h}\index{I\-D3\-Info.\-h@{I\-D3\-Info.\-h}}
+}
+
+
+Function for reading and getting information for I\-D3tags.  
+
+
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structid3}{id3} $\ast$ \hyperlink{_i_d3_info_8h_a7b44bf917df0532db1df9365ed1b4dc7}{I\-D3}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_i_d3_info_8h_a7b44bf917df0532db1df9365ed1b4dc7}{I\-D3} \hyperlink{_i_d3_info_8h_aa1da4ad12b4cd2a7e2614c2e8f040333}{readid3info} (char $\ast$filename)
+\item 
+char $\ast$ \hyperlink{_i_d3_info_8h_a7944ffc03f805986513fb0d44859d7ad}{getinfo} (\hyperlink{_i_d3_info_8h_a7b44bf917df0532db1df9365ed1b4dc7}{I\-D3} mymfile, char value)
+\item 
+void \hyperlink{_i_d3_info_8h_acfa769b12c2f96538c5408480d83f660}{destroyid3} (\hyperlink{_i_d3_info_8h_a7b44bf917df0532db1df9365ed1b4dc7}{I\-D3} mymfile)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Function for reading and getting information for I\-D3tags. Read and get functions for I\-D3tags.
+
+Max Falk Nilsson 
+
+\subsection{Typedef Documentation}
+\hypertarget{_i_d3_info_8h_a7b44bf917df0532db1df9365ed1b4dc7}{\index{I\-D3\-Info.\-h@{I\-D3\-Info.\-h}!I\-D3@{I\-D3}}
+\index{I\-D3@{I\-D3}!ID3Info.h@{I\-D3\-Info.\-h}}
+\subsubsection[{I\-D3}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf id3}$\ast$ {\bf I\-D3}}}\label{_i_d3_info_8h_a7b44bf917df0532db1df9365ed1b4dc7}
+typedef for the \hyperlink{structid3}{id3} struct 
+
+\subsection{Function Documentation}
+\hypertarget{_i_d3_info_8h_acfa769b12c2f96538c5408480d83f660}{\index{I\-D3\-Info.\-h@{I\-D3\-Info.\-h}!destroyid3@{destroyid3}}
+\index{destroyid3@{destroyid3}!ID3Info.h@{I\-D3\-Info.\-h}}
+\subsubsection[{destroyid3}]{\setlength{\rightskip}{0pt plus 5cm}void destroyid3 (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-D3}}]{mymfile}
+\end{DoxyParamCaption}
+)}}\label{_i_d3_info_8h_acfa769b12c2f96538c5408480d83f660}
+Destroy the I\-D3tag 
+\begin{DoxyParams}{Parameters}
+{\em mymfile} & the I\-D\-::tag to destroy. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_i_d3_info_8h_a7944ffc03f805986513fb0d44859d7ad}{\index{I\-D3\-Info.\-h@{I\-D3\-Info.\-h}!getinfo@{getinfo}}
+\index{getinfo@{getinfo}!ID3Info.h@{I\-D3\-Info.\-h}}
+\subsubsection[{getinfo}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ getinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-D3}}]{mymfile, }
+\item[{char}]{value}
+\end{DoxyParamCaption}
+)}}\label{_i_d3_info_8h_a7944ffc03f805986513fb0d44859d7ad}
+Get information from a generated I\-D3tag. 
+\begin{DoxyParams}{Parameters}
+{\em mymfile} & the I\-D3tag to look in. \\
+\hline
+{\em value} & The code for what information to get. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the infromation stored at the given code in the given I\-D3tag. 
+\end{DoxyReturn}
+\hypertarget{_i_d3_info_8h_aa1da4ad12b4cd2a7e2614c2e8f040333}{\index{I\-D3\-Info.\-h@{I\-D3\-Info.\-h}!readid3info@{readid3info}}
+\index{readid3info@{readid3info}!ID3Info.h@{I\-D3\-Info.\-h}}
+\subsubsection[{readid3info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-D3} readid3info (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}}\label{_i_d3_info_8h_aa1da4ad12b4cd2a7e2614c2e8f040333}
+Read the I\-D3info of the file at the fullpath given. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The fullpath to the file to read from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The information stored in the files I\-D3tags. 
+\end{DoxyReturn}

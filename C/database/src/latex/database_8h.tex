@@ -1,0 +1,177 @@
+\hypertarget{database_8h}{\section{database.\-h File Reference}
+\label{database_8h}\index{database.\-h@{database.\-h}}
+}
+
+
+An impementation for a simple database.  
+
+
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structbitree}{bitree} $\ast$ \hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} \hyperlink{database_8h_a9e72db6a2008354c326e67e4fb738534}{createdb} ()
+\item 
+\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} \hyperlink{database_8h_a61760f449b1eaf89c454a6d6628f8c0a}{destroy} (\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} database)
+\item 
+\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} \hyperlink{database_8h_a98dc1a91b997462f81ee3fc2b8cf6afa}{querydb} (\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} database, char $\ast$key, char $\ast$result, int $\ast$status)
+\item 
+\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} \hyperlink{database_8h_af2cce04f281cf1f0cce45c18edd11f48}{updatedb} (\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} database, char $\ast$key, char $\ast$value, int $\ast$status)
+\item 
+\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} \hyperlink{database_8h_a6a57b1d91bab531664f09dfffbc02195}{insertdb} (\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} database, char $\ast$key, char $\ast$value, int $\ast$status)
+\item 
+\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} \hyperlink{database_8h_a2ddec9921dcf331187becd947798814c}{deletedb} (\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} database, char $\ast$key, int $\ast$status, char $\ast$result)
+\item 
+\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} \hyperlink{database_8h_a4cbf8a72924d9d9d8ee21115612d2e3f}{printdb} (\hyperlink{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{db} database)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An impementation for a simple database. This module conatians functions for working with a simple database and for sotring and getting information saved in it.
+
+Max Falk Nilsson 
+
+\subsection{Typedef Documentation}
+\hypertarget{database_8h_a48324ed9e0bc5578c7124751c417fdf6}{\index{database.\-h@{database.\-h}!db@{db}}
+\index{db@{db}!database.h@{database.\-h}}
+\subsubsection[{db}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf bitree}$\ast$ {\bf db}}}\label{database_8h_a48324ed9e0bc5578c7124751c417fdf6}
+typedef for the struct bitree 
+
+\subsection{Function Documentation}
+\hypertarget{database_8h_a9e72db6a2008354c326e67e4fb738534}{\index{database.\-h@{database.\-h}!createdb@{createdb}}
+\index{createdb@{createdb}!database.h@{database.\-h}}
+\subsubsection[{createdb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf db} createdb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{database_8h_a9e72db6a2008354c326e67e4fb738534}
+Creates a new empty database. \begin{DoxyReturn}{Returns}
+The new empty database. 
+\end{DoxyReturn}
+\hypertarget{database_8h_a2ddec9921dcf331187becd947798814c}{\index{database.\-h@{database.\-h}!deletedb@{deletedb}}
+\index{deletedb@{deletedb}!database.h@{database.\-h}}
+\subsubsection[{deletedb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf db} deletedb (
+\begin{DoxyParamCaption}
+\item[{{\bf db}}]{database, }
+\item[{char $\ast$}]{key, }
+\item[{int $\ast$}]{status, }
+\item[{char $\ast$}]{result}
+\end{DoxyParamCaption}
+)}}\label{database_8h_a2ddec9921dcf331187becd947798814c}
+Delete a entry in the database. 
+\begin{DoxyParams}{Parameters}
+{\em database} & The database the remove the enrty in. \\
+\hline
+{\em key} & The key of the entry to remove. \\
+\hline
+{\em status} & Indicates if the insert was successful with a 0, and unsuccessful with a 1. \\
+\hline
+{\em result} & The value which was removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The database without the removed entry. 
+\end{DoxyReturn}
+\hypertarget{database_8h_a61760f449b1eaf89c454a6d6628f8c0a}{\index{database.\-h@{database.\-h}!destroy@{destroy}}
+\index{destroy@{destroy}!database.h@{database.\-h}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf db} destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf db}}]{database}
+\end{DoxyParamCaption}
+)}}\label{database_8h_a61760f449b1eaf89c454a6d6628f8c0a}
+Destroys the given database and frees all it's memory. 
+\begin{DoxyParams}{Parameters}
+{\em database} & The database to destry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+db A empty database . 
+\end{DoxyReturn}
+\hypertarget{database_8h_a6a57b1d91bab531664f09dfffbc02195}{\index{database.\-h@{database.\-h}!insertdb@{insertdb}}
+\index{insertdb@{insertdb}!database.h@{database.\-h}}
+\subsubsection[{insertdb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf db} insertdb (
+\begin{DoxyParamCaption}
+\item[{{\bf db}}]{database, }
+\item[{char $\ast$}]{key, }
+\item[{char $\ast$}]{value, }
+\item[{int $\ast$}]{status}
+\end{DoxyParamCaption}
+)}}\label{database_8h_a6a57b1d91bab531664f09dfffbc02195}
+Inserts a new entry in the database. 
+\begin{DoxyParams}{Parameters}
+{\em database} & The database to enter the new entry. \\
+\hline
+{\em key} & The key of the new entry. \\
+\hline
+{\em value} & The value of the new entry. \\
+\hline
+{\em status} & Indicates if the insert was successful with a 0, and unsuccessful with a 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The database with the new entry inserted. 
+\end{DoxyReturn}
+\hypertarget{database_8h_a4cbf8a72924d9d9d8ee21115612d2e3f}{\index{database.\-h@{database.\-h}!printdb@{printdb}}
+\index{printdb@{printdb}!database.h@{database.\-h}}
+\subsubsection[{printdb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf db} printdb (
+\begin{DoxyParamCaption}
+\item[{{\bf db}}]{database}
+\end{DoxyParamCaption}
+)}}\label{database_8h_a4cbf8a72924d9d9d8ee21115612d2e3f}
+Prints the database to stdout. 
+\begin{DoxyParams}{Parameters}
+{\em database} & The database to be printed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{database_8h_a98dc1a91b997462f81ee3fc2b8cf6afa}{\index{database.\-h@{database.\-h}!querydb@{querydb}}
+\index{querydb@{querydb}!database.h@{database.\-h}}
+\subsubsection[{querydb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf db} querydb (
+\begin{DoxyParamCaption}
+\item[{{\bf db}}]{database, }
+\item[{char $\ast$}]{key, }
+\item[{char $\ast$}]{result, }
+\item[{int $\ast$}]{status}
+\end{DoxyParamCaption}
+)}}\label{database_8h_a98dc1a91b997462f81ee3fc2b8cf6afa}
+Query the database. 
+\begin{DoxyParams}{Parameters}
+{\em database} & The database to look query. \\
+\hline
+{\em key} & The key to lookup. \\
+\hline
+{\em result} & The value corresponding to the given key. \\
+\hline
+{\em status} & Takes either the value 1 or 0, 1 if the key wasn't found. 0 if it did. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the given database. 
+\end{DoxyReturn}
+\hypertarget{database_8h_af2cce04f281cf1f0cce45c18edd11f48}{\index{database.\-h@{database.\-h}!updatedb@{updatedb}}
+\index{updatedb@{updatedb}!database.h@{database.\-h}}
+\subsubsection[{updatedb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf db} updatedb (
+\begin{DoxyParamCaption}
+\item[{{\bf db}}]{database, }
+\item[{char $\ast$}]{key, }
+\item[{char $\ast$}]{value, }
+\item[{int $\ast$}]{status}
+\end{DoxyParamCaption}
+)}}\label{database_8h_af2cce04f281cf1f0cce45c18edd11f48}
+Update a entry in the database 
+\begin{DoxyParams}{Parameters}
+{\em database} & The database to look in. \\
+\hline
+{\em key} & The key of the value to update. \\
+\hline
+{\em value} & The new value to update the entry with the given key. \\
+\hline
+{\em status} & Indicates if the update was successful with a 0, and unsuccessful with a 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated database 
+\end{DoxyReturn}

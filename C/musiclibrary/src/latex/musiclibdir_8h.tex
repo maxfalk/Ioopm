@@ -1,0 +1,138 @@
+\hypertarget{musiclibdir_8h}{\section{musiclibdir.\-h File Reference}
+\label{musiclibdir_8h}\index{musiclibdir.\-h@{musiclibdir.\-h}}
+}
+
+
+Function for interacting with the filesystem.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{musiclibdir_8h_ab23795057b9efd723f260037e9b5c045}{listdir} (char $\ast$path, char pathlist\mbox{[}$\,$\mbox{]}\mbox{[}50\mbox{]})
+\item 
+int \hyperlink{musiclibdir_8h_a1d576eb23b7eecaf99058a281de533bf}{movefile} (char $\ast$filepath, char $\ast$newfilepath)
+\item 
+int \hyperlink{musiclibdir_8h_abd5483ecdbabec4d1159ca0c5b5cf325}{makefolder} (char $\ast$path)
+\item 
+int \hyperlink{musiclibdir_8h_af623504bf0ed2379c6b7470daa97a211}{checkfordir} (char $\ast$dirname, char $\ast$lkdir)
+\item 
+void \hyperlink{musiclibdir_8h_a7a82bdbba9dde8f7e3ba2a234ab3d9e5}{changedirdown} (char $\ast$dir)
+\item 
+void \hyperlink{musiclibdir_8h_a0c4517ca25b079cb379b5df235836644}{dirconcat} (char $\ast$first, char $\ast$last)
+\item 
+void \hyperlink{musiclibdir_8h_a3b2a55ce118d79ff483d6f83f6750380}{getfilename} (char $\ast$fullpath)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Function for interacting with the filesystem. Function to look at a location on the harddrive and make files, move files etc..
+
+Max Falk Nilsson 
+
+\subsection{Function Documentation}
+\hypertarget{musiclibdir_8h_a7a82bdbba9dde8f7e3ba2a234ab3d9e5}{\index{musiclibdir.\-h@{musiclibdir.\-h}!changedirdown@{changedirdown}}
+\index{changedirdown@{changedirdown}!musiclibdir.h@{musiclibdir.\-h}}
+\subsubsection[{changedirdown}]{\setlength{\rightskip}{0pt plus 5cm}void changedirdown (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dir}
+\end{DoxyParamCaption}
+)}}\label{musiclibdir_8h_a7a82bdbba9dde8f7e3ba2a234ab3d9e5}
+Changes a path a dir down(cd ..). 
+\begin{DoxyParams}{Parameters}
+{\em dir} & The dir to go one step down from. \\
+\hline
+\end{DoxyParams}
+\hypertarget{musiclibdir_8h_af623504bf0ed2379c6b7470daa97a211}{\index{musiclibdir.\-h@{musiclibdir.\-h}!checkfordir@{checkfordir}}
+\index{checkfordir@{checkfordir}!musiclibdir.h@{musiclibdir.\-h}}
+\subsubsection[{checkfordir}]{\setlength{\rightskip}{0pt plus 5cm}int checkfordir (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dirname, }
+\item[{char $\ast$}]{lkdir}
+\end{DoxyParamCaption}
+)}}\label{musiclibdir_8h_af623504bf0ed2379c6b7470daa97a211}
+Checks it a folder already exists 
+\begin{DoxyParams}{Parameters}
+{\em dirname} & The directory the be search \\
+\hline
+{\em lkdir} & The directory to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the directory was found else 0. 
+\end{DoxyReturn}
+\hypertarget{musiclibdir_8h_a0c4517ca25b079cb379b5df235836644}{\index{musiclibdir.\-h@{musiclibdir.\-h}!dirconcat@{dirconcat}}
+\index{dirconcat@{dirconcat}!musiclibdir.h@{musiclibdir.\-h}}
+\subsubsection[{dirconcat}]{\setlength{\rightskip}{0pt plus 5cm}void dirconcat (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{first, }
+\item[{char $\ast$}]{last}
+\end{DoxyParamCaption}
+)}}\label{musiclibdir_8h_a0c4517ca25b079cb379b5df235836644}
+Concatenat to a path with a file. 
+\begin{DoxyParams}{Parameters}
+{\em first} & The path to be concatenated. \\
+\hline
+{\em last} & The file to be concatenated to the path. \\
+\hline
+\end{DoxyParams}
+\hypertarget{musiclibdir_8h_a3b2a55ce118d79ff483d6f83f6750380}{\index{musiclibdir.\-h@{musiclibdir.\-h}!getfilename@{getfilename}}
+\index{getfilename@{getfilename}!musiclibdir.h@{musiclibdir.\-h}}
+\subsubsection[{getfilename}]{\setlength{\rightskip}{0pt plus 5cm}void getfilename (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{fullpath}
+\end{DoxyParamCaption}
+)}}\label{musiclibdir_8h_a3b2a55ce118d79ff483d6f83f6750380}
+Takes a fullpath and returns the file which it leads to. 
+\begin{DoxyParams}{Parameters}
+{\em fullpath} & The path to get the filename from. \\
+\hline
+\end{DoxyParams}
+\hypertarget{musiclibdir_8h_ab23795057b9efd723f260037e9b5c045}{\index{musiclibdir.\-h@{musiclibdir.\-h}!listdir@{listdir}}
+\index{listdir@{listdir}!musiclibdir.h@{musiclibdir.\-h}}
+\subsubsection[{listdir}]{\setlength{\rightskip}{0pt plus 5cm}void listdir (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path, }
+\item[{char}]{pathlist\mbox{[}$\,$\mbox{]}\mbox{[}50\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{musiclibdir_8h_ab23795057b9efd723f260037e9b5c045}
+Lists all files in the current path. 
+\begin{DoxyParams}{Parameters}
+{\em path} & The path of which to list all of it's files. \\
+\hline
+{\em pathlist} & Were the result of the files found in path will be stored. \\
+\hline
+\end{DoxyParams}
+\hypertarget{musiclibdir_8h_abd5483ecdbabec4d1159ca0c5b5cf325}{\index{musiclibdir.\-h@{musiclibdir.\-h}!makefolder@{makefolder}}
+\index{makefolder@{makefolder}!musiclibdir.h@{musiclibdir.\-h}}
+\subsubsection[{makefolder}]{\setlength{\rightskip}{0pt plus 5cm}int makefolder (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path}
+\end{DoxyParamCaption}
+)}}\label{musiclibdir_8h_abd5483ecdbabec4d1159ca0c5b5cf325}
+Makes a new directory. 
+\begin{DoxyParams}{Parameters}
+{\em path} & The fullpath to the new directory to be created. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 if there was an error else 0. 
+\end{DoxyReturn}
+\hypertarget{musiclibdir_8h_a1d576eb23b7eecaf99058a281de533bf}{\index{musiclibdir.\-h@{musiclibdir.\-h}!movefile@{movefile}}
+\index{movefile@{movefile}!musiclibdir.h@{musiclibdir.\-h}}
+\subsubsection[{movefile}]{\setlength{\rightskip}{0pt plus 5cm}int movefile (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{filepath, }
+\item[{char $\ast$}]{newfilepath}
+\end{DoxyParamCaption}
+)}}\label{musiclibdir_8h_a1d576eb23b7eecaf99058a281de533bf}
+Moves a file form on location to another. 
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The fullpath to the file to be moved. \\
+\hline
+{\em newfilepath} & The fullpath to were the file is to be moved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 if there was an error else 0. 
+\end{DoxyReturn}
