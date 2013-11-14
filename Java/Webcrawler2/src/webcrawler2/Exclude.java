@@ -29,7 +29,7 @@ public class Exclude {
     public static void loadExcludes(){
         try{
             File currentDir = new File("Exclude.txt");
-            System.out.println(currentDir.getAbsolutePath());
+            
             FileReader instream = new FileReader(currentDir.getAbsolutePath());
             BufferedReader br = new BufferedReader(instream);
             
