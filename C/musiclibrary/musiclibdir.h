@@ -5,9 +5,9 @@
 //list all files in a dir
 void listdir(char *path,char pathlist[][50]);
 //movefile
-void movefile(char*,char*);
+int movefile(char*,char*);
 //make a folder
-void makefolder(char*);
+int makefolder(char*);
 //check path for a dir
 int checkfordir(char*,char*);
 //remove the highest folder

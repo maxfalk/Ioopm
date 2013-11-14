@@ -27,30 +27,30 @@ void listdir(char *path,char pathlist[][50]){
        strcpy(pathlist[fi],path);
        dirconcat(pathlist[fi],ep->d_name);
        //printf("File1:%s\n",ep->d_name);
-       printf("File2:%s\n",pathlist[fi]);
+       //printf("File2:%s\n",pathlist[fi]);
        fi++;    
      }
     }
    strcpy(pathlist[fi],"\0");
     closedir(dr);
   }else
-    perror("Couldn't open the dir");
+    perror("Couldn't open the dir\n");
 
-  puts("done");
+  //puts("done");
 }
 
 
 //------------------------------------------------------------------
-void movefile(char* filepath, char* newfilepath){
+int movefile(char* filepath, char* newfilepath){
   
-    rename(filepath,newfilepath);
+    return rename(filepath,newfilepath);
 }
 //--------------------------------------------------------------------
 //makefolder
-void makefolder(char *path){
+int makefolder(char *path){
    
 
-    mkdir(path,0777);
+   return mkdir(path,0777);
 
 }
 //-------------------------------------------------------------------
@@ -73,7 +73,7 @@ int checkfordir(char *dirname, char *lkdir){
     }
     closedir(dr);
   }else
-    perror("Couldn't open the dir");
+    perror("Couldn't open the dir\n");
 
 
   return found;

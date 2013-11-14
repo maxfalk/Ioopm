@@ -3,6 +3,8 @@
 #include "string.h"
 #include "ID3Info.h"
 
+#define MAXFRAMES 5000
+
 struct header{
   char *ID3v2identifier; //"ID3"
   int ID3v2version;     //2 bytes version
@@ -27,7 +29,7 @@ struct frame{
 
 struct id3{
   struct header *Header;
-  struct frame *Frame[5000]; 
+  struct frame *Frame[MAXFRAMES]; 
 };
  
 //Tags = Låttitel, huvudartist, album,spårnummer, Genre, inspelningsår
@@ -160,7 +162,7 @@ int readframeheader(FILE* stream, ID3 mymfile, int framenum){
     return 0; // read data, header found
   }else{
     mymfile->Frame[framenum] = NULL; //mark end of frames 
-    printf("End at:%d\n", framenum);
+    //printf("End at:%d\n", framenum);
     return 1; // no data
   }
 }
@@ -183,12 +185,12 @@ int readframeinfo(FILE *stream, ID3 mymfile,int framenum){
 void readframes(FILE*stream, ID3 mymfile){
   
   int ID3v2size = mymfile->Header->ID3v2size;
-  printf("sizeid3:%d\n.",ID3v2size);
+  //printf("sizeid3:%d\n.",ID3v2size);
   int endoffile = 0;
   int bytesread = 0;
 
 
-  for(int i = 0; bytesread < ID3v2size && endoffile == 0; i++){
+  for(int i = 0; bytesread < ID3v2size && endoffile == 0 && i < MAXFRAMES; i++){
     if(readframeheader(stream,mymfile,i) == 0){
       bytesread += 10; // 10 bytes is for the frame header.
       bytesread += readframeinfo(stream,mymfile,i);// count bytes read
