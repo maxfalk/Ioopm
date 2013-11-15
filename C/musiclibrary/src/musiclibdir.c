@@ -83,8 +83,8 @@ int checkfordir(char *dirname, char *lkdir){
 void changedirdown(char *dir){
   
   int len = strlen(dir);
-  dir[len--] = '\0'; //remove first sign probably a /.
-
+  dir[len] = '\0'; //remove first sign probably a /.
+  len--;
   while(dir[len] != '/' && len >= 0){
     dir[len] = '\0';
     len--;

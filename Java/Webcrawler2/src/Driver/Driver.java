@@ -34,7 +34,8 @@ public class Driver {
     public static void main(String[] args) throws IOException{
         
         int Action = 0;
-        int steps = 0;
+        int steps = -1;
+        int depth = -1;
         String From = "";
         String To = "";
         boolean tags = false;
@@ -53,6 +54,7 @@ public class Driver {
             if(args[i].equals("-tags") && tags == false) tags = true;
             if(args[i].equals("-ranking") && ranking == false) ranking = true;
             if(args[i].equals("-word") && Word.isEmpty()) Word = args[++i];
+            if(args[i].equals("-depth")) depth = Integer.parseInt(args[++i]);
             if(args[i].equals("-graph") && graph == false){
                 graph = true; 
                 filename = args[++i];
@@ -64,7 +66,7 @@ public class Driver {
         }
         
         if(Action == 1 && From.isEmpty() == false){
-            Webcrawler W = webCrawl(From, steps);
+            Webcrawler W = webCrawl(From, steps,depth);
             if(tags == true) TagCloud(W);     
             if(ranking == true && Word.isEmpty() == false) Ranking(W, Word);
             if(graph == true && filename.isEmpty() == false) makeGraph(W, From, filename);
@@ -90,10 +92,10 @@ public class Driver {
         
     }
 
-    private static Webcrawler webCrawl(String CrawlFrom, int steps) throws IOException {
+    private static Webcrawler webCrawl(String CrawlFrom, int steps, int depth) throws IOException {
         Webcrawler W = new Webcrawler();
         
-        W.Crawl(CrawlFrom,steps);
+        W.Crawl(CrawlFrom,steps,depth);
         
 
         return W;

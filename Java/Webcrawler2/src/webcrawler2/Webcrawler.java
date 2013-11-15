@@ -87,7 +87,7 @@ public class Webcrawler {
      * @param siteAddress the address at were the crawling will begin
      * @param maxSteps how many steps from the first address we should go.
      */
-    public void Crawl(String siteAddress, int maxSteps) {
+    public void Crawl(String siteAddress, int maxSteps, int depth) {
         //put first site on stack
         Stack<String> Path = new Stack();
         Path.push(siteAddress);
@@ -105,7 +105,7 @@ public class Webcrawler {
             
             
             
-            if(containsSite(VisitedSites,site) == false && (step <= maxSteps || maxSteps == -1)){
+            if(containsSite(VisitedSites,site) == false && (step <= maxSteps || maxSteps == -1) && (depth <= Currdepth || depth == -1)){
                 
                 //System.out.println(site + ", " + Currdepth);
                 //System.out.println(Path.toString());

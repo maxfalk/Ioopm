@@ -240,7 +240,7 @@ db destroy(db node){
     destroy(node->left);
     destroy(node->right);
     destroynode(node);
-  
+	node = NULL;
   
   }
 
